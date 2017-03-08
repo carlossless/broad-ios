@@ -15,6 +15,9 @@ env:
 
 cache:
   bundler: true
+  directories:
+    - Carthage
+    - $HOME/Library/Caches/Homebrew
 
 before_install:
   - 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
@@ -22,6 +25,7 @@ before_install:
 install:
   - bundle install --jobs=3 --retry=3 --deployment
   - brew bundle
+  - carthage bootstrap
 
 before_script:
   - xcrun agvtool new-version -all "$TRAVIS_BUILD_NUMBER"
@@ -35,7 +39,7 @@ after_script:
 
 after_success:
   - printf "CI build $TRAVIS_BUILD_NUMBER\n\nChanges:\n\n$COMMIT_TEXT" > $DISTRIBUTION_NOTES_FILE
-  - make distribute 
+  - make distribute
 
 branches:
   only:
