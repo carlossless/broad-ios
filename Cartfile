@@ -1,0 +1,7 @@
+github "ReactiveCocoa/ReactiveSwift"
+github "ReactiveCocoa/ReactiveCocoa"
+github "thoughtbot/Argo"
+github "thoughtbot/Curry"
+github "SnapKit/SnapKit"
+github "mac-cain13/R.swift.Library"
+github "bitstadium/HockeySDK-iOS"
