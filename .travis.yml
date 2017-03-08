@@ -1,0 +1,43 @@
+osx_image: xcode8.2
+language: objective-c
+
+env:
+  global:
+    - LANG=en_US.UTF-8
+    - COMMIT_TEXT="$(git log --no-merges --format=%B $TRAVIS_COMMIT_RANGE)"
+    - DISTRIBUTION_NOTES_FILE=distribution_notes.txt
+    - COMMIT_SHA1=$TRAVIS_COMMIT
+    - BUILD_URL="https://travis-ci.com/$TRAVIS_REPO_SLUG/builds/$TRAVIS_BUILD_ID"
+    - REPOSITORY_URL="https://github.com/$TRAVIS_REPO_SLUG"
+    - CONFIGURATION=Release
+
+cache:
+  bundler: true
+
+before_install:
+  - 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
+
+install:
+  - bundle install --jobs=3 --retry=3 --deployment
+  - brew bundle
+
+before_script:
+  - xcrun agvtool new-version -all "$TRAVIS_BUILD_NUMBER"
+  - ./Scripts/add-key.sh
+
+script:
+  - make
+
+after_script:
+  - ./Scripts/remove-key.sh
+
+after_success:
+  - printf "CI build $TRAVIS_BUILD_NUMBER\n\nChanges:\n\n$COMMIT_TEXT" > $DISTRIBUTION_NOTES_FILE
+  - make distribute 
+
+branches:
+  only:
+    master
+
+notifications:
+  slack: adroiti:DVp2N0mvTdWdQTwl2goV4qJm
