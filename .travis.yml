@@ -25,7 +25,7 @@ before_install:
 install:
   - bundle install --jobs=3 --retry=3 --deployment
   - brew bundle
-  - carthage bootstrap
+  - carthage bootstrap --platform ios
 
 before_script:
   - xcrun agvtool new-version -all "$TRAVIS_BUILD_NUMBER"
