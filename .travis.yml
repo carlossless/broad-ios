@@ -40,6 +40,3 @@ after_success:
 branches:
   only:
     master
-
-notifications:
-  slack: adroiti:DVp2N0mvTdWdQTwl2goV4qJm
