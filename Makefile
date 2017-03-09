@@ -28,7 +28,7 @@ $(BINDIR)/$(TARGET).xcarchive:
 distribute: $(BINDIR)/$(TARGET).ipa $(BINDIR)/$(TARGET).app.dSYM.zip
 	curl -v "https://rink.hockeyapp.net/api/2/apps/upload" \
 		-F status=2 \
-		-F notify=0 \
+		-F notify=1 \
 		-F ipa=@"$(word 1,$^)" \
 		-F dsym=@"$(word 2,$^)" \
 		-H "X-HockeyAppToken: $(HOCKEY_APP_TOKEN)" \
