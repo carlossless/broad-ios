@@ -21,6 +21,7 @@ install:
   - carthage bootstrap --platform ios
 
 before_script:
+  - rvm system
   - xcrun agvtool new-version -all "$TRAVIS_BUILD_NUMBER"
   - ./Scripts/add-key.sh
 
