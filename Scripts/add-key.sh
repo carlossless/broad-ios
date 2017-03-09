@@ -14,7 +14,7 @@ security import ./Signing/Certificates/dev.cer -k ~/Library/Keychains/ios-build.
 security import ./Signing/Certificates/dev.p12 -k ~/Library/Keychains/ios-build.keychain -P $KEY_PASSWORD -A
 
 #new signing shenanigans!
-security set-key-partition-list -S apple-tool:,apple: -s -k $KEY_PASSWORD ios-build.keychain
+security set-key-partition-list -S apple-tool:,apple: -s -k travis ios-build.keychain
 
 #copy all provisioning profiles to the designated directory
 mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
