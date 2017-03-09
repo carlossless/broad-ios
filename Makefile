@@ -23,7 +23,7 @@ $(BINDIR)/$(TARGET).app.dSYM.zip: $(BINDIR)/$(TARGET).xcarchive
 	pushd $(PROJ_PATH)/$</dSYMs/ && zip -r $(PROJ_PATH)/$@ *.dSYM && popd
 
 $(BINDIR)/$(TARGET).xcarchive:
-	xcodebuild -project $(TARGET).xcodeproj -scheme $(TARGET) -configuration '$(CONFIGURATION)' clean archive -archivePath $@ DEVELOPMENT_TEAM='$(DEVELOPMENT_TEAM)'
+	set -o pipefail && xcodebuild -project $(TARGET).xcodeproj -scheme $(TARGET) -configuration '$(CONFIGURATION)' clean archive -archivePath $@ DEVELOPMENT_TEAM='$(DEVELOPMENT_TEAM)'  | xcpretty
 
 distribute: $(BINDIR)/$(TARGET).ipa $(BINDIR)/$(TARGET).app.dSYM.zip
 	curl -v "https://rink.hockeyapp.net/api/2/apps/upload" \
