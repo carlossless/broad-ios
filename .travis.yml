@@ -27,7 +27,7 @@ before_script:
   - ./Scripts/add-key.sh
 
 script:
-  - travis_wait make
+  - travis_wait 40 make
 
 after_script:
   - ./Scripts/remove-key.sh
