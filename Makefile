@@ -5,7 +5,7 @@ SCHEME ?= $(TARGET)
 CONFIGURATION ?= Release
 DEVELOPMENT_TEAM = DXEF6FH82Q
 
-REPOSITORY_URL ?= https://github.com/Adroiti/viptag-ios
+REPOSITORY_URL ?= https://github.com/carlossless/lrt
 DISTRIBUTION_NOTES_FILE ?= distribution_notes.txt
 
 PROJ_PATH = $(shell pwd)
