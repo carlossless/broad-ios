@@ -32,7 +32,7 @@ distribute: $(BINDIR)/$(TARGET).ipa $(BINDIR)/$(TARGET).app.dSYM.zip
 		-F ipa=@"$(word 1,$^)" \
 		-F dsym=@"$(word 2,$^)" \
 		-H "X-HockeyAppToken: $(HOCKEY_APP_TOKEN)" \
-		-F notes=@"$(DISTRIBUTION_NOTES_FILE)" \
+		-F notes=<"$(DISTRIBUTION_NOTES_FILE)" \
 		-F commit_sha="$(COMMIT_SHA1)" \
 		-F build_server_url="$(BUILD_URL)" \
 		-F repository_url="$(REPOSITORY_URL)"
