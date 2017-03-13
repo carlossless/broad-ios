@@ -1,4 +1,4 @@
-osx_image: xcode8.2
+osx_image: xcode8.3
 language: objective-c
 
 env:
@@ -19,6 +19,7 @@ cache:
 install:
   - brew bundle
   - carthage bootstrap --platform ios
+  - pushd FFmpeg && ./build-ffmpeg.sh && popd
 
 before_script:
   - rvm system

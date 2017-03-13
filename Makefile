@@ -5,6 +5,7 @@ SCHEME ?= $(TARGET)
 CONFIGURATION ?= Release
 DEVELOPMENT_TEAM = DXEF6FH82Q
 
+COMMIT_SHA1 ?= $(shell git rev-parse HEAD)
 REPOSITORY_URL ?= https://github.com/carlossless/lrt
 DISTRIBUTION_NOTES_FILE ?= distribution_notes.txt
 
@@ -26,16 +27,18 @@ $(BINDIR)/$(TARGET).xcarchive:
 	xcodebuild -project $(TARGET).xcodeproj -scheme $(TARGET) -configuration '$(CONFIGURATION)' clean archive -archivePath $@ DEVELOPMENT_TEAM='$(DEVELOPMENT_TEAM)'
 
 distribute: $(BINDIR)/$(TARGET).ipa $(BINDIR)/$(TARGET).app.dSYM.zip
-	curl -v "https://rink.hockeyapp.net/api/2/apps/upload" \
-		-F status=2 \
-		-F notify=1 \
-		-F ipa=@"$(word 1,$^)" \
-		-F dsym=@"$(word 2,$^)" \
+	curl \
+		-F "notes=<$(DISTRIBUTION_NOTES_FILE)" \
+		-F "notes_type=0" \
+		-F "notify=1" \
+		-F "status=2" \
+		-F "commit_sha=$(COMMIT_SHA1)" \
+		-F "build_server_url=$(BUILD_URL)" \
+		-F "repository_url=$(REPOSITORY_URL)" \
+		-F "ipa=@$(word 1,$^)" \
+		-F "dsym=@$(word 2,$^)" \
 		-H "X-HockeyAppToken: $(HOCKEY_APP_TOKEN)" \
-		-F notes=<"$(DISTRIBUTION_NOTES_FILE)" \
-		-F commit_sha="$(COMMIT_SHA1)" \
-		-F build_server_url="$(BUILD_URL)" \
-		-F repository_url="$(REPOSITORY_URL)"
+		https://rink.hockeyapp.net/api/2/apps/upload
 
 clean:
 	rm -rf $(BINDIR)
