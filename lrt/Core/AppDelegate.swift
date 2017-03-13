@@ -12,21 +12,29 @@ import HockeySDK
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+    var navigator: Navigator!
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
         setupHockeyApp()
         
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = UIColor.red
-        window?.rootViewController = SelectionNavigationController(rootViewController: MainViewController())
-        window?.makeKeyAndVisible()
+        navigator = Navigator.shared
+        registerViewControllers()
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        navigator.window = window
+        navigator.replaceRoot(model: SplashViewModel())
+        window.makeKeyAndVisible()
     }
     
     private func setupHockeyApp() {
         BITHockeyManager.shared().configure(withIdentifier: "58d1c2e2eaf14e97b01973edade2d378")
         BITHockeyManager.shared().start()
         BITHockeyManager.shared().authenticator.authenticateInstallation()
+    }
+    
+    private func registerViewControllers() {
+        navigator.register(SplashViewController.self, for: SplashViewModel.self)
+        navigator.register(SelectionNavigationController.self, for: MainViewModel.self)
     }
 
 }

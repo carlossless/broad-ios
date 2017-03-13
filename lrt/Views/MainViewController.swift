@@ -10,18 +10,28 @@ import UIKit
 import SnapKit
 import ReactiveSwift
 import ReactiveCocoa
+import AVKit
+import AVFoundation
 
-class MainViewController: UITableViewController {
+class MainViewController: UITableViewController, ModelBased {
     
-    let viewModel = MainViewModel()
+    var viewModel: MainViewModel!
+    
+    func configure(for model: MainViewModel) {
+        self.viewModel = model
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = UIColor.white
-        navigationItem.titleView = UIImageView(image: R.image.logo())
+        navigationItem.title = "LRT Live Broadcast"
+        tableView.separatorColor = UIColor(hex: 0x373D55)
+        tableView.backgroundColor = UIColor(hex: 0x202535)
+        tableView.tableFooterView = UIView()
         // Do any additional setup after loading the view, typically from a nib.
         
-        tableView.register(MainCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(StationTableViewCell.self, forCellReuseIdentifier: "Cell")
         
         tableView.reactive.reloadData <~ viewModel.stations.map { _ in () }
         
@@ -35,32 +45,31 @@ class MainViewController: UITableViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        tableView.setContentOffset(CGPoint(x: 0, y: self.tableView.contentOffset.y - (self.refreshControl!.frame.size.height)), animated: true)
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2, execute: {
-            self.refreshControl?.sendActions(for: .valueChanged)
-        })
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.stations.value.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! StationTableViewCell
         let model = viewModel.stations.value[indexPath.row]
-        cell.textLabel?.text = model.name
-        cell.detailTextLabel?.text = model.title ?? "¯\\_(ツ)_/¯"
+        cell.configure(for: model)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = viewModel.stations.value[indexPath.row]
-        UIApplication.shared.open(model.content, options: [:], completionHandler: nil)
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let player = AVPlayer(url: model.playlistUrl)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        self.present(playerViewController, animated: true) {
+            playerViewController.player!.play()
+        }
     }
 
 }

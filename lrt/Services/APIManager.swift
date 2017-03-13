@@ -75,7 +75,7 @@ struct APIManager {
             .flatMap(.concat, transform: self.handleResponse)
             .flatMap(.concat, transform: self.deserialise)
             .on(failed: { e in
-                print("Error: \(e)\nUrl: \(url)\nHeaders: \(request.allHTTPHeaderFields)")
+                print("Error: \(e)\nUrl: \(url)\nHeaders: \(String(describing: request.allHTTPHeaderFields))")
             })
             .map { value in
                 return (value, date)
@@ -130,7 +130,7 @@ struct APIManager {
     
     // MARK: - Data Retrieval
     
-    func stations(timeOffset: NSDate = NSDate(timeIntervalSince1970: 0)) -> SignalProducer<(APIStationResponse, Date), NSError> {
+    func stations() -> SignalProducer<APIStationResponse, NSError> {
         let url = APIManager.apiBaseUrl.appendingPathComponent("/data-service/module/live")!
         return retrieveAndParseData(url: url)
     }
