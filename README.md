@@ -2,7 +2,7 @@
 
 Stream Live Broadcasts from [LRT](http://lrt.lt)
 
-## Bootstraping
+## Bootstrapping
 
 ```
 brew bundle
