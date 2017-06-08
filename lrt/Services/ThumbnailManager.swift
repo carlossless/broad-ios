@@ -21,7 +21,7 @@ class ThumbnailManager {
             if let cachedImage = self.cachedThumbnails[key] {
                 obs.send(value: cachedImage)
             }
-            let genSignal = self.generator.genImage(for: playlistUrl, size: CGSize(width: 0, height: 80))
+            let genSignal = self.generator.genImage(for: playlistUrl, size: size)
                 .on(value: { image in self.cachedThumbnails[key] = image })
                 .start(obs)
             disp.add(genSignal)
