@@ -17,8 +17,6 @@ cache:
     - $HOME/Library/Caches/Homebrew
 
 install:
-  - echo $GITHUB_ACCESS_TOKEN
-  - echo $KEY_PASSWORD
   - brew bundle
   - carthage bootstrap --platform ios
   - pushd FFmpeg && ./build-ffmpeg.sh && popd
