@@ -20,15 +20,3 @@ extension UIColor {
     }
     
 }
-
-extension Array {
-    
-}
-
-extension Collection where Index == Int, IndexDistance == Int {
-    
-    func random() -> Iterator.Element {
-        return self[IndexDistance(arc4random_uniform(UInt32(self.count)))]
-    }
-    
-}
