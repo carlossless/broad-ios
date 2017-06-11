@@ -21,6 +21,7 @@
 		F936B9E51EE8C3EF00B6C84D /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F936B9DE1EE8C3EF00B6C84D /* libswresample.a */; };
 		F936B9E61EE8C3EF00B6C84D /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F936B9DF1EE8C3EF00B6C84D /* libswscale.a */; };
 		F93A31AA1ED5CBAE00F390C2 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F93A31A91ED5CBAE00F390C2 /* VideoToolbox.framework */; };
+		F957AFE31EEB13E000C9A981 /* Collection+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957AFE21EEB13E000C9A981 /* Collection+Convenience.swift */; };
 		F98BA6D71E6E0ECA001A33A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BA6D61E6E0ECA001A33A8 /* AppDelegate.swift */; };
 		F98BA6D91E6E0ECA001A33A8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BA6D81E6E0ECA001A33A8 /* MainViewController.swift */; };
 		F98BA6DE1E6E0ECA001A33A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F98BA6DD1E6E0ECA001A33A8 /* Assets.xcassets */; };
@@ -204,6 +205,7 @@
 		F936B9DE1EE8C3EF00B6C84D /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswresample.a; sourceTree = "<group>"; };
 		F936B9DF1EE8C3EF00B6C84D /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswscale.a; sourceTree = "<group>"; };
 		F93A31A91ED5CBAE00F390C2 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		F957AFE21EEB13E000C9A981 /* Collection+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Convenience.swift"; sourceTree = "<group>"; };
 		F98BA6D31E6E0ECA001A33A8 /* lrt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lrt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98BA6D61E6E0ECA001A33A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F98BA6D81E6E0ECA001A33A8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			children = (
 				F90A70051EDC9D72007A56D1 /* UIColor+Hex.swift */,
 				F90A70071EDD5DB2007A56D1 /* UIView+Convenience.swift */,
+				F957AFE21EEB13E000C9A981 /* Collection+Convenience.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -718,7 +721,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which carthage >/dev/null; then\n    carthage copy-frameworks\nelse\n    echo \"warning: Carthage not installed, download from https://github.com/Carthage/Carthage\"\n    exit 1\nfi";
+			shellScript = "if which carthage >/dev/null; then\n    carthage copy-frameworks\nelse\n    echo \"warning: Carthage not installed, download from https://github.com/Carthage/Carthage\"\nfi";
 		};
 		F9E18EEF1E6E26E100F1A607 /* R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -732,7 +735,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which rswift >/dev/null; then\n    rswift \"$SRCROOT/lrt/Resources/\"\nelse\n    echo \"warning: R.swift not installed, download from https://github.com/mac-cain13/R.swift\"\n    exit 1\nfi";
+			shellScript = "if which rswift >/dev/null; then\n    rswift \"$SRCROOT/lrt/Resources/\"\nelse\n    echo \"warning: R.swift not installed, download from https://github.com/mac-cain13/R.swift\"\nfi";
 		};
 		F9E18EF01E6E26EC00F1A607 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -764,6 +767,7 @@
 				F98BA6D71E6E0ECA001A33A8 /* AppDelegate.swift in Sources */,
 				F9E18EFA1E6EA96600F1A607 /* APIManager.swift in Sources */,
 				F9A1CBAE1EDE0CAE00AA59FA /* SplashViewController.swift in Sources */,
+				F957AFE31EEB13E000C9A981 /* Collection+Convenience.swift in Sources */,
 				F9E18EEE1E6E241500F1A607 /* SelectionNavigationController.swift in Sources */,
 				F9E18EF21E6E27B400F1A607 /* R.generated.swift in Sources */,
 				F90A70081EDD5DB2007A56D1 /* UIView+Convenience.swift in Sources */,
