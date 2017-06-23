@@ -36,10 +36,10 @@ class MainViewModel : ViewModel {
     let thumbnailManager = ThumbnailManager()
     
     let stations = MutableProperty<[StationTableCellModel]>([])
-    let updateStations: Action<(), APIStationResponse, NSError>!
+    let updateStations: Action<(), StreamDataResponse, NSError>!
     
     init () {
-        updateStations = Action<(), APIStationResponse, NSError> { _ in
+        updateStations = Action<(), StreamDataResponse, NSError> { _ in
             return APIManager.sharedInstance.stations()
         }
         
@@ -48,7 +48,7 @@ class MainViewModel : ViewModel {
             .observe(on: UIScheduler())
     }
     
-    func buildViewModels(stations: APIStationResponse) -> [StationTableCellModel] {
+    func buildViewModels(stations: StreamDataResponse) -> [StationTableCellModel] {
         return Array(stations.data
             .filter { MainViewModel.order.index(of: $0.0) != nil }
             .sorted { st1, st2 in

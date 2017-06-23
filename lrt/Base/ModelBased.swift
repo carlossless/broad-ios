@@ -12,7 +12,6 @@ protocol ConcreteModelBased {
     
     associatedtype ViewModelType
     
-//    var viewModel: ViewModelType! { get set }
     func configure(for model: ViewModelType)
     
 }

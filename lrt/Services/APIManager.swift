@@ -1,9 +1,9 @@
 //
 //  APIManager.swift
-//  Conference
+//  lrt
 //
 //  Created by Karolis Stasaitis on 10/08/15.
-//  Copyright (c) 2015 Adroiti. All rights reserved.
+//  Copyright (c) 2017 delanoir. All rights reserved.
 //
 
 import Foundation
@@ -14,12 +14,16 @@ import Result
 struct APIManager {
     
     static let sharedInstance = APIManager()
-    static private let apiBaseUrl = NSURL(string: "http://www.lrt.lt/")!
+    private let apiBaseUrl: URL
     
     // MARK: - Private Interface
     
     private func createDefaultRequest(url: URL) -> URLRequest {
         return URLRequest(url: url)
+    }
+    
+    init (baseUrl: URL = URL(string: "http://www.lrt.lt/")!) {
+        apiBaseUrl = baseUrl
     }
     
     private func deserialise<T : Decodable>(data: Data) -> Result<T, NSError> where T == T.DecodedType {
@@ -89,7 +93,7 @@ struct APIManager {
             }
     }
     
-    func httpUrlRequest(request: URLRequest) -> SignalProducer<(Data, URLResponse), NSError> {
+    private func httpUrlRequest(request: URLRequest) -> SignalProducer<(Data, URLResponse), NSError> {
         #if DEBUG
             var date: NSDate! = nil
             let reqName = "\(request.httpMethod!) \(request.url!)"
@@ -130,8 +134,8 @@ struct APIManager {
     
     // MARK: - Data Retrieval
     
-    func stations() -> SignalProducer<APIStationResponse, NSError> {
-        let url = APIManager.apiBaseUrl.appendingPathComponent("/data-service/module/live")!
+    func stations() -> SignalProducer<StreamDataResponse, NSError> {
+        let url = apiBaseUrl.appendingPathComponent("/data-service/module/live")
         return retrieveAndParseData(url: url)
     }
     
@@ -140,7 +144,7 @@ struct APIManager {
 extension NSError {
     
     static func APIError(string: String) -> NSError {
-        return NSError(domain: "com.adroiti.beacon.api", code: 1, userInfo: [NSLocalizedDescriptionKey: string])
+        return NSError(domain: "com.delanoir.lrt.api", code: 1, userInfo: [NSLocalizedDescriptionKey: string])
     }
     
 }

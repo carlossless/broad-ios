@@ -18,8 +18,8 @@ class Navigator {
             actuator.window = newValue
         }
     }
-    let actuator: NavigationActuator
-    var vcMap: [String : UIViewController.Type] = [:]
+    private let actuator: NavigationActuator
+    private var vcMap: [String : UIViewController.Type] = [:]
     
     static let shared = Navigator()
     
@@ -31,7 +31,7 @@ class Navigator {
         vcMap[String(describing: modelType)] = vcType
     }
     
-    func resolveAndConfigureController(for model: ViewModel) -> UIViewController {
+    private func resolveAndConfigureController(for model: ViewModel) -> UIViewController {
         let vcClass = vcMap[String(describing: type(of: model))]!
         let vc = vcClass.init()
         if let mb = vc as? AnyModelBased {
@@ -41,15 +41,15 @@ class Navigator {
     }
     
     func replaceRoot(model: ViewModel, animated: Bool = false, options: UIViewAnimationOptions = []) {
-        actuator.replaceRoot(vc: resolveAndConfigureController(for: model), animated: animated, options: options)
+        actuator.replaceRoot(controller: resolveAndConfigureController(for: model), animated: animated, options: options)
     }
     
     func push(model: ViewModel, animated: Bool) {
-        actuator.push(vc: resolveAndConfigureController(for: model), animated: animated)
+        actuator.push(controller: resolveAndConfigureController(for: model), animated: animated)
     }
     
     func present(model: ViewModel, animated: Bool) {
-        actuator.present(vc: resolveAndConfigureController(for: model), animated: animated)
+        actuator.present(controller: resolveAndConfigureController(for: model), animated: animated)
     }
     
     func pop(animated: Bool) {
@@ -62,38 +62,35 @@ class Navigator {
     
 }
 
-class NavigationActuator {
+fileprivate class NavigationActuator {
     
     var window: UIWindow?
     
-    func replaceRoot(vc: UIViewController, animated: Bool, options: UIViewAnimationOptions) {
-        let replaceAction: (Bool) -> Void = { _ in
-            self.window!.rootViewController = vc
-        }
-        if animated && window!.rootViewController != nil {
-            UIView.transition(
-                from: window!.rootViewController!.view!,
-                to: vc.view,
-                duration: 1.0,
-                options: options,
-                completion: replaceAction
-            )
-        } else {
-            replaceAction(true)
-        }
+    func replaceRoot(controller: UIViewController, animated: Bool, options: UIViewAnimationOptions) {
+        let snapshot = self.window!.snapshotView(afterScreenUpdates: true)!
+        controller.view.addSubview(snapshot)
+        
+        self.window!.rootViewController = controller
+        
+        UIView.animate(withDuration: 0.3, animations: {() in
+            snapshot.layer.opacity = 0
+            snapshot.layer.transform = CATransform3DMakeScale(1.5, 1.5, 1.5)
+        }, completion: { _ in
+            snapshot.removeFromSuperview()
+        })
     }
     
-    func push(vc: UIViewController, animated: Bool) {
+    func push(controller target: UIViewController, animated: Bool) {
         if let nav = window?.topMostViewController?.navigationController {
-            nav.pushViewController(nav, animated: animated)
+            nav.pushViewController(target, animated: animated)
         } else {
             print("Couldn't find a navigation controller")
         }
     }
     
-    func present(vc: UIViewController, animated: Bool) {
-        if let vc = window?.topMostViewController {
-            vc.present(vc, animated: animated, completion: nil)
+    func present(controller target: UIViewController, animated: Bool) {
+        if let controller = window?.topMostViewController {
+            controller.present(target, animated: animated, completion: nil)
         } else {
             print("Couldn't find a view controller")
         }
@@ -117,42 +114,3 @@ class NavigationActuator {
     
 }
 
-extension UIWindow {
-
-    var topMostViewController: UIViewController? {
-        if let windowRootViewController = self.rootViewController {
-            return windowRootViewController.topMostDescendantViewController
-        }
-        return nil
-    }
-    
-}
-
-extension UIViewController {
-    
-    var topMostDescendantViewController: UIViewController? {
-        
-        if let tabBarController = self as? UITabBarController,
-            let selectedViewController = tabBarController.selectedViewController {
-            return selectedViewController.topMostDescendantViewController
-        }
-        
-        if let navigationController = self as? UINavigationController,
-            let visibleViewController = navigationController.visibleViewController {
-            return visibleViewController.topMostDescendantViewController
-        }
-        
-        if let presentedViewController = self.presentedViewController {
-            return presentedViewController.topMostDescendantViewController
-        }
-        
-        for subview in self.view?.subviews ?? [] {
-            if let childViewController = subview.next as? UIViewController {
-                return childViewController.topMostDescendantViewController
-            }
-        }
-        
-        return self
-    }
-    
-}
