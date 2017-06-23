@@ -48,13 +48,16 @@
 		F9B5FE431ED5BEE600545320 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B5FE421ED5BEE600545320 /* libiconv.tbd */; };
 		F9B9CBDF1E70405A00168940 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B9CBDE1E70405A00168940 /* HockeySDK.framework */; };
 		F9B9CBE21E70407200168940 /* HockeySDK.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F9B9CBE01E70406900168940 /* HockeySDK.framework.dSYM */; };
+		F9C3204E1EF1AC270053A92C /* UIWindow+TopMost.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C3204C1EF1AC270053A92C /* UIWindow+TopMost.swift */; };
+		F9C3204F1EF1AC270053A92C /* UIViewController+TopMost.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C3204D1EF1AC270053A92C /* UIViewController+TopMost.swift */; };
+		F9C320511EF1ACE80053A92C /* URL+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C320501EF1ACE80053A92C /* URL+Decodable.swift */; };
 		F9E18EEE1E6E241500F1A607 /* SelectionNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E18EED1E6E241500F1A607 /* SelectionNavigationController.swift */; };
 		F9E18EF21E6E27B400F1A607 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E18EF11E6E27B400F1A607 /* R.generated.swift */; };
 		F9E18EF41E6E27F000F1A607 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E18EF31E6E27F000F1A607 /* Rswift.framework */; };
 		F9E18EF71E6E282000F1A607 /* Rswift.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F9E18EF51E6E27FC00F1A607 /* Rswift.framework.dSYM */; };
 		F9E18EF81E6E282000F1A607 /* SnapKit.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F98BA70C1E6E1A63001A33A8 /* SnapKit.framework.dSYM */; };
 		F9E18EFA1E6EA96600F1A607 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E18EF91E6EA96600F1A607 /* APIManager.swift */; };
-		F9E18EFC1E6EA98E00F1A607 /* APIStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E18EFB1E6EA98E00F1A607 /* APIStation.swift */; };
+		F9E18EFC1E6EA98E00F1A607 /* StreamDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E18EFB1E6EA98E00F1A607 /* StreamDataResponse.swift */; };
 		F9E18EFE1E6EBC8B00F1A607 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E18EFD1E6EBC8B00F1A607 /* MainViewModel.swift */; };
 		F9E805301EDEC1960027F1A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E8052F1EDEC1960027F1A4 /* ViewController.swift */; };
 		F9E805321EDECDD50027F1A4 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E805311EDECDD50027F1A4 /* SplashViewModel.swift */; };
@@ -237,12 +240,15 @@
 		F9B5FE421ED5BEE600545320 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		F9B9CBDE1E70405A00168940 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HockeySDK.framework; path = Carthage/Build/iOS/HockeySDK.framework; sourceTree = "<group>"; };
 		F9B9CBE01E70406900168940 /* HockeySDK.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = HockeySDK.framework.dSYM; path = Carthage/Build/iOS/HockeySDK.framework.dSYM; sourceTree = "<group>"; };
+		F9C3204C1EF1AC270053A92C /* UIWindow+TopMost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+TopMost.swift"; sourceTree = "<group>"; };
+		F9C3204D1EF1AC270053A92C /* UIViewController+TopMost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+TopMost.swift"; sourceTree = "<group>"; };
+		F9C320501EF1ACE80053A92C /* URL+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Decodable.swift"; sourceTree = "<group>"; };
 		F9E18EED1E6E241500F1A607 /* SelectionNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionNavigationController.swift; sourceTree = "<group>"; };
 		F9E18EF11E6E27B400F1A607 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		F9E18EF31E6E27F000F1A607 /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
 		F9E18EF51E6E27FC00F1A607 /* Rswift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Rswift.framework.dSYM; path = Carthage/Build/iOS/Rswift.framework.dSYM; sourceTree = "<group>"; };
 		F9E18EF91E6EA96600F1A607 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		F9E18EFB1E6EA98E00F1A607 /* APIStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIStation.swift; sourceTree = "<group>"; };
+		F9E18EFB1E6EA98E00F1A607 /* StreamDataResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamDataResponse.swift; sourceTree = "<group>"; };
 		F9E18EFD1E6EBC8B00F1A607 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		F9E8052F1EDEC1960027F1A4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F9E805311EDECDD50027F1A4 /* SplashViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
@@ -287,6 +293,9 @@
 				F90A70051EDC9D72007A56D1 /* UIColor+Hex.swift */,
 				F90A70071EDD5DB2007A56D1 /* UIView+Convenience.swift */,
 				F957AFE21EEB13E000C9A981 /* Collection+Convenience.swift */,
+				F9C3204C1EF1AC270053A92C /* UIWindow+TopMost.swift */,
+				F9C3204D1EF1AC270053A92C /* UIViewController+TopMost.swift */,
+				F9C320501EF1ACE80053A92C /* URL+Decodable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -577,6 +586,7 @@
 		F9B9CBE51E70441C00168940 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F9C320541EF2E20D0053A92C /* HTTP */,
 				F9E18EF91E6EA96600F1A607 /* APIManager.swift */,
 				F9E805351EDEDF4A0027F1A4 /* Navigator.swift */,
 				F997AF111ED85CD000EAA72B /* LRTStreamImageGrabber.h */,
@@ -612,9 +622,16 @@
 		F9B9CBE81E70449D00168940 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F9E18EFB1E6EA98E00F1A607 /* APIStation.swift */,
+				F9E18EFB1E6EA98E00F1A607 /* StreamDataResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F9C320541EF2E20D0053A92C /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = HTTP;
 			sourceTree = "<group>";
 		};
 		F9E8052E1EDEC1860027F1A4 /* Base */ = {
@@ -760,6 +777,7 @@
 			files = (
 				F9E18EFE1E6EBC8B00F1A607 /* MainViewModel.swift in Sources */,
 				F98BA6D91E6E0ECA001A33A8 /* MainViewController.swift in Sources */,
+				F9C3204E1EF1AC270053A92C /* UIWindow+TopMost.swift in Sources */,
 				F9E805361EDEDF4A0027F1A4 /* Navigator.swift in Sources */,
 				F9A1CBB11EDE0CC100AA59FA /* SplashView.swift in Sources */,
 				F936B9621EE8286500B6C84D /* ThumbnailManager.swift in Sources */,
@@ -776,10 +794,12 @@
 				F9E805321EDECDD50027F1A4 /* SplashViewModel.swift in Sources */,
 				F997AF131ED85CD000EAA72B /* LRTStreamImageGrabber.m in Sources */,
 				F90A70061EDC9D72007A56D1 /* UIColor+Hex.swift in Sources */,
-				F9E18EFC1E6EA98E00F1A607 /* APIStation.swift in Sources */,
+				F9E18EFC1E6EA98E00F1A607 /* StreamDataResponse.swift in Sources */,
 				F9E805301EDEC1960027F1A4 /* ViewController.swift in Sources */,
 				F936B9641EE89E2200B6C84D /* ModelBased.swift in Sources */,
 				F90A700E1EDD8CB8007A56D1 /* ThumbnailGenerator.swift in Sources */,
+				F9C320511EF1ACE80053A92C /* URL+Decodable.swift in Sources */,
+				F9C3204F1EF1AC270053A92C /* UIViewController+TopMost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
