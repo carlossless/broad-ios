@@ -8,6 +8,7 @@
 
 import UIKit
 import HockeySDK
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
         setupHockeyApp()
+        setupAudioSessionCategory()
         
         navigator = Navigator.shared
         registerViewControllers()
@@ -35,6 +37,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func registerViewControllers() {
         navigator.register(SplashViewController.self, for: SplashViewModel.self)
         navigator.register(SelectionNavigationController.self, for: MainViewModel.self)
+        navigator.register(PlayerViewController.self, for: PlayerViewModel.self)
+    }
+    
+    private func setupAudioSessionCategory() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print("Failed setting AVAudioSessionCategoryPlayback")
+        }
     }
 
 }

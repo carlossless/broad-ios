@@ -51,6 +51,8 @@
 		F9C3204E1EF1AC270053A92C /* UIWindow+TopMost.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C3204C1EF1AC270053A92C /* UIWindow+TopMost.swift */; };
 		F9C3204F1EF1AC270053A92C /* UIViewController+TopMost.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C3204D1EF1AC270053A92C /* UIViewController+TopMost.swift */; };
 		F9C320511EF1ACE80053A92C /* URL+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C320501EF1ACE80053A92C /* URL+Decodable.swift */; };
+		F9D3FE971F02AE050048EDDE /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D3FE961F02AE050048EDDE /* PlayerViewModel.swift */; };
+		F9D3FE9A1F02AE4E0048EDDE /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D3FE991F02AE4E0048EDDE /* PlayerViewController.swift */; };
 		F9E18EEE1E6E241500F1A607 /* SelectionNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E18EED1E6E241500F1A607 /* SelectionNavigationController.swift */; };
 		F9E18EF21E6E27B400F1A607 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E18EF11E6E27B400F1A607 /* R.generated.swift */; };
 		F9E18EF41E6E27F000F1A607 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E18EF31E6E27F000F1A607 /* Rswift.framework */; };
@@ -243,6 +245,8 @@
 		F9C3204C1EF1AC270053A92C /* UIWindow+TopMost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+TopMost.swift"; sourceTree = "<group>"; };
 		F9C3204D1EF1AC270053A92C /* UIViewController+TopMost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+TopMost.swift"; sourceTree = "<group>"; };
 		F9C320501EF1ACE80053A92C /* URL+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Decodable.swift"; sourceTree = "<group>"; };
+		F9D3FE961F02AE050048EDDE /* PlayerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		F9D3FE991F02AE4E0048EDDE /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		F9E18EED1E6E241500F1A607 /* SelectionNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionNavigationController.swift; sourceTree = "<group>"; };
 		F9E18EF11E6E27B400F1A607 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		F9E18EF31E6E27F000F1A607 /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
@@ -605,6 +609,7 @@
 				F9A1CBB01EDE0CC100AA59FA /* SplashView.swift */,
 				F9A1CBAD1EDE0CAE00AA59FA /* SplashViewController.swift */,
 				F997AF141ED88F2600EAA72B /* StationTableViewCell.swift */,
+				F9D3FE991F02AE4E0048EDDE /* PlayerViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -615,6 +620,7 @@
 				F9E18EFD1E6EBC8B00F1A607 /* MainViewModel.swift */,
 				F9E805311EDECDD50027F1A4 /* SplashViewModel.swift */,
 				F90A700A1EDD8C60007A56D1 /* StationTableCellModel.swift */,
+				F9D3FE961F02AE050048EDDE /* PlayerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -787,6 +793,8 @@
 				F9A1CBAE1EDE0CAE00AA59FA /* SplashViewController.swift in Sources */,
 				F957AFE31EEB13E000C9A981 /* Collection+Convenience.swift in Sources */,
 				F9E18EEE1E6E241500F1A607 /* SelectionNavigationController.swift in Sources */,
+				F9D3FE971F02AE050048EDDE /* PlayerViewModel.swift in Sources */,
+				F9D3FE9A1F02AE4E0048EDDE /* PlayerViewController.swift in Sources */,
 				F9E18EF21E6E27B400F1A607 /* R.generated.swift in Sources */,
 				F90A70081EDD5DB2007A56D1 /* UIView+Convenience.swift in Sources */,
 				F9E805341EDED83F0027F1A4 /* ViewModel.swift in Sources */,
