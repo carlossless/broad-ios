@@ -50,9 +50,9 @@ class MainViewModel : ViewModel {
     
     func buildViewModels(stations: StreamDataResponse) -> [StationTableCellModel] {
         return Array(stations.data
-            .filter { MainViewModel.order.index(of: $0.0) != nil }
+            .filter { MainViewModel.order.index(of: $0.key) != nil })
             .sorted { st1, st2 in
-                return MainViewModel.order.index(of: st1.0) ?? -1 < MainViewModel.order.index(of: st2.0) ?? -1
+                return MainViewModel.order.index(of: st1.key) ?? -1 < MainViewModel.order.index(of: st2.key) ?? -1
             }
             .map { apiStation in
                 return StationTableCellModel(
@@ -62,7 +62,6 @@ class MainViewModel : ViewModel {
                     thumbnailManager: self.thumbnailManager
                 )
             }
-        )
     }
     
 }

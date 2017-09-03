@@ -24,7 +24,7 @@ class ThumbnailManager {
             let genSignal = self.generator.genImage(for: playlistUrl, size: size)
                 .on(value: { image in self.cachedThumbnails[key] = image })
                 .start(obs)
-            disp.add(genSignal)
+            disp.observeEnded(genSignal.dispose)
         }
     }
     

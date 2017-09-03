@@ -22,14 +22,14 @@ struct StreamInfo {
     let enable: Bool
 }
 
-extension StreamDataResponse: Decodable {
+extension StreamDataResponse: Argo.Decodable {
     static func decode(_ j: JSON) -> Decoded<StreamDataResponse> {
         return curry(StreamDataResponse.init)
             <^> (j <| ["response", "data"] >>- { [String: StreamInfo].decode($0) })
     }
 }
 
-extension StreamInfo: Decodable {
+extension StreamInfo: Argo.Decodable {
     static func decode(_ j: JSON) -> Decoded<StreamInfo> {
         return curry(StreamInfo.init)
             <^> j <| "name"

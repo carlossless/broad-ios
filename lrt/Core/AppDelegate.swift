@@ -10,10 +10,14 @@ import UIKit
 import HockeySDK
 import AVFoundation
 
+import Fuzi
+import ReactiveSwift
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var navigator: Navigator!
+    var window: UIWindow?
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
         setupHockeyApp()
@@ -22,10 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigator = Navigator.shared
         registerViewControllers()
         
-        let window = UIWindow(frame: UIScreen.main.bounds)
+        window = UIWindow(frame: UIScreen.main.bounds)
         navigator.window = window
         navigator.replaceRoot(model: SplashViewModel())
-        window.makeKeyAndVisible()
+        window?.makeKeyAndVisible()
     }
     
     private func setupHockeyApp() {

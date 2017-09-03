@@ -26,7 +26,7 @@ struct APIManager {
         apiBaseUrl = baseUrl
     }
     
-    private func deserialise<T : Decodable>(data: Data) -> Result<T, NSError> where T == T.DecodedType {
+    private func deserialise<T : Argo.Decodable>(data: Data) -> Result<T, NSError> where T == T.DecodedType {
         do {
             let json: Any? = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions(rawValue: 0))
             if let j: AnyObject = json as AnyObject? {
@@ -68,16 +68,16 @@ struct APIManager {
         }
     }
     
-    private func deserialise<T : Decodable>(data: Data) -> SignalProducer<T, NSError> where T == T.DecodedType {
+    private func deserialise<T : Argo.Decodable>(data: Data) -> SignalProducer<T, NSError> where T == T.DecodedType {
         return SignalProducer(result: deserialise(data: data))
     }
     
-    private func retrieveAndParseData<T : Decodable>(url: URL) -> SignalProducer<(T, Date), NSError> where T == T.DecodedType {
+    private func retrieveAndParseData<T : Argo.Decodable>(url: URL) -> SignalProducer<(T, Date), NSError> where T == T.DecodedType {
         let request = self.createDefaultRequest(url: url)
         let date = Date()
         return httpUrlRequest(request: request)
-            .flatMap(.concat, transform: self.handleResponse)
-            .flatMap(.concat, transform: self.deserialise)
+            .flatMap(.concat, self.handleResponse)
+            .flatMap(.concat, self.deserialise)
             .on(failed: { e in
                 print("Error: \(e)\nUrl: \(url)\nHeaders: \(String(describing: request.allHTTPHeaderFields))")
             })
@@ -86,7 +86,7 @@ struct APIManager {
             }
     }
     
-    private func retrieveAndParseData<T : Decodable>(url: URL) -> SignalProducer<T, NSError> where T == T.DecodedType {
+    private func retrieveAndParseData<T : Argo.Decodable>(url: URL) -> SignalProducer<T, NSError> where T == T.DecodedType {
         return retrieveAndParseData(url: url)
             .map { value, _ in
                 return value
