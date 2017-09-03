@@ -31,7 +31,7 @@ class SelectionNavigationController : UINavigationController, ModelBased {
         self.navigationBar.backgroundColor = UIColor(hex: 0x373D55)
         self.navigationBar.barTintColor = UIColor(hex: 0x373D55)
         self.navigationBar.isTranslucent = false
-        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        self.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

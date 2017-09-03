@@ -62,7 +62,7 @@ class Navigator {
     
 }
 
-fileprivate class NavigationActuator {
+private class NavigationActuator {
     
     var window: UIWindow?
     
@@ -106,7 +106,7 @@ fileprivate class NavigationActuator {
     
     func dismiss(animated: Bool) {
         if let presenting = window?.topMostViewController?.presentingViewController {
-            presenting.dismiss(animated: true, completion: nil)
+            presenting.dismiss(animated: animated, completion: nil)
         } else {
             print("Couldn't find a presenting view controller")
         }

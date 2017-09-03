@@ -46,8 +46,8 @@ class StationTableViewCell : UITableViewCell, ModelBased {
         programmeLabel.numberOfLines = 0
         
         thumbnailImageView = UIImageView()
-        thumbnailImageView.setContentHuggingPriority(1000, for: .horizontal)
-        thumbnailImageView.setContentCompressionResistancePriority(1000, for: .horizontal)
+        thumbnailImageView.setContentHuggingPriority(UILayoutPriority(rawValue: 1000), for: .horizontal)
+        thumbnailImageView.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 1000), for: .horizontal)
         
         activityIndicator = UIActivityIndicatorView()
         
