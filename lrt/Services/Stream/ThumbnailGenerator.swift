@@ -16,17 +16,15 @@ class ThumbnailGenerator {
     let grabber = LRTStreamImageGrabber()
     let queue = DispatchQueue(label: "com.delanoir.lrt.ThumbnailGenerator", qos: DispatchQoS.userInitiated, attributes: .concurrent, autoreleaseFrequency: .workItem, target: nil)
     
-    func genImage(for playlistUrl: URL, size: CGSize) -> SignalProducer<UIImage?, NoError> {
+    func genImage(for playlistUrl: URL, size: CGSize) -> SignalProducer<UIImage, NSError> {
         return SignalProducer { obs, _ in
                 self.queue.async {
                     do {
                         let image = try self.grabber.generateImage(for: playlistUrl, size: size)
                         obs.send(value: image)
                         obs.sendCompleted()
-                    } catch let error {
-                        print("======= AY CARAMBA MUCHACHO\n", error)
-                        obs.send(value: nil)
-                        obs.sendCompleted()
+                    } catch let error as NSError {
+                        obs.send(error: error)
                     }
                 }
             }

@@ -9,9 +9,8 @@
 import UIKit
 import HockeySDK
 import AVFoundation
-
-import Fuzi
 import ReactiveSwift
+import CoreSpotlight
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,6 +31,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
     }
     
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Swift.Void) -> Bool {
+        if userActivity.activityType == CSSearchableItemActionType {
+            // This activity represents an item indexed using Core Spotlight, so restore the context related to the unique identifier.
+            // Note that the unique identifier of the Core Spotlight item is set in the activity’s userInfo property for the key CSSearchableItemActivityIdentifier.
+            if let uniqueIdentifier = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String {
+                // Call the service
+            }
+            // Next, find and open the item specified by uniqueIdentifer.
+        }
+        return true
+    }
+    
     private func setupHockeyApp() {
         BITHockeyManager.shared().configure(withIdentifier: "58d1c2e2eaf14e97b01973edade2d378")
         BITHockeyManager.shared().start()
@@ -42,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigator.register(SplashViewController.self, for: SplashViewModel.self)
         navigator.register(SelectionNavigationController.self, for: MainViewModel.self)
         navigator.register(PlayerViewController.self, for: PlayerViewModel.self)
+        navigator.register(AboutViewController.self, for: AboutViewModel.self)
     }
     
     private func setupAudioSessionCategory() {

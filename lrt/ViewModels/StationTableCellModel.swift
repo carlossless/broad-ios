@@ -12,6 +12,7 @@ import Result
 
 struct StationTableCellModel : ViewModel {
     
+    let id: String
     let name: String
     let title: String?
     let playlistUrl: URL
@@ -22,7 +23,8 @@ struct StationTableCellModel : ViewModel {
 
 extension StationTableCellModel {
     
-    init(name: String, title: String, playlistUrl: URL, thumbnailManager: ThumbnailManager) {
+    init(id: String, name: String, title: String, playlistUrl: URL, thumbnailManager: ThumbnailManager) {
+        self.id = id
         self.name = name
         self.title = title
         self.playlistUrl = playlistUrl

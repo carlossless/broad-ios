@@ -17,6 +17,17 @@ class MainViewController: UITableViewController, ModelBased {
     
     var viewModel: MainViewModel!
     
+    public init() {
+        super.init(style: .plain)
+        
+        navigationItem.title = "LRT"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "About", style: .plain, target: nil, action: nil)
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     func configure(for model: MainViewModel) {
         self.viewModel = model
     }
@@ -25,13 +36,20 @@ class MainViewController: UITableViewController, ModelBased {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.white
-        navigationItem.title = "LRT Live Broadcast"
+        
+        
         tableView.separatorColor = UIColor(hex: 0x373D55)
         tableView.backgroundColor = UIColor(hex: 0x202535)
         tableView.tableFooterView = UIView()
         // Do any additional setup after loading the view, typically from a nib.
         
         tableView.register(StationTableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+        bind()
+    }
+    
+    func bind() {
+        navigationItem.leftBarButtonItem?.reactive.pressed = CocoaAction(self.viewModel.openAboutScreen)
         
         tableView.reactive.reloadData <~ viewModel.stations.map { _ in () }
         
@@ -61,15 +79,8 @@ class MainViewController: UITableViewController, ModelBased {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let model = viewModel.stations.value[indexPath.row]
+        viewModel.select(index: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        let player = AVPlayer(url: model.playlistUrl)
-        let playerViewController = AVPlayerViewController()
-        playerViewController.player = player
-        self.present(playerViewController, animated: true) {
-            playerViewController.player!.play()
-        }
     }
 
 }
