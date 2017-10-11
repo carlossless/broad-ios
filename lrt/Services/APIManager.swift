@@ -11,9 +11,9 @@ import ReactiveSwift
 import Argo
 import Result
 
-struct APIManager {
+struct APIClient {
     
-    static let sharedInstance = APIManager()
+    static let sharedInstance = APIClient()
     private let apiBaseUrl: URL
     
     // MARK: - Private Interface

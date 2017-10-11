@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import ReactiveSwift
 import ReactiveCocoa
+import Result
 import AVFoundation
 import CoreMedia
 
@@ -33,19 +34,36 @@ class MainViewModel : ViewModel {
         "Opus"
     ]
     
-    let thumbnailManager = ThumbnailManager()
+    let apiClient: APIClient
+    let navigator: Navigator
+    let thumbnailManager: ThumbnailManager
     
     let stations = MutableProperty<[StationTableCellModel]>([])
-    let updateStations: Action<(), StreamDataResponse, NSError>!
+    var updateStations: Action<(), StreamDataResponse, APIError>!
+    var openAboutScreen: Action<(), (), NoError>!
     
-    init () {
-        updateStations = Action<(), StreamDataResponse, NSError> { _ in
-            return APIManager.sharedInstance.stations()
+    init (apiClient: APIClient = APIClient(), navigator: Navigator = Navigator.shared, thumbnailManager: ThumbnailManager = ThumbnailManager()) {
+        self.apiClient = apiClient
+        self.navigator = navigator
+        self.thumbnailManager = thumbnailManager
+        
+        updateStations = Action<(), StreamDataResponse, APIError> { [unowned self] _ in
+            return self.apiClient.stations()
+        }
+        
+        openAboutScreen = Action<(), (), NoError> { [unowned self] _ in
+            self.navigator.push(model: AboutViewModel(), animated: true)
+            return SignalProducer.init(value: ())
         }
         
         stations <~ updateStations.values
             .map(self.buildViewModels)
             .observe(on: UIScheduler())
+    }
+    
+    func select(index: Int) {
+        let model = stations.value[index]
+        Navigator.shared.present(model: PlayerViewModel(playlistURL: model.playlistUrl), animated: true)
     }
     
     func buildViewModels(stations: StreamDataResponse) -> [StationTableCellModel] {
@@ -56,6 +74,7 @@ class MainViewModel : ViewModel {
             }
             .map { apiStation in
                 return StationTableCellModel(
+                    id: apiStation.value.name,
                     name: MainViewModel.names[apiStation.value.name] ?? apiStation.value.name,
                     title: apiStation.value.title,
                     playlistUrl: apiStation.value.content,

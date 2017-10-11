@@ -2,8 +2,9 @@ BINDIR = bin
 
 TARGET ?= lrt
 SCHEME ?= $(TARGET)
-CONFIGURATION ?= Release
+CONFIGURATION ?= AdHoc
 DEVELOPMENT_TEAM = DXEF6FH82Q
+EXPORT_OPTIONS_PATH = Config/$(CONFIGURATION)ExportOptions.plist
 
 COMMIT_SHA1 ?= $(shell git rev-parse HEAD)
 REPOSITORY_URL ?= https://github.com/carlossless/lrt
@@ -18,7 +19,7 @@ all: $(BINDIR)/$(TARGET).ipa $(BINDIR)/$(TARGET).app.dSYM.zip
 ### General Xcode tooling
 
 $(BINDIR)/$(TARGET).ipa: $(BINDIR)/$(TARGET).xcarchive
-	xcodebuild -exportArchive -archivePath $< -exportOptionsPlist Config/ReleaseExportOptions.plist -exportPath $(@D)
+	xcodebuild -exportArchive -archivePath $< -exportOptionsPlist $(EXPORT_OPTIONS_PATH) -exportPath $(@D)
 
 $(BINDIR)/$(TARGET).app.dSYM.zip: $(BINDIR)/$(TARGET).xcarchive
 	pushd $(PROJ_PATH)/$</dSYMs/ && zip -r $(PROJ_PATH)/$@ *.dSYM && popd

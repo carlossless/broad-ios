@@ -107,6 +107,8 @@ class StationTableViewCell : UITableViewCell, ModelBased {
                         self.thumbnailImageView.alpha = 1
                     }
                     self.activityIndicator.stopAnimating()
+                    self.setNeedsLayout()
+                    self.layoutIfNeeded()
                 },
                 interrupted: {
                     self.activityIndicator.stopAnimating()
