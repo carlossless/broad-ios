@@ -13,8 +13,9 @@ env:
 
 cache:
   directories:
-    - Carthage
     - $HOME/Library/Caches/Homebrew
+    - Carthage
+    - FFmpeg
 
 install:
   - brew update && brew bundle
