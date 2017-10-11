@@ -17,7 +17,7 @@ cache:
     - $HOME/Library/Caches/Homebrew
 
 install:
-  - brew bundle
+  - brew update && brew bundle
   - carthage bootstrap --platform ios
   - pushd FFmpeg && ./build-ffmpeg.sh && popd
 
