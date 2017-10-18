@@ -58,12 +58,13 @@
 		F9C320511EF1ACE80053A92C /* URL+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C320501EF1ACE80053A92C /* URL+Decodable.swift */; };
 		F9D3FE971F02AE050048EDDE /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D3FE961F02AE050048EDDE /* PlayerViewModel.swift */; };
 		F9D3FE9A1F02AE4E0048EDDE /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D3FE991F02AE4E0048EDDE /* PlayerViewController.swift */; };
+		F9D8FF3D1F97860B0086AD76 /* LRTStreamAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8FF3C1F97860B0086AD76 /* LRTStreamAPIClient.swift */; };
 		F9E18EEE1E6E241500F1A607 /* SelectionNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E18EED1E6E241500F1A607 /* SelectionNavigationController.swift */; };
 		F9E18EF21E6E27B400F1A607 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E18EF11E6E27B400F1A607 /* R.generated.swift */; };
 		F9E18EF41E6E27F000F1A607 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E18EF31E6E27F000F1A607 /* Rswift.framework */; };
 		F9E18EF71E6E282000F1A607 /* Rswift.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F9E18EF51E6E27FC00F1A607 /* Rswift.framework.dSYM */; };
 		F9E18EF81E6E282000F1A607 /* SnapKit.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F98BA70C1E6E1A63001A33A8 /* SnapKit.framework.dSYM */; };
-		F9E18EFA1E6EA96600F1A607 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E18EF91E6EA96600F1A607 /* APIClient.swift */; };
+		F9E18EFA1E6EA96600F1A607 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E18EF91E6EA96600F1A607 /* HTTPClient.swift */; };
 		F9E18EFC1E6EA98E00F1A607 /* StreamDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E18EFB1E6EA98E00F1A607 /* StreamDataResponse.swift */; };
 		F9E18EFE1E6EBC8B00F1A607 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E18EFD1E6EBC8B00F1A607 /* MainViewModel.swift */; };
 		F9E805301EDEC1960027F1A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E8052F1EDEC1960027F1A4 /* ViewController.swift */; };
@@ -259,11 +260,12 @@
 		F9C320501EF1ACE80053A92C /* URL+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Decodable.swift"; sourceTree = "<group>"; };
 		F9D3FE961F02AE050048EDDE /* PlayerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 		F9D3FE991F02AE4E0048EDDE /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		F9D8FF3C1F97860B0086AD76 /* LRTStreamAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRTStreamAPIClient.swift; sourceTree = "<group>"; };
 		F9E18EED1E6E241500F1A607 /* SelectionNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionNavigationController.swift; sourceTree = "<group>"; };
 		F9E18EF11E6E27B400F1A607 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		F9E18EF31E6E27F000F1A607 /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
 		F9E18EF51E6E27FC00F1A607 /* Rswift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Rswift.framework.dSYM; path = Carthage/Build/iOS/Rswift.framework.dSYM; sourceTree = "<group>"; };
-		F9E18EF91E6EA96600F1A607 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		F9E18EF91E6EA96600F1A607 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		F9E18EFB1E6EA98E00F1A607 /* StreamDataResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamDataResponse.swift; sourceTree = "<group>"; };
 		F9E18EFD1E6EBC8B00F1A607 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		F9E8052F1EDEC1960027F1A4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -535,8 +537,9 @@
 		F97D80FA1F656E4A005AA5A0 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				F9E18EF91E6EA96600F1A607 /* APIClient.swift */,
+				F9E18EF91E6EA96600F1A607 /* HTTPClient.swift */,
 				F97D80FB1F656E6B005AA5A0 /* APIError.swift */,
+				F9D8FF3C1F97860B0086AD76 /* LRTStreamAPIClient.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -829,7 +832,7 @@
 				F936B9621EE8286500B6C84D /* ThumbnailManager.swift in Sources */,
 				F997AF151ED88F2600EAA72B /* StationTableViewCell.swift in Sources */,
 				F98BA6D71E6E0ECA001A33A8 /* AppDelegate.swift in Sources */,
-				F9E18EFA1E6EA96600F1A607 /* APIClient.swift in Sources */,
+				F9E18EFA1E6EA96600F1A607 /* HTTPClient.swift in Sources */,
 				F9A1CBAE1EDE0CAE00AA59FA /* SplashViewController.swift in Sources */,
 				F957AFE31EEB13E000C9A981 /* Collection+Convenience.swift in Sources */,
 				F9E18EEE1E6E241500F1A607 /* SelectionNavigationController.swift in Sources */,
@@ -845,6 +848,7 @@
 				F908B39B1F7C588400819655 /* AboutViewModel.swift in Sources */,
 				F9E805321EDECDD50027F1A4 /* SplashViewModel.swift in Sources */,
 				F997AF131ED85CD000EAA72B /* LRTStreamImageGrabber.m in Sources */,
+				F9D8FF3D1F97860B0086AD76 /* LRTStreamAPIClient.swift in Sources */,
 				F90A70061EDC9D72007A56D1 /* UIColor+Hex.swift in Sources */,
 				F9E18EFC1E6EA98E00F1A607 /* StreamDataResponse.swift in Sources */,
 				F9E805301EDEC1960027F1A4 /* ViewController.swift in Sources */,

@@ -34,7 +34,7 @@ class MainViewModel : ViewModel {
         "Opus"
     ]
     
-    let apiClient: APIClient
+    let apiClient: LRTStreamAPIClient
     let navigator: Navigator
     let thumbnailManager: ThumbnailManager
     
@@ -42,7 +42,7 @@ class MainViewModel : ViewModel {
     var updateStations: Action<(), StreamDataResponse, APIError>!
     var openAboutScreen: Action<(), (), NoError>!
     
-    init (apiClient: APIClient = APIClient(), navigator: Navigator = Navigator.shared, thumbnailManager: ThumbnailManager = ThumbnailManager()) {
+    init (apiClient: LRTStreamAPIClient = LRTStreamAPIClient(), navigator: Navigator = Navigator.shared, thumbnailManager: ThumbnailManager = ThumbnailManager()) {
         self.apiClient = apiClient
         self.navigator = navigator
         self.thumbnailManager = thumbnailManager
