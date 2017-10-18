@@ -11,19 +11,15 @@ import ReactiveSwift
 import Argo
 import Result
 
-class APIClient {
+class HTTPClient {
     
-    private let apiBaseUrl: URL
+    init () { }
     
-    init (baseUrl: URL = URL(string: "http://www.lrt.lt/")!) {
-        apiBaseUrl = baseUrl
-    }
+    // MARK: - Private Interface
     
     private func createDefaultRequest(url: URL) -> URLRequest {
         return URLRequest(url: url)
     }
-    
-    // MARK: - Private Interface
     
     private func handleResponse(data: Data, response: URLResponse) -> Result<Data, APIError> {
         if let response = response as? HTTPURLResponse {
@@ -58,16 +54,6 @@ class APIClient {
     
     private func deserialise<T : Argo.Decodable>(data: Data) -> SignalProducer<T, APIError> where T == T.DecodedType {
         return SignalProducer(result: deserialise(data: data))
-    }
-    
-    private func retrieveAndParseData<T : Argo.Decodable>(url: URL) -> SignalProducer<T, APIError> where T == T.DecodedType {
-        let request = self.createDefaultRequest(url: url)
-        return httpUrlRequest(request: request)
-            .flatMap(.concat, self.handleResponse)
-            .flatMap(.concat, self.deserialise)
-            .on(failed: { e in
-                print("Error: \(e)\nUrl: \(url)\nHeaders: \(String(describing: request.allHTTPHeaderFields))")
-            })
     }
     
     private func httpUrlRequest(request: URLRequest) -> SignalProducer<(Data, URLResponse), APIError> {
@@ -109,11 +95,16 @@ class APIClient {
         #endif
     }
     
-    // MARK: - Data Retrieval
+    // MARK: - Public
     
-    public func stations() -> SignalProducer<StreamDataResponse, APIError> {
-        let url = apiBaseUrl.appendingPathComponent("/data-service/module/live")
-        return retrieveAndParseData(url: url)
+    public func retrieveAndParseData<T : Argo.Decodable>(url: URL) -> SignalProducer<T, APIError> where T == T.DecodedType {
+        let request = self.createDefaultRequest(url: url)
+        return httpUrlRequest(request: request)
+            .flatMap(.concat, self.handleResponse)
+            .flatMap(.concat, self.deserialise)
+            .on(failed: { e in
+                print("Error: \(e)\nUrl: \(url)\nHeaders: \(String(describing: request.allHTTPHeaderFields))")
+            })
     }
     
 }
