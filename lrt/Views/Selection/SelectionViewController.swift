@@ -13,14 +13,15 @@ import ReactiveCocoa
 import AVKit
 import AVFoundation
 
-class MainViewController: UITableViewController, ModelBased {
+class SelectionViewController: UITableViewController, ModelBased {
     
-    var viewModel: MainViewModel!
+    var viewModel: SelectionViewModel!
     
     public init() {
         super.init(style: .plain)
         
         navigationItem.title = "LRT"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Channels", style: .plain, target: nil, action: nil)
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "About", style: .plain, target: nil, action: nil)
     }
     
@@ -28,7 +29,7 @@ class MainViewController: UITableViewController, ModelBased {
         super.init(coder: aDecoder)
     }
     
-    func configure(for model: MainViewModel) {
+    func configure(for model: SelectionViewModel) {
         self.viewModel = model
     }
 
@@ -36,7 +37,6 @@ class MainViewController: UITableViewController, ModelBased {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.white
-        
         
         tableView.separatorColor = UIColor(hex: 0x373D55)
         tableView.backgroundColor = UIColor(hex: 0x202535)

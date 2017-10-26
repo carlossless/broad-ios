@@ -12,15 +12,15 @@ class SelectionNavigationController : UINavigationController, ModelBased {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        pushViewController(MainViewController(), animated: false)
+        pushViewController(SelectionViewController(), animated: false)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(for model: MainViewModel) {
-        if let main = viewControllers.first as? MainViewController {
+    func configure(for model: SelectionViewModel) {
+        if let main = viewControllers.first as? SelectionViewController {
             main.configure(for: model)
         }
     }

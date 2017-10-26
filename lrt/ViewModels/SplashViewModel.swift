@@ -24,7 +24,7 @@ class SplashViewModel : ViewModel {
     }
     
     func load() {
-        let vm = MainViewModel()
+        let vm = SelectionViewModel()
         vm.updateStations
             .apply()
             .observe(on: UIScheduler())

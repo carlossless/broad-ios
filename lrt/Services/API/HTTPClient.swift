@@ -17,8 +17,14 @@ class HTTPClient {
     
     // MARK: - Private Interface
     
-    private func createDefaultRequest(url: URL) -> URLRequest {
-        return URLRequest(url: url)
+    private func createDefaultRequest(url: URL, method: String = "GET", body: Data? = nil, contentType: String? = nil) -> URLRequest {
+        var request = URLRequest(url: url)
+        request.httpMethod = method
+        request.httpBody = body
+        if let contentType = contentType {
+            request.setValue(contentType, forHTTPHeaderField: "Content-Type")
+        }
+        return request
     }
     
     private func handleResponse(data: Data, response: URLResponse) -> Result<Data, APIError> {
@@ -52,27 +58,49 @@ class HTTPClient {
         }
     }
     
+    private func deserialise<T : Swift.Decodable>(data: Data) -> Result<T, APIError> {
+        do {
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .custom({ (decoder) -> Date in
+                let container = try decoder.singleValueContainer()
+                let timestamp = try container.decode(String.self)
+                guard let miliSeconds = Double(timestamp) else {
+                    throw DecodingError.dataCorruptedError(in: container, debugDescription: "Cannot decode timestamp string \(timestamp)")
+                }
+                return Date(timeIntervalSince1970: miliSeconds / 1000)
+            })
+            let result = try decoder.decode(T.self, from: data)
+            return Result(value: result)
+        } catch let error as NSError {
+            return Result(error: APIError.jsonParsingFailed(error))
+        }
+    }
+    
     private func deserialise<T : Argo.Decodable>(data: Data) -> SignalProducer<T, APIError> where T == T.DecodedType {
+        return SignalProducer(result: deserialise(data: data))
+    }
+    
+    private func deserialise<T : Swift.Decodable>(data: Data) -> SignalProducer<T, APIError> {
         return SignalProducer(result: deserialise(data: data))
     }
     
     private func httpUrlRequest(request: URLRequest) -> SignalProducer<(Data, URLResponse), APIError> {
         #if DEBUG
-            var date: NSDate! = nil
+            var date: Date! = nil
             let reqName = "\(request.httpMethod!) \(request.url!)"
             let barier = (0..<reqName.characters.count + 26).map { _ in "=" }.joined(separator: "")
-            print("======= HTTP REQ  \(reqName) =======")
-            if let fields = request.allHTTPHeaderFields {
-                print("HEADERS: \(fields)")
-            }
-            if let body = request.httpBody {
-                print("DATA: \(String(data: body, encoding: String.Encoding.utf8) ?? "lenght \(body.count))")")
-            }
-            print(barier)
             return URLSession.shared.reactive.data(with: request)
                 .on(
                     started: {
-                        date = NSDate()
+                        date = Date()
+                        print("======= HTTP REQ \(reqName) =======")
+                        if let fields = request.allHTTPHeaderFields {
+                            print("HEADERS: \(fields)")
+                        }
+                        if let body = request.httpBody {
+                            print("DATA: \(String(data: body, encoding: String.Encoding.utf8) ?? "lenght \(body.count))")")
+                        }
+                        print(barier)
                     },
                     completed: {
                         print("======= HTTP TIME \(reqName) =======")
@@ -97,14 +125,65 @@ class HTTPClient {
     
     // MARK: - Public
     
-    public func retrieveAndParseData<T : Argo.Decodable>(url: URL) -> SignalProducer<T, APIError> where T == T.DecodedType {
-        let request = self.createDefaultRequest(url: url)
+    public func retrieveData(request: URLRequest) -> SignalProducer<Data, APIError> {
         return httpUrlRequest(request: request)
             .flatMap(.concat, self.handleResponse)
+    }
+    
+    public func retrieveAndParseData<T : Argo.Decodable>(request: URLRequest) -> SignalProducer<T, APIError> where T == T.DecodedType {
+        return retrieveData(request: request)
             .flatMap(.concat, self.deserialise)
-            .on(failed: { e in
-                print("Error: \(e)\nUrl: \(url)\nHeaders: \(String(describing: request.allHTTPHeaderFields))")
-            })
+    }
+    
+    public func retrieveAndParseData<T : Swift.Decodable>(request: URLRequest) -> SignalProducer<T, APIError> {
+        return retrieveData(request: request)
+            .flatMap(.concat, self.deserialise)
+    }
+    
+    // MARK: - GET
+    
+    public func get(url: URL) -> SignalProducer<Data, APIError> {
+        let request = self.createDefaultRequest(url: url, method: "GET")
+        return retrieveData(request: request)
+    }
+    
+    public func get<T : Argo.Decodable>(url: URL) -> SignalProducer<T, APIError> where T == T.DecodedType {
+        let request = self.createDefaultRequest(url: url, method: "GET")
+        return retrieveAndParseData(request: request)
+    }
+    
+    public func get<T : Swift.Decodable>(url: URL) -> SignalProducer<T, APIError> {
+        let request = self.createDefaultRequest(url: url, method: "GET")
+        return retrieveAndParseData(request: request)
+    }
+    
+    // MARK: - Post
+    
+    public func post(url: URL, data: Data? = nil, isJson: Bool = false) -> SignalProducer<Data, APIError> {
+        let request = self.createDefaultRequest(url: url, method: "POST", body: data, contentType: isJson ? "application/json; charset=utf-8" : nil)
+        return retrieveData(request: request)
+    }
+    
+    public func post<T: Argo.Decodable>(url: URL, data: Data? = nil, isJson: Bool = false) -> SignalProducer<T, APIError> where T == T.DecodedType {
+        let request = self.createDefaultRequest(url: url, method: "POST", body: data, contentType: isJson ? "application/json; charset=utf-8" : nil)
+        return retrieveAndParseData(request: request)
+    }
+    
+    public func post<T: Swift.Decodable>(url: URL, data: Data? = nil, isJson: Bool = false) -> SignalProducer<T, APIError> {
+        let request = self.createDefaultRequest(url: url, method: "POST", body: data, contentType: isJson ? "application/json; charset=utf-8" : nil)
+        return retrieveAndParseData(request: request)
+    }
+    
+    public func post<T: Encodable>(url: URL, object: T? = nil) -> SignalProducer<Data, APIError> {
+        return post(url: url, data: try! JSONEncoder().encode(object), isJson: true)
+    }
+    
+    public func post<T: Argo.Decodable, U: Encodable>(url: URL, object: U? = nil) -> SignalProducer<T, APIError> where T == T.DecodedType {
+        return post(url: url, data: try! JSONEncoder().encode(object), isJson: true)
+    }
+    
+    public func post<T: Swift.Decodable, U: Encodable>(url: URL, object: U? = nil) -> SignalProducer<T, APIError> {
+        return post(url: url, data: try! JSONEncoder().encode(object), isJson: true)
     }
     
 }
