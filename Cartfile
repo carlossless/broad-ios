@@ -5,3 +5,7 @@ github "thoughtbot/Curry"
 github "SnapKit/SnapKit"
 github "mac-cain13/R.swift.Library"
 github "bitstadium/HockeySDK-iOS"
+github "onevcat/Kingfisher"
+
+github "Quick/Quick"
+github "Quick/Nimble"

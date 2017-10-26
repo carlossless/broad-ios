@@ -14,14 +14,14 @@ class LRTStreamAPIClient {
     private let apiBaseUrl: URL
     private let client: HTTPClient
     
-    init (baseUrl: URL = URL(string: "http://www.lrt.lt/")!, httpClient: HTTPClient = HTTPClient()) {
+    init (baseUrl: URL = URL(string: "http://www.lrt.lt")!, httpClient: HTTPClient = HTTPClient()) {
         apiBaseUrl = baseUrl
         client = httpClient
     }
     
     public func stations() -> SignalProducer<StreamDataResponse, APIError> {
         let url = apiBaseUrl.appendingPathComponent("/data-service/module/live")
-        return client.retrieveAndParseData(url: url)
+        return client.get(url: url)
     }
     
 }

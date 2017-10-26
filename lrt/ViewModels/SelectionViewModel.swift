@@ -14,7 +14,7 @@ import Result
 import AVFoundation
 import CoreMedia
 
-class MainViewModel : ViewModel {
+class SelectionViewModel : ViewModel {
     
     static let names = [
         "LTV1": "LRT Televizija",
@@ -63,19 +63,20 @@ class MainViewModel : ViewModel {
     
     func select(index: Int) {
         let model = stations.value[index]
-        Navigator.shared.present(model: PlayerViewModel(playlistURL: model.playlistUrl), animated: true)
+        Navigator.shared.push(model: ChannelViewModel(channelId: model.id, channelName: model.name, playlistUrl: model.playlistUrl), animated: true)
+//        Navigator.shared.present(model: PlayerViewModel(playlistURL: model.playlistUrl), animated: true)
     }
     
     func buildViewModels(stations: StreamDataResponse) -> [StationTableCellModel] {
         return Array(stations.data
-            .filter { MainViewModel.order.index(of: $0.key) != nil })
+            .filter { SelectionViewModel.order.index(of: $0.key) != nil })
             .sorted { st1, st2 in
-                return MainViewModel.order.index(of: st1.key) ?? -1 < MainViewModel.order.index(of: st2.key) ?? -1
+                return SelectionViewModel.order.index(of: st1.key) ?? -1 < SelectionViewModel.order.index(of: st2.key) ?? -1
             }
             .map { apiStation in
                 return StationTableCellModel(
                     id: apiStation.value.name,
-                    name: MainViewModel.names[apiStation.value.name] ?? apiStation.value.name,
+                    name: SelectionViewModel.names[apiStation.value.name] ?? apiStation.value.name,
                     title: apiStation.value.title,
                     playlistUrl: apiStation.value.content,
                     thumbnailManager: self.thumbnailManager
