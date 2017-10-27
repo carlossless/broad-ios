@@ -52,7 +52,7 @@ class ChannelViewController : ViewController<ChannelView>, ModelBased {
                 let showView = ChannelShowView()
                 showView.nameLabel.text = show.name
                 showView.descriptionLabel.text = show.description
-                showView.thumbnailView.reactive.imageUrl <~ SignalProducer(value: show.thumbnailUrl)
+                showView.thumbnailView.reactive.imageUrl(size: CGSize(width: 60, height: 40)) <~ SignalProducer(value: show.thumbnailUrl)
                 self.controlledView.showsStackView.addArrangedSubview(showView)
             }
         }
