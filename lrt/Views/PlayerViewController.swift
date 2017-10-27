@@ -22,4 +22,11 @@ class PlayerViewController: AVPlayerViewController, ModelBased {
         self.player?.play()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if view.bounds == contentOverlayView?.bounds {
+            UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+        }
+    }
+    
 }

@@ -43,6 +43,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        guard let vc = (window?.rootViewController?.presentedViewController) else {
+            return .portrait
+        }
+        
+        if (vc.isKind(of: NSClassFromString("AVFullScreenViewController")!)) {
+            return .allButUpsideDown
+        }
+        
+        return .portrait
+    }
+    
     private func setupHockeyApp() {
         BITHockeyManager.shared().configure(withIdentifier: "58d1c2e2eaf14e97b01973edade2d378")
         BITHockeyManager.shared().start()

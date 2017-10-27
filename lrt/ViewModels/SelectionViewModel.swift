@@ -16,6 +16,10 @@ import CoreMedia
 
 class SelectionViewModel : ViewModel {
     
+    static let ids = [
+        "Lituanica": "WORLD"
+    ]
+    
     static let names = [
         "LTV1": "LRT Televizija",
         "LTV2": "LRT Kultūra",
@@ -69,16 +73,17 @@ class SelectionViewModel : ViewModel {
     
     func buildViewModels(stations: StreamDataResponse) -> [StationTableCellModel] {
         return Array(stations.data
-            .filter { SelectionViewModel.order.index(of: $0.key) != nil })
+            .map { (station: $0, id: SelectionViewModel.ids[$0.value.name] ?? $0.value.name) }
+            .filter { SelectionViewModel.order.index(of: $0.station.key) != nil })
             .sorted { st1, st2 in
-                return SelectionViewModel.order.index(of: st1.key) ?? -1 < SelectionViewModel.order.index(of: st2.key) ?? -1
+                return SelectionViewModel.order.index(of: st1.id) ?? -1 < SelectionViewModel.order.index(of: st2.id) ?? -1
             }
             .map { apiStation in
                 return StationTableCellModel(
-                    id: apiStation.value.name,
-                    name: SelectionViewModel.names[apiStation.value.name] ?? apiStation.value.name,
-                    title: apiStation.value.title,
-                    playlistUrl: apiStation.value.content,
+                    id: apiStation.id,
+                    name: SelectionViewModel.names[apiStation.id] ?? apiStation.station.value.name,
+                    title: apiStation.station.value.title,
+                    playlistUrl: apiStation.station.value.content,
                     thumbnailManager: self.thumbnailManager
                 )
             }

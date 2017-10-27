@@ -56,7 +56,7 @@ class ChannelViewModel: ViewModel {
         
         return Array(channel.shows.filter { show in
             return show.startsAt..<show.endsAt ~= now || show.startsAt >= now
-        }.suffix(showCount))
+        }.prefix(showCount))
     }
     
 }

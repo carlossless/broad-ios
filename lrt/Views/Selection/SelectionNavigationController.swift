@@ -39,4 +39,8 @@ class SelectionNavigationController : UINavigationController, ModelBased {
         return .lightContent
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
 }
