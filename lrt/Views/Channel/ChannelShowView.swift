@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import ReactiveSwift
+import ReactiveCocoa
 
-class ChannelShowView : UIView {
+class ChannelShowView : UIView, ModelBased {
     
     private var observer: NSKeyValueObservation!
     
@@ -16,6 +18,13 @@ class ChannelShowView : UIView {
     var timeLabel: UILabel!
     var nameLabel: UILabel!
     var descriptionLabel: UILabel!
+    
+    func configure(for model: ChannelShowViewModel) {
+        nameLabel.text = model.name
+        timeLabel.text = model.time
+        descriptionLabel.text = model.description
+        thumbnailView.reactive.imageUrl(size: ChannelViewController.imageSize) <~ SignalProducer(value: model.thumbnailUrl)
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,6 +39,11 @@ class ChannelShowView : UIView {
     func setup() {
         backgroundColor = UIColor(hex: 0x373D55)
         
+        let titleStack = UIStackView()
+        titleStack.distribution = .fill
+        titleStack.alignment = .top
+        titleStack.spacing = 10
+        
         let horizontalStack = UIStackView()
         horizontalStack.distribution = .fillProportionally
         horizontalStack.alignment = .top
@@ -37,7 +51,7 @@ class ChannelShowView : UIView {
         
         let verticalStack = UIStackView()
         verticalStack.axis = .vertical
-        verticalStack.alignment = .top
+        verticalStack.alignment = .fill
         
         thumbnailView = UIImageView()
         thumbnailView.setContentHuggingPriority(.required, for: .horizontal)
@@ -61,8 +75,13 @@ class ChannelShowView : UIView {
         descriptionLabel.font = UIFont.systemFont(ofSize: 12)
         descriptionLabel.numberOfLines = 0
         
-        verticalStack.addArrangedSubviews(
+        titleStack.addArrangedSubviews(
             nameLabel,
+            timeLabel
+        )
+        
+        verticalStack.addArrangedSubviews(
+            titleStack,
             descriptionLabel
         )
         

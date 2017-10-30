@@ -68,7 +68,6 @@ class SelectionViewModel : ViewModel {
     func select(index: Int) {
         let model = stations.value[index]
         Navigator.shared.push(model: ChannelViewModel(channelId: model.id, channelName: model.name, playlistUrl: model.playlistUrl), animated: true)
-//        Navigator.shared.present(model: PlayerViewModel(playlistURL: model.playlistUrl), animated: true)
     }
     
     func buildViewModels(stations: StreamDataResponse) -> [StationTableCellModel] {

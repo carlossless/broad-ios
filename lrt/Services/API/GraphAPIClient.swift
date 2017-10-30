@@ -43,7 +43,7 @@ class GraphAPIClient {
     func latest() -> SignalProducer<GraphChannelResponse, APIError> {
         let genericQuery: String = """
         {
-          channels(date: "\(dateFormatter.string(from: Date(timeIntervalSinceNow: 20000)))") {
+          channels(date: "\(dateFormatter.string(from: Date()))") {
             name
             shows {
               name
