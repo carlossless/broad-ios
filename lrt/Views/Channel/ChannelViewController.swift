@@ -12,7 +12,15 @@ import ReactiveCocoa
 import AVKit
 import AVFoundation
 
-class ChannelViewController : ViewController<ChannelView>, ModelBased {
+class ChannelViewController : ViewController<ChannelView>, ModelBased, AVPlayerViewControllerDelegate {
+    
+    static let imageSize: CGSize = {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return CGSize(width: 120, height: 80)
+        } else {
+            return CGSize(width: 60, height: 40)
+        }
+    }()
     
     var viewModel: ChannelViewModel!
     
@@ -44,18 +52,18 @@ class ChannelViewController : ViewController<ChannelView>, ModelBased {
         controlledView.nameLabel.reactive.text <~ viewModel.showName
         controlledView.descriptionLabel.reactive.text <~ viewModel.showDescription
         controlledView.comingUpLabel.reactive.isHidden <~ updateShows.isExecuting
-        controlledView.allShowsButton.reactive.isHidden <~ updateShows.isExecuting
+//        controlledView.allShowsButton.reactive.isHidden <~ updateShows.isExecuting
         
         viewModel.upcomingShows.producer.observe(on: UIScheduler()).startWithValues { [unowned self] shows in
             self.controlledView.showsStackView.removeAllArrangedSubviews()
-            shows.forEach { show in
+            shows.forEach { model in
                 let showView = ChannelShowView()
-                showView.nameLabel.text = show.name
-                showView.descriptionLabel.text = show.description
-                showView.thumbnailView.reactive.imageUrl(size: CGSize(width: 60, height: 40)) <~ SignalProducer(value: show.thumbnailUrl)
+                showView.configure(for: model)
                 self.controlledView.showsStackView.addArrangedSubview(showView)
             }
         }
+        
+        videoController.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,6 +71,11 @@ class ChannelViewController : ViewController<ChannelView>, ModelBased {
         
         updateShows.execute(())
         videoController.player?.play()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

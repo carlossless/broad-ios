@@ -41,6 +41,8 @@ class ChannelView : UIView {
         backgroundColor = UIColor(hex: 0x202535)
         
         scrollView = UIScrollView()
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 24, right: 0)
+        
         constrainedView = UIView()
         
         backgroundView = UIView()
@@ -72,6 +74,7 @@ class ChannelView : UIView {
         comingUpLabel.font = UIFont.boldSystemFont(ofSize: 13)
         comingUpLabel.textColor = UIColor(hex: 0xA3A3A3)
         comingUpLabel.text = "Coming up:"
+        comingUpLabel.isHidden = true
         
         allShowsButton = UIButton()
         allShowsButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
@@ -79,6 +82,7 @@ class ChannelView : UIView {
         allShowsButton.setTitle("All Shows >", for: .normal)
         allShowsButton.setContentCompressionResistancePriority(.required, for: .horizontal)
         allShowsButton.setContentHuggingPriority(.required, for: .horizontal)
+        allShowsButton.isHidden = true
         
         showsStackView = UIStackView()
         showsStackView.axis = .vertical

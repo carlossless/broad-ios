@@ -42,3 +42,9 @@ struct GraphShow: Codable {
     let endsAt: Date
     
 }
+
+extension GraphShow: Equatable {
+    public static func == (lhs: GraphShow, rhs: GraphShow) -> Bool {
+        return lhs.name == rhs.name && lhs.startsAt == rhs.startsAt && lhs.endsAt == rhs.endsAt
+    }
+}
