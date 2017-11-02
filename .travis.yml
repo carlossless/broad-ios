@@ -9,7 +9,7 @@ env:
     - COMMIT_SHA1=$TRAVIS_COMMIT
     - BUILD_URL="https://travis-ci.com/$TRAVIS_REPO_SLUG/builds/$TRAVIS_BUILD_ID"
     - REPOSITORY_URL="https://github.com/$TRAVIS_REPO_SLUG"
-    - CONFIGURATION=Release
+    - CONFIGURATION=AdHoc
 
 cache:
   directories:
