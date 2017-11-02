@@ -13,7 +13,7 @@ env:
 
 cache:
   directories:
-    - $HOME/Library/Caches/Homebrew
+    # - $HOME/Library/Caches/Homebrew
     - Carthage
     - FFmpeg
 
