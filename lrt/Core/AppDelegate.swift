@@ -35,9 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if userActivity.activityType == CSSearchableItemActionType {
             // This activity represents an item indexed using Core Spotlight, so restore the context related to the unique identifier.
             // Note that the unique identifier of the Core Spotlight item is set in the activity’s userInfo property for the key CSSearchableItemActivityIdentifier.
-            if let uniqueIdentifier = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String {
+//            if let uniqueIdentifier = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String {
                 // Call the service
-            }
+//            }
             // Next, find and open the item specified by uniqueIdentifer.
         }
         return true
@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return .portrait
         }
         
-        if (vc.isKind(of: NSClassFromString("AVFullScreenViewController")!)) {
+        if vc.isKind(of: NSClassFromString("AVFullScreenViewController")!) {
             return .allButUpsideDown
         }
         

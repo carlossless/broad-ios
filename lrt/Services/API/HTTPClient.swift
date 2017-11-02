@@ -88,7 +88,7 @@ class HTTPClient {
         #if DEBUG
             var date: Date! = nil
             let reqName = "\(request.httpMethod!) \(request.url!)"
-            let barier = (0..<reqName.characters.count + 26).map { _ in "=" }.joined(separator: "")
+            let barier = (0..<reqName.count + 26).map { _ in "=" }.joined(separator: "")
             return URLSession.shared.reactive.data(with: request)
                 .on(
                     started: {
