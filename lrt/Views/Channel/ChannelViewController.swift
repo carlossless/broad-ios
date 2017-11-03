@@ -51,7 +51,7 @@ class ChannelViewController : ViewController<ChannelView>, ModelBased, AVPlayerV
         controlledView.timeLabel.reactive.text <~ viewModel.showName.map { $0 != nil ? "NOW" : nil }
         controlledView.nameLabel.reactive.text <~ viewModel.showName
         controlledView.descriptionLabel.reactive.text <~ viewModel.showDescription
-        controlledView.comingUpLabel.reactive.isHidden <~ updateShows.isExecuting
+        controlledView.comingUpLabel.reactive.isHidden <~ viewModel.showComingUpLabel.negate()
 //        controlledView.allShowsButton.reactive.isHidden <~ updateShows.isExecuting
         
         viewModel.upcomingShows.producer.observe(on: UIScheduler()).startWithValues { [unowned self] shows in

@@ -20,6 +20,7 @@ class ChannelViewModel: ViewModel {
     let showName = MutableProperty<String?>(nil)
     let showDescription = MutableProperty<String?>(nil)
     let showThumbnailUrl = MutableProperty<URL?>(nil)
+    let showComingUpLabel = MutableProperty<Bool>(false)
     let upcomingShows = MutableProperty<[ChannelShowViewModel]>([])
     var updateShows: Action<(), GraphChannelResponse, APIError>!
     
@@ -52,9 +53,10 @@ class ChannelViewModel: ViewModel {
                 let currentShow = models
                     .map { shows in shows.first }
                 
-                self.showName <~ currentShow.map { $0?.name }
+                self.showName <~ currentShow.map { $0?.name ?? "¯\\_(ツ)_/¯" }
                 self.showDescription <~ currentShow.map { $0?.description }
                 self.showThumbnailUrl <~ currentShow.map { $0?.thumbnailUrl }
+                self.showComingUpLabel <~ upcomingShows.map { $0.count > 0 }
             }
     }
     
