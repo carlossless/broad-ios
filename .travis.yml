@@ -40,3 +40,6 @@ after_success:
 branches:
   only:
     master
+
+notifications:
+  slack: delanoir:VvO4iLPEMOWzmcd9a6HRO3am
