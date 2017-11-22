@@ -58,16 +58,24 @@ class HTTPClient {
         }
     }
     
+    //TODO: Remove this duplication
+    private let dateFormatter: DateFormatter = {
+        var formatter = DateFormatter()
+        formatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'"
+        formatter.timeZone = TimeZone(abbreviation: "UTC")!
+        return formatter
+    }()
+    
     private func deserialise<T : Swift.Decodable>(data: Data) -> Result<T, APIError> {
         do {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .custom({ (decoder) -> Date in
                 let container = try decoder.singleValueContainer()
                 let timestamp = try container.decode(String.self)
-                guard let miliSeconds = Double(timestamp) else {
+                guard let date = self.dateFormatter.date(from: timestamp) else {
                     throw DecodingError.dataCorruptedError(in: container, debugDescription: "Cannot decode timestamp string \(timestamp)")
                 }
-                return Date(timeIntervalSince1970: miliSeconds / 1000)
+                return date
             })
             let result = try decoder.decode(T.self, from: data)
             return Result(value: result)
