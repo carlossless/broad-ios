@@ -41,7 +41,6 @@ void LRTFrameBufferFree(LRTFrameBuffer *info) {
 
 @end
 
-
 @implementation LRTStreamImageGrabber
 
 - (instancetype)init
@@ -61,7 +60,6 @@ void LRTFrameBufferFree(LRTFrameBuffer *info) {
         height = (int)(size.height * scale);
     const char *curl = [url.absoluteString cStringUsingEncoding: NSASCIIStringEncoding];
     int ret = 0;
-    int frame_done = 0;
     
     AVFormatContext *format_c = nil;
     AVStream *stream = nil;
@@ -139,13 +137,15 @@ void LRTFrameBufferFree(LRTFrameBuffer *info) {
         goto cleanup;
     }
     
-    img_len = avpicture_get_size(AV_PIX_FMT_RGB24, width, height);
+    img_len = av_image_get_buffer_size(AV_PIX_FMT_RGB24, width, height, 1);
+//    img_len = avpicture_get_size(AV_PIX_FMT_RGB24, width, height);
     if ((buffer = av_malloc(img_len * sizeof(uint8_t))) == nil) {
         *error = [self spewErrorWithDescription: @"Failed to allocate buffer"];
         goto cleanup;
     }
     
-    if ((ret = avpicture_fill((AVPicture *)frame_rgb, buffer, AV_PIX_FMT_RGB24, width, height)) < 0) {
+    if ((ret = av_image_fill_arrays(frame_rgb->data, frame_rgb->linesize, buffer, AV_PIX_FMT_RGB24, width, height, 1)) < 0) {
+//    if ((ret = avpicture_fill((AVPicture *)frame_rgb, buffer, AV_PIX_FMT_RGB24, width, height)) < 0) {
         *error = [self spewErrorForCode: ret];
         goto cleanup;
     }
@@ -170,9 +170,10 @@ void LRTFrameBufferFree(LRTFrameBuffer *info) {
     while (av_read_frame(format_c, &packet) >= 0) {
         if (packet.stream_index == stream->index) {
             @synchronized (self) {
-                avcodec_decode_video2(codec_c, frame, &frame_done, &packet);
+                avcodec_send_packet(codec_c, &packet);
+//                avcodec_decode_video2(codec_c, frame, &frame_done, &packet);
             }
-            if (frame_done) {
+            if (!avcodec_receive_frame(codec_c, frame)) {
                 sws_scale(
                     sws_c,
                     (uint8_t const * const *)frame->data,

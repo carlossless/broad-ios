@@ -28,22 +28,25 @@ class GraphAPIClient {
     private let apiBaseUrl: URL
     private let client: HTTPClient
     
+    //TODO: Remove this duplication
     private let dateFormatter: DateFormatter = {
         var formatter = DateFormatter()
+        formatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'"
         formatter.timeZone = TimeZone(abbreviation: "UTC")!
-        formatter.dateFormat = "YYYY-MM-dd"
         return formatter
     }()
     
-    init (baseUrl: URL = URL(string: "https://lrt.carlossless.io")!, httpClient: HTTPClient = HTTPClient()) {
+    init(baseUrl: URL = URL(string: "https://lrt.carlossless.io")!, httpClient: HTTPClient = HTTPClient()) {
         apiBaseUrl = baseUrl
         client = httpClient
     }
     
     func latest() -> SignalProducer<GraphChannelResponse, APIError> {
+        let fromDate = Date()
+        let toDate = Date(timeInterval: 24 * 60 * 60, since: fromDate) // 24 Hours
         let genericQuery: String = """
         {
-          channels(date: "\(dateFormatter.string(from: Date()))") {
+          channels(from: "\(dateFormatter.string(from: fromDate))", to: "\(dateFormatter.string(from: toDate))") {
             name
             shows {
               name

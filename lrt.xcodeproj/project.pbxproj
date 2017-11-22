@@ -54,6 +54,8 @@
 		F9A1CBAE1EDE0CAE00AA59FA /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A1CBAD1EDE0CAE00AA59FA /* SplashViewController.swift */; };
 		F9A1CBB11EDE0CC100AA59FA /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A1CBB01EDE0CC100AA59FA /* SplashView.swift */; };
 		F9A2C5381F7AF68300D4CA01 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A2C5371F7AF68300D4CA01 /* Station.swift */; };
+		F9A6F72D1FB3654E0028D868 /* ProgrammeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A6F72C1FB3654E0028D868 /* ProgrammeViewController.swift */; };
+		F9A6F7311FB365CD0028D868 /* ProgrammeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A6F7301FB365CD0028D868 /* ProgrammeViewModel.swift */; };
 		F9B5FE3F1ED5BED200545320 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B5FE3E1ED5BED200545320 /* libz.tbd */; };
 		F9B5FE411ED5BEDA00545320 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B5FE401ED5BEDA00545320 /* libbz2.tbd */; };
 		F9B5FE431ED5BEE600545320 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B5FE421ED5BEE600545320 /* libiconv.tbd */; };
@@ -297,6 +299,8 @@
 		F9A1CBAD1EDE0CAE00AA59FA /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		F9A1CBB01EDE0CC100AA59FA /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		F9A2C5371F7AF68300D4CA01 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		F9A6F72C1FB3654E0028D868 /* ProgrammeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeViewController.swift; sourceTree = "<group>"; };
+		F9A6F7301FB365CD0028D868 /* ProgrammeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeViewModel.swift; sourceTree = "<group>"; };
 		F9B5FE381ED5BA3F00545320 /* lrt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lrt-Bridging-Header.h"; sourceTree = "<group>"; };
 		F9B5FE3E1ED5BED200545320 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F9B5FE401ED5BEDA00545320 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
@@ -758,6 +762,22 @@
 			name = DSYMs;
 			sourceTree = "<group>";
 		};
+		F9A6F72A1FB3652A0028D868 /* Programme */ = {
+			isa = PBXGroup;
+			children = (
+				F9A6F72C1FB3654E0028D868 /* ProgrammeViewController.swift */,
+			);
+			path = Programme;
+			sourceTree = "<group>";
+		};
+		F9A6F72B1FB365370028D868 /* Programme */ = {
+			isa = PBXGroup;
+			children = (
+				F9A6F7301FB365CD0028D868 /* ProgrammeViewModel.swift */,
+			);
+			path = Programme;
+			sourceTree = "<group>";
+		};
 		F9B9CBE31E70440200168940 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -790,6 +810,7 @@
 		F9B9CBE61E70446E00168940 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F9A6F72A1FB3652A0028D868 /* Programme */,
 				F9F3F7E41F9CC81900829B70 /* About */,
 				F9F3F7E31F9CC80B00829B70 /* Channel */,
 				F9810BF11FA7AA7200A9E230 /* Player */,
@@ -802,6 +823,7 @@
 		F9B9CBE71E70448700168940 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				F9A6F72B1FB365370028D868 /* Programme */,
 				F9810BF01FA7AA5A00A9E230 /* About */,
 				F9810BEF1FA7AA5600A9E230 /* Channel */,
 				F9810BEE1FA7AA4400A9E230 /* Player */,
@@ -1065,6 +1087,7 @@
 				F9C3204E1EF1AC270053A92C /* UIWindow+TopMost.swift in Sources */,
 				F9E805361EDEDF4A0027F1A4 /* Navigator.swift in Sources */,
 				F9A1CBB11EDE0CC100AA59FA /* SplashView.swift in Sources */,
+				F9A6F72D1FB3654E0028D868 /* ProgrammeViewController.swift in Sources */,
 				F936B9621EE8286500B6C84D /* ThumbnailManager.swift in Sources */,
 				F9810BB61F97C22100136F0F /* GraphAPIClient.swift in Sources */,
 				F9F3F7E01F9CC7E700829B70 /* ChannelView.swift in Sources */,
@@ -1073,6 +1096,7 @@
 				F9E18EFA1E6EA96600F1A607 /* HTTPClient.swift in Sources */,
 				F9F3F7D91F98861A00829B70 /* ChannelResponse.swift in Sources */,
 				F9F3F7E21F9CC7FF00829B70 /* ChannelViewController.swift in Sources */,
+				F9A6F7311FB365CD0028D868 /* ProgrammeViewModel.swift in Sources */,
 				F9A1CBAE1EDE0CAE00AA59FA /* SplashViewController.swift in Sources */,
 				F957AFE31EEB13E000C9A981 /* Collection+Convenience.swift in Sources */,
 				F9E18EEE1E6E241500F1A607 /* SelectionNavigationController.swift in Sources */,
@@ -1167,7 +1191,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1248,7 +1272,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1443,7 +1467,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1493,7 +1517,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
