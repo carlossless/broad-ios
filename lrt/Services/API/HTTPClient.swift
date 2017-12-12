@@ -17,10 +17,13 @@ class HTTPClient {
     
     // MARK: - Private Interface
     
-    private func createDefaultRequest(url: URL, method: String = "GET", body: Data? = nil, contentType: String? = nil) -> URLRequest {
+    private func createDefaultRequest(url: URL, method: String = "GET", body: Data? = nil, contentType: String? = nil, cachePolicy: URLRequest.CachePolicy? = nil) -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = method
         request.httpBody = body
+        if let cachePolicy = cachePolicy {
+            request.cachePolicy = cachePolicy
+        }
         if let contentType = contentType {
             request.setValue(contentType, forHTTPHeaderField: "Content-Type")
         }
@@ -150,18 +153,18 @@ class HTTPClient {
     
     // MARK: - GET
     
-    public func get(url: URL) -> SignalProducer<Data, APIError> {
-        let request = self.createDefaultRequest(url: url, method: "GET")
+    public func get(url: URL, cachePolicy: URLRequest.CachePolicy? = nil) -> SignalProducer<Data, APIError> {
+        let request = self.createDefaultRequest(url: url, method: "GET", cachePolicy: cachePolicy)
         return retrieveData(request: request)
     }
     
-    public func get<T : Argo.Decodable>(url: URL) -> SignalProducer<T, APIError> where T == T.DecodedType {
-        let request = self.createDefaultRequest(url: url, method: "GET")
+    public func get<T : Argo.Decodable>(url: URL, cachePolicy: URLRequest.CachePolicy? = nil) -> SignalProducer<T, APIError> where T == T.DecodedType {
+        let request = self.createDefaultRequest(url: url, method: "GET", cachePolicy: cachePolicy)
         return retrieveAndParseData(request: request)
     }
     
-    public func get<T : Swift.Decodable>(url: URL) -> SignalProducer<T, APIError> {
-        let request = self.createDefaultRequest(url: url, method: "GET")
+    public func get<T : Swift.Decodable>(url: URL, cachePolicy: URLRequest.CachePolicy? = nil) -> SignalProducer<T, APIError> {
+        let request = self.createDefaultRequest(url: url, method: "GET", cachePolicy: cachePolicy)
         return retrieveAndParseData(request: request)
     }
     

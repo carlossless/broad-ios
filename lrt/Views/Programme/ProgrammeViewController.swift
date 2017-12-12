@@ -10,7 +10,7 @@ import Foundation
 
 class ProgrammeViewController : UITableViewController, ModelBased {
 
-    var viewModel: SelectionViewModel!
+    var viewModel: ProgrammeViewModel!
     
     public init() {
         super.init(style: .plain)
@@ -24,7 +24,7 @@ class ProgrammeViewController : UITableViewController, ModelBased {
         super.init(coder: aDecoder)
     }
     
-    func configure(for model: SelectionViewModel) {
+    func configure(for model: ProgrammeViewModel) {
         self.viewModel = model
     }
     
@@ -47,12 +47,12 @@ class ProgrammeViewController : UITableViewController, ModelBased {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.stations.value.count
+        return viewModel.shows.value.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! StationTableViewCell
-        let model = viewModel.stations.value[indexPath.row]
+        let model = viewModel.shows.value[indexPath.row]
         cell.configure(for: model)
         return cell
     }

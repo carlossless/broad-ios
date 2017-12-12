@@ -83,6 +83,8 @@
 		F9E805341EDED83F0027F1A4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E805331EDED83F0027F1A4 /* ViewModel.swift */; };
 		F9E805361EDEDF4A0027F1A4 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E805351EDEDF4A0027F1A4 /* Navigator.swift */; };
 		F9F304611F1825D90097E961 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F304601F1825D90097E961 /* libxml2.tbd */; };
+		F9F3B9D51FCDE6A500D5CC47 /* DateHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F3B9D41FCDE6A400D5CC47 /* DateHelper.framework */; };
+		F9F3B9D81FCDE6BB00D5CC47 /* DateHelper.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F9F3B9D61FCDE6B100D5CC47 /* DateHelper.framework.dSYM */; };
 		F9F3F7CE1F97F15A00829B70 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F3F7CC1F97F15A00829B70 /* Quick.framework */; };
 		F9F3F7CF1F97F15A00829B70 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F3F7CD1F97F15A00829B70 /* Nimble.framework */; };
 		F9F3F7D51F97F24D00829B70 /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F9F3F7CD1F97F15A00829B70 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -112,6 +114,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				F9F3B9D81FCDE6BB00D5CC47 /* DateHelper.framework.dSYM in Copy dSYMs */,
 				F9E7F1C01FA283AC008B1B13 /* Kingfisher.framework.dSYM in Copy dSYMs */,
 				F9E18EF71E6E282000F1A607 /* Rswift.framework.dSYM in Copy dSYMs */,
 				F9B9CBE21E70407200168940 /* HockeySDK.framework.dSYM in Copy dSYMs */,
@@ -328,6 +331,8 @@
 		F9E805331EDED83F0027F1A4 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		F9E805351EDEDF4A0027F1A4 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		F9F304601F1825D90097E961 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		F9F3B9D41FCDE6A400D5CC47 /* DateHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DateHelper.framework; path = Carthage/Build/iOS/DateHelper.framework; sourceTree = "<group>"; };
+		F9F3B9D61FCDE6B100D5CC47 /* DateHelper.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = DateHelper.framework.dSYM; path = Carthage/Build/iOS/DateHelper.framework.dSYM; sourceTree = "<group>"; };
 		F9F3F7CC1F97F15A00829B70 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		F9F3F7CD1F97F15A00829B70 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		F9F3F7D01F97F16500829B70 /* Nimble.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Nimble.framework.dSYM; path = Carthage/Build/iOS/Nimble.framework.dSYM; sourceTree = "<group>"; };
@@ -358,6 +363,7 @@
 				F9F304611F1825D90097E961 /* libxml2.tbd in Frameworks */,
 				F936B9E51EE8C3EF00B6C84D /* libswresample.a in Frameworks */,
 				F93A31AA1ED5CBAE00F390C2 /* VideoToolbox.framework in Frameworks */,
+				F9F3B9D51FCDE6A500D5CC47 /* DateHelper.framework in Frameworks */,
 				F9B5FE431ED5BEE600545320 /* libiconv.tbd in Frameworks */,
 				F9B5FE411ED5BEDA00545320 /* libbz2.tbd in Frameworks */,
 				F936B9E31EE8C3EF00B6C84D /* libavformat.a in Frameworks */,
@@ -722,6 +728,7 @@
 			children = (
 				F936B9651EE8C3EF00B6C84D /* FFmpeg */,
 				F98BA6F61E6E1546001A33A8 /* DSYMs */,
+				F9F3B9D41FCDE6A400D5CC47 /* DateHelper.framework */,
 				F9E7F1BD1FA2838F008B1B13 /* Kingfisher.framework */,
 				F9F3F7CD1F97F15A00829B70 /* Nimble.framework */,
 				F9F3F7CC1F97F15A00829B70 /* Quick.framework */,
@@ -746,6 +753,7 @@
 		F98BA6F61E6E1546001A33A8 /* DSYMs */ = {
 			isa = PBXGroup;
 			children = (
+				F9F3B9D61FCDE6B100D5CC47 /* DateHelper.framework.dSYM */,
 				F9E7F1BF1FA2839B008B1B13 /* Kingfisher.framework.dSYM */,
 				F9F3F7D01F97F16500829B70 /* Nimble.framework.dSYM */,
 				F9F3F7D11F97F16500829B70 /* Quick.framework.dSYM */,
@@ -1028,6 +1036,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/HockeySDK.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/DateHelper.framework",
 			);
 			name = "Carthage Copy-Frameworks";
 			outputPaths = (
