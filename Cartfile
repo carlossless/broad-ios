@@ -6,6 +6,7 @@ github "SnapKit/SnapKit"
 github "mac-cain13/R.swift.Library"
 github "bitstadium/HockeySDK-iOS"
 github "onevcat/Kingfisher"
+github "melvitax/DateHelper"
 
 github "Quick/Quick"
 github "Quick/Nimble"

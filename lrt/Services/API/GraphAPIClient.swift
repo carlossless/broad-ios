@@ -41,9 +41,7 @@ class GraphAPIClient {
         client = httpClient
     }
     
-    func latest() -> SignalProducer<GraphChannelResponse, APIError> {
-        let fromDate = Date()
-        let toDate = Date(timeInterval: 24 * 60 * 60, since: fromDate) // 24 Hours
+    func programme(fromDate: Date, toDate: Date) -> SignalProducer<GraphChannelResponse, APIError> {
         let genericQuery: String = """
         {
           channels(from: "\(dateFormatter.string(from: fromDate))", to: "\(dateFormatter.string(from: toDate))") {
@@ -65,6 +63,12 @@ class GraphAPIClient {
             .map { wrapper in
                 return wrapper.data
             }
+    }
+    
+    func latest() -> SignalProducer<GraphChannelResponse, APIError> {
+        let fromDate = Date()
+        let toDate = Date(timeInterval: 24 * 60 * 60, since: fromDate) // 24 Hours
+        return programme(fromDate: fromDate, toDate: toDate)
     }
     
 }

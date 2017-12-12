@@ -16,7 +16,10 @@ class SplashViewModel : ViewModel {
         "Baking Beans...",
         "Praying...",
         "Paying Back Investors...",
-        "Recombining DNA..."
+        "Recombining DNA...",
+        "Coliding Particles...",
+        "Constructing Additional Pylons...",
+        "Arguing on the Internet..."
     ]
     
     func randomLabel() -> String {
