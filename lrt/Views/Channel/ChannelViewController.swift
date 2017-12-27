@@ -52,7 +52,9 @@ class ChannelViewController : ViewController<ChannelView>, ModelBased, AVPlayerV
         controlledView.nameLabel.reactive.text <~ viewModel.showName
         controlledView.descriptionLabel.reactive.text <~ viewModel.showDescription
         controlledView.comingUpLabel.reactive.isHidden <~ viewModel.showComingUpLabel.negate()
-//        controlledView.allShowsButton.reactive.isHidden <~ updateShows.isExecuting
+        controlledView.allShowsButton.reactive.isHidden <~ viewModel.showAllShowsButton.negate()
+        
+        controlledView.allShowsButton.reactive.pressed = CocoaAction(viewModel.showAllShows, { _ in () })
         
         viewModel.upcomingShows.producer.observe(on: UIScheduler()).startWithValues { [unowned self] shows in
             self.controlledView.showsStackView.removeAllArrangedSubviews()
