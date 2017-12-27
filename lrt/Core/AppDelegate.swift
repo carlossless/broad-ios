@@ -67,6 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigator.register(PlayerViewController.self, for: PlayerViewModel.self)
         navigator.register(AboutViewController.self, for: AboutViewModel.self)
         navigator.register(ChannelViewController.self, for: ChannelViewModel.self)
+        navigator.register(ProgrammeViewController.self, for: ProgrammeViewModel.self)
     }
     
     private func setupAudioSessionCategory() {

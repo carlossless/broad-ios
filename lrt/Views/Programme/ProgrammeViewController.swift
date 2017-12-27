@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import ReactiveSwift
+import ReactiveCocoa
 
 class ProgrammeViewController : UITableViewController, ModelBased {
 
@@ -15,9 +17,7 @@ class ProgrammeViewController : UITableViewController, ModelBased {
     public init() {
         super.init(style: .plain)
         
-        navigationItem.title = "LRT"
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Channels", style: .plain, target: nil, action: nil)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "About", style: .plain, target: nil, action: nil)
+        navigationItem.title = "Programme"
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -38,12 +38,22 @@ class ProgrammeViewController : UITableViewController, ModelBased {
         tableView.tableFooterView = UIView()
         // Do any additional setup after loading the view, typically from a nib.
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(ProgrammeShowCell.self, forCellReuseIdentifier: "Cell")
         
         bind()
     }
     
     func bind() {
+        tableView.reactive.reloadData <~ viewModel.shows.map { _ in () }
+        
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl!.reactive.refresh = CocoaAction(viewModel.updateProgramme)
+        
+        viewModel.updateProgramme.errors.observeValues { error in
+            let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { _ in alert.dismiss(animated: true, completion: nil)}))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,14 +61,14 @@ class ProgrammeViewController : UITableViewController, ModelBased {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! StationTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! ProgrammeShowCell
         let model = viewModel.shows.value[indexPath.row]
         cell.configure(for: model)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 60
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
