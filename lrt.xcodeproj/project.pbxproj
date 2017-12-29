@@ -32,6 +32,8 @@
 		F9810BB61F97C22100136F0F /* GraphAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9810BB51F97C22100136F0F /* GraphAPIClient.swift */; };
 		F9810BD81F97C56200136F0F /* GraphAPIClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9810BD71F97C56200136F0F /* GraphAPIClientSpec.swift */; };
 		F9810BDA1F97C97A00136F0F /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98BA6EC1E6E1382001A33A8 /* ReactiveSwift.framework */; };
+		F98785281FF5903100DB5E82 /* ProgrammeSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98785271FF5903100DB5E82 /* ProgrammeSectionModel.swift */; };
+		F987852A1FF6730D00DB5E82 /* Sequence+Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98785291FF6730D00DB5E82 /* Sequence+Group.swift */; };
 		F98BA6D71E6E0ECA001A33A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BA6D61E6E0ECA001A33A8 /* AppDelegate.swift */; };
 		F98BA6D91E6E0ECA001A33A8 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BA6D81E6E0ECA001A33A8 /* SelectionViewController.swift */; };
 		F98BA6DE1E6E0ECA001A33A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F98BA6DD1E6E0ECA001A33A8 /* Assets.xcassets */; };
@@ -278,6 +280,8 @@
 		F9810BCB1F97C54300136F0F /* lrtTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lrtTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9810BCF1F97C54300136F0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9810BD71F97C56200136F0F /* GraphAPIClientSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphAPIClientSpec.swift; sourceTree = "<group>"; };
+		F98785271FF5903100DB5E82 /* ProgrammeSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeSectionModel.swift; sourceTree = "<group>"; };
+		F98785291FF6730D00DB5E82 /* Sequence+Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Group.swift"; sourceTree = "<group>"; };
 		F98BA6D31E6E0ECA001A33A8 /* lrt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lrt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98BA6D61E6E0ECA001A33A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F98BA6D81E6E0ECA001A33A8 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
@@ -406,6 +410,7 @@
 				F9C3204D1EF1AC270053A92C /* UIViewController+TopMost.swift */,
 				F9C3204C1EF1AC270053A92C /* UIWindow+TopMost.swift */,
 				F9C320501EF1ACE80053A92C /* URL+Decodable.swift */,
+				F98785291FF6730D00DB5E82 /* Sequence+Group.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -788,6 +793,7 @@
 			children = (
 				F9A6F7301FB365CD0028D868 /* ProgrammeViewModel.swift */,
 				F9F3F9ED1FF1077600DB7817 /* ProgrammeShowCellModel.swift */,
+				F98785271FF5903100DB5E82 /* ProgrammeSectionModel.swift */,
 			);
 			path = Programme;
 			sourceTree = "<group>";
@@ -1098,6 +1104,8 @@
 				F908B3991F7C57FF00819655 /* AboutView.swift in Sources */,
 				F9F6C31D1F82FBC200A57890 /* SignalProducer+Convenience.swift in Sources */,
 				F9F3F9F01FF112EF00DB7817 /* ProgrammeShowCell.swift in Sources */,
+				F987852A1FF6730D00DB5E82 /* Sequence+Group.swift in Sources */,
+				F98785281FF5903100DB5E82 /* ProgrammeSectionModel.swift in Sources */,
 				F9E184DC1F9FEFD2002DDA5E /* ChannelShowView.swift in Sources */,
 				F98BA6D91E6E0ECA001A33A8 /* SelectionViewController.swift in Sources */,
 				F9C3204E1EF1AC270053A92C /* UIWindow+TopMost.swift in Sources */,

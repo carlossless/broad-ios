@@ -71,13 +71,17 @@ class ChannelViewController : ViewController<ChannelView>, ModelBased, AVPlayerV
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        updateShows.execute(())
+        if isMovingToParentViewController {
+            updateShows.execute(())
+        }
+        
         videoController.player?.play()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        videoController.player?.pause()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
