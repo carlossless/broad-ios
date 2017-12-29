@@ -33,6 +33,8 @@ class ProgrammeViewController : UITableViewController, ModelBased {
         
         view.backgroundColor = UIColor.white
         
+        tableView.refreshControl = UIRefreshControl()
+        
         tableView.separatorColor = UIColor(hex: 0x373D55)
         tableView.backgroundColor = UIColor(hex: 0x202535)
         tableView.tableFooterView = UIView()
@@ -44,10 +46,20 @@ class ProgrammeViewController : UITableViewController, ModelBased {
     }
     
     func bind() {
-        tableView.reactive.reloadData <~ viewModel.shows.map { _ in () }
-        
-        tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl!.reactive.refresh = CocoaAction(viewModel.updateProgramme)
+        
+//        tableView.reactive.reloadData <~ viewModel.shows.producer.map { _ in () }
+        
+        viewModel.shows.producer
+            .take(during: self.reactive.lifetime)
+            .observe(on: UIScheduler())
+            .startWithValues { [weak self] _ in
+                self?.tableView.reloadData()
+                if let pair = self?.viewModel.currentShow.value {
+                    print(pair)
+                    self?.tableView.scrollToRow(at: IndexPath(row: pair.row, section: pair.section), at: .top, animated: false)
+                }
+            }
         
         viewModel.updateProgramme.errors.observeValues { error in
             let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
@@ -56,13 +68,35 @@ class ProgrammeViewController : UITableViewController, ModelBased {
         }
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // For some reason the tint color has to be applied just before showing the refresh control, otherwise it doesn't get set
+        tableView.refreshControl!.tintColor = UIColor.white
+        tableView.contentOffset = CGPoint(x: 0, y: -refreshControl!.frame.size.height)
+        refreshControl!.beginRefreshing()
+        viewModel.updateProgramme.apply().start()
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel.shows.value[section].date.toString(format: .isoDate)
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.shows.value.count
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.shows.value[section].cells.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! ProgrammeShowCell
-        let model = viewModel.shows.value[indexPath.row]
+        let model = viewModel.shows.value[indexPath.section].cells[indexPath.row]
         cell.configure(for: model)
         return cell
     }

@@ -29,4 +29,10 @@ class PlayerViewController: AVPlayerViewController, ModelBased {
         }
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        self.player?.pause()
+        
+        super.viewDidDisappear(animated)
+    }
+    
 }
