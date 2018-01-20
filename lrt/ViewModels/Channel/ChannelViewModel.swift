@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Result
 import ReactiveSwift
 import Curry
 
@@ -21,7 +22,10 @@ class ChannelViewModel: ViewModel {
     let showDescription = MutableProperty<String?>(nil)
     let showThumbnailUrl = MutableProperty<URL?>(nil)
     let showComingUpLabel = MutableProperty<Bool>(false)
+    let showAllShowsButton = MutableProperty<Bool>(false)
     let upcomingShows = MutableProperty<[ChannelShowViewModel]>([])
+    
+    var showAllShows: Action<(), (), NoError>!
     var updateShows: Action<(), GraphChannelResponse, APIError>!
     
     init (channelId: String, channelName: String, playlistUrl: URL, apiClient: GraphAPIClient = GraphAPIClient(), navigator: Navigator = Navigator.shared) {
@@ -53,12 +57,23 @@ class ChannelViewModel: ViewModel {
                 let currentShow = models
                     .map { shows in shows.first }
                 
+                let upcomingShowsExist = upcomingShows.map { $0.count > 0 }
+                
                 self.showName <~ currentShow.map { $0?.name ?? "¯\\_(ツ)_/¯" }
                 self.showDescription <~ currentShow.map { $0?.description }
                 self.showThumbnailUrl <~ currentShow.map { $0?.thumbnailUrl }
-                self.showComingUpLabel <~ upcomingShows.map { $0.count > 0 }
+                self.showComingUpLabel <~ upcomingShowsExist
+                self.showAllShowsButton <~ upcomingShowsExist
             }
+        
+        showAllShows = Action(enabledIf: self.showAllShowsButton) {
+            return SignalProducer {
+                return Navigator.shared.push(model: ProgrammeViewModel(channelId: channelId), animated: true)
+            }
+        }
     }
+    
+    
     
     static func selectLatestShows(_ channelId: String, _ showCount: Int, now: Date, response: GraphChannelResponse) -> [GraphShow] {
         guard let channel = response.channels.first(where: { $0.name == channelId })
