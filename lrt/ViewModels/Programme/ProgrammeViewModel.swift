@@ -54,7 +54,7 @@ class ProgrammeViewModel: ViewModel {
 
         return indices
     }
-
+    
     func select(index: Int) {
 //        let model = shows.value[index]
 //        Navigator.shared.push(model: ChannelViewModel(channelId: model.id, channelName: model.name, playlistUrl: model.playlistUrl), animated: true)

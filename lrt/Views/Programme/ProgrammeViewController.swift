@@ -31,6 +31,8 @@ class ProgrammeViewController : UITableViewController, ModelBased {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.estimatedRowHeight = 44
+        
         view.backgroundColor = UIColor.white
         
         tableView.refreshControl = UIRefreshControl()
@@ -40,6 +42,7 @@ class ProgrammeViewController : UITableViewController, ModelBased {
         tableView.tableFooterView = UIView()
         // Do any additional setup after loading the view, typically from a nib.
         
+        tableView.register(ProgrammeHeaderView.self, forHeaderFooterViewReuseIdentifier: "Header")
         tableView.register(ProgrammeShowCell.self, forCellReuseIdentifier: "Cell")
         
         bind()
@@ -82,10 +85,6 @@ class ProgrammeViewController : UITableViewController, ModelBased {
         viewModel.updateProgramme.apply().start()
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return viewModel.shows.value[section].date.toString(format: .isoDate)
-    }
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.shows.value.count
     }
@@ -102,7 +101,17 @@ class ProgrammeViewController : UITableViewController, ModelBased {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "Header") as! ProgrammeHeaderView
+        view.configure(for: viewModel.shows.value[section].date)
+        return view
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
