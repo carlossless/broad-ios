@@ -52,7 +52,9 @@ class ChannelViewController : ViewController<ChannelView>, ModelBased, AVPlayerV
         controlledView.nameLabel.reactive.text <~ viewModel.showName
         controlledView.descriptionLabel.reactive.text <~ viewModel.showDescription
         controlledView.comingUpLabel.reactive.isHidden <~ viewModel.showComingUpLabel.negate()
-//        controlledView.allShowsButton.reactive.isHidden <~ updateShows.isExecuting
+        controlledView.allShowsButton.reactive.isHidden <~ viewModel.showAllShowsButton.negate()
+        
+        controlledView.allShowsButton.reactive.pressed = CocoaAction(viewModel.showAllShows, { _ in () })
         
         viewModel.upcomingShows.producer.observe(on: UIScheduler()).startWithValues { [unowned self] shows in
             self.controlledView.showsStackView.removeAllArrangedSubviews()
@@ -69,13 +71,17 @@ class ChannelViewController : ViewController<ChannelView>, ModelBased, AVPlayerV
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        updateShows.execute(())
+        if isMovingToParentViewController {
+            updateShows.execute(())
+        }
+        
         videoController.player?.play()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        videoController.player?.pause()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

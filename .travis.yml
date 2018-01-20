@@ -35,11 +35,7 @@ after_script:
 
 after_success:
   - printf "CI build $TRAVIS_BUILD_NUMBER\n\nChanges:\n\n$COMMIT_TEXT" > $DISTRIBUTION_NOTES_FILE
-  - make distribute
-
-branches:
-  only:
-    master
+  - if [[ "$TRAVIS_BRANCH" == "master" ]]; then make distribute; fi
 
 notifications:
   slack: delanoir:VvO4iLPEMOWzmcd9a6HRO3am

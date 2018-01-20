@@ -32,6 +32,8 @@
 		F9810BB61F97C22100136F0F /* GraphAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9810BB51F97C22100136F0F /* GraphAPIClient.swift */; };
 		F9810BD81F97C56200136F0F /* GraphAPIClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9810BD71F97C56200136F0F /* GraphAPIClientSpec.swift */; };
 		F9810BDA1F97C97A00136F0F /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98BA6EC1E6E1382001A33A8 /* ReactiveSwift.framework */; };
+		F98785281FF5903100DB5E82 /* ProgrammeSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98785271FF5903100DB5E82 /* ProgrammeSectionModel.swift */; };
+		F987852A1FF6730D00DB5E82 /* Sequence+Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98785291FF6730D00DB5E82 /* Sequence+Group.swift */; };
 		F98BA6D71E6E0ECA001A33A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BA6D61E6E0ECA001A33A8 /* AppDelegate.swift */; };
 		F98BA6D91E6E0ECA001A33A8 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BA6D81E6E0ECA001A33A8 /* SelectionViewController.swift */; };
 		F98BA6DE1E6E0ECA001A33A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F98BA6DD1E6E0ECA001A33A8 /* Assets.xcassets */; };
@@ -49,6 +51,7 @@
 		F98BA7081E6E15BB001A33A8 /* Result.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F98BA6FB1E6E156C001A33A8 /* Result.framework.dSYM */; };
 		F98BA7091E6E15BB001A33A8 /* Runes.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F98BA6FC1E6E156C001A33A8 /* Runes.framework.dSYM */; };
 		F98BA70B1E6E1A55001A33A8 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98BA70A1E6E1A55001A33A8 /* SnapKit.framework */; };
+		F98E057C2013E84C00EBCACE /* ProgrammeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98E057B2013E84C00EBCACE /* ProgrammeHeaderView.swift */; };
 		F997AF131ED85CD000EAA72B /* LRTStreamImageGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = F997AF121ED85CD000EAA72B /* LRTStreamImageGrabber.m */; };
 		F997AF151ED88F2600EAA72B /* StationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F997AF141ED88F2600EAA72B /* StationTableViewCell.swift */; };
 		F9A1CBAE1EDE0CAE00AA59FA /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A1CBAD1EDE0CAE00AA59FA /* SplashViewController.swift */; };
@@ -94,6 +97,8 @@
 		F9F3F7DE1F9CC7A900829B70 /* ChannelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3F7DD1F9CC7A900829B70 /* ChannelViewModel.swift */; };
 		F9F3F7E01F9CC7E700829B70 /* ChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3F7DF1F9CC7E700829B70 /* ChannelView.swift */; };
 		F9F3F7E21F9CC7FF00829B70 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3F7E11F9CC7FF00829B70 /* ChannelViewController.swift */; };
+		F9F3F9EE1FF1077600DB7817 /* ProgrammeShowCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3F9ED1FF1077600DB7817 /* ProgrammeShowCellModel.swift */; };
+		F9F3F9F01FF112EF00DB7817 /* ProgrammeShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3F9EF1FF112EF00DB7817 /* ProgrammeShowCell.swift */; };
 		F9F6C31D1F82FBC200A57890 /* SignalProducer+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F6C31C1F82FBC200A57890 /* SignalProducer+Convenience.swift */; };
 /* End PBXBuildFile section */
 
@@ -276,6 +281,8 @@
 		F9810BCB1F97C54300136F0F /* lrtTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lrtTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9810BCF1F97C54300136F0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9810BD71F97C56200136F0F /* GraphAPIClientSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphAPIClientSpec.swift; sourceTree = "<group>"; };
+		F98785271FF5903100DB5E82 /* ProgrammeSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeSectionModel.swift; sourceTree = "<group>"; };
+		F98785291FF6730D00DB5E82 /* Sequence+Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Group.swift"; sourceTree = "<group>"; };
 		F98BA6D31E6E0ECA001A33A8 /* lrt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lrt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98BA6D61E6E0ECA001A33A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F98BA6D81E6E0ECA001A33A8 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
@@ -296,6 +303,7 @@
 		F98BA6FC1E6E156C001A33A8 /* Runes.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Runes.framework.dSYM; path = Carthage/Build/iOS/Runes.framework.dSYM; sourceTree = "<group>"; };
 		F98BA70A1E6E1A55001A33A8 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		F98BA70C1E6E1A63001A33A8 /* SnapKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SnapKit.framework.dSYM; path = Carthage/Build/iOS/SnapKit.framework.dSYM; sourceTree = "<group>"; };
+		F98E057B2013E84C00EBCACE /* ProgrammeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeHeaderView.swift; sourceTree = "<group>"; };
 		F997AF111ED85CD000EAA72B /* LRTStreamImageGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRTStreamImageGrabber.h; sourceTree = "<group>"; };
 		F997AF121ED85CD000EAA72B /* LRTStreamImageGrabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRTStreamImageGrabber.m; sourceTree = "<group>"; };
 		F997AF141ED88F2600EAA72B /* StationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationTableViewCell.swift; sourceTree = "<group>"; };
@@ -342,6 +350,8 @@
 		F9F3F7DD1F9CC7A900829B70 /* ChannelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewModel.swift; sourceTree = "<group>"; };
 		F9F3F7DF1F9CC7E700829B70 /* ChannelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelView.swift; sourceTree = "<group>"; };
 		F9F3F7E11F9CC7FF00829B70 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
+		F9F3F9ED1FF1077600DB7817 /* ProgrammeShowCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeShowCellModel.swift; sourceTree = "<group>"; };
+		F9F3F9EF1FF112EF00DB7817 /* ProgrammeShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeShowCell.swift; sourceTree = "<group>"; };
 		F9F6C31C1F82FBC200A57890 /* SignalProducer+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignalProducer+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -402,6 +412,7 @@
 				F9C3204D1EF1AC270053A92C /* UIViewController+TopMost.swift */,
 				F9C3204C1EF1AC270053A92C /* UIWindow+TopMost.swift */,
 				F9C320501EF1ACE80053A92C /* URL+Decodable.swift */,
+				F98785291FF6730D00DB5E82 /* Sequence+Group.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -774,6 +785,8 @@
 			isa = PBXGroup;
 			children = (
 				F9A6F72C1FB3654E0028D868 /* ProgrammeViewController.swift */,
+				F9F3F9EF1FF112EF00DB7817 /* ProgrammeShowCell.swift */,
+				F98E057B2013E84C00EBCACE /* ProgrammeHeaderView.swift */,
 			);
 			path = Programme;
 			sourceTree = "<group>";
@@ -782,6 +795,8 @@
 			isa = PBXGroup;
 			children = (
 				F9A6F7301FB365CD0028D868 /* ProgrammeViewModel.swift */,
+				F9F3F9ED1FF1077600DB7817 /* ProgrammeShowCellModel.swift */,
+				F98785271FF5903100DB5E82 /* ProgrammeSectionModel.swift */,
 			);
 			path = Programme;
 			sourceTree = "<group>";
@@ -1040,6 +1055,17 @@
 			);
 			name = "Carthage Copy-Frameworks";
 			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Argo.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Curry.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveCocoa.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Runes.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Rswift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/HockeySDK.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/DateHelper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1091,14 +1117,19 @@
 				F9E18EFE1E6EBC8B00F1A607 /* SelectionViewModel.swift in Sources */,
 				F908B3991F7C57FF00819655 /* AboutView.swift in Sources */,
 				F9F6C31D1F82FBC200A57890 /* SignalProducer+Convenience.swift in Sources */,
+				F9F3F9F01FF112EF00DB7817 /* ProgrammeShowCell.swift in Sources */,
+				F987852A1FF6730D00DB5E82 /* Sequence+Group.swift in Sources */,
+				F98785281FF5903100DB5E82 /* ProgrammeSectionModel.swift in Sources */,
 				F9E184DC1F9FEFD2002DDA5E /* ChannelShowView.swift in Sources */,
 				F98BA6D91E6E0ECA001A33A8 /* SelectionViewController.swift in Sources */,
 				F9C3204E1EF1AC270053A92C /* UIWindow+TopMost.swift in Sources */,
 				F9E805361EDEDF4A0027F1A4 /* Navigator.swift in Sources */,
+				F9F3F9EE1FF1077600DB7817 /* ProgrammeShowCellModel.swift in Sources */,
 				F9A1CBB11EDE0CC100AA59FA /* SplashView.swift in Sources */,
 				F9A6F72D1FB3654E0028D868 /* ProgrammeViewController.swift in Sources */,
 				F936B9621EE8286500B6C84D /* ThumbnailManager.swift in Sources */,
 				F9810BB61F97C22100136F0F /* GraphAPIClient.swift in Sources */,
+				F98E057C2013E84C00EBCACE /* ProgrammeHeaderView.swift in Sources */,
 				F9F3F7E01F9CC7E700829B70 /* ChannelView.swift in Sources */,
 				F997AF151ED88F2600EAA72B /* StationTableViewCell.swift in Sources */,
 				F98BA6D71E6E0ECA001A33A8 /* AppDelegate.swift in Sources */,
