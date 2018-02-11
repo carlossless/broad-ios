@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import ReactiveSwift
+import ReactiveCocoa
+import SnapKit
 
 class ChannelView : UIView {
     
@@ -14,7 +17,6 @@ class ChannelView : UIView {
     var constrainedView: UIView!
     
     var backgroundView: UIView!
-    var verticalStack: UIStackView!
     var loadingIndicator: UIActivityIndicatorView!
     
     var videoView: UIView!
@@ -26,6 +28,9 @@ class ChannelView : UIView {
     var allShowsButton: UIButton!
     
     var showsStackView: UIStackView!
+    
+    var nameBottomContraint: Constraint!
+    var descriptionBottomContraint: Constraint!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,10 +54,6 @@ class ChannelView : UIView {
         backgroundView.backgroundColor = UIColor(hex: 0x373D55)
         
         loadingIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
-        
-        verticalStack = UIStackView()
-        verticalStack.axis = .vertical
-        verticalStack.alignment = .fill
         
         timeLabel = UILabel()
         timeLabel.textColor = UIColor.white
@@ -110,6 +111,7 @@ class ChannelView : UIView {
             make.top.equalTo(backgroundView).offset(12)
             make.left.equalTo(backgroundView).offset(12)
             make.right.equalTo(timeLabel.snp.left).offset(-10)
+            self.nameBottomContraint = make.bottom.equalTo(backgroundView).offset(-12).constraint
         }
         
         timeLabel.snp.makeConstraints { make in
@@ -118,12 +120,13 @@ class ChannelView : UIView {
         }
         
         descriptionLabel.snp.makeConstraints { make in
-            make.top.greaterThanOrEqualTo(nameLabel.snp.bottom)
-            make.top.greaterThanOrEqualTo(timeLabel.snp.bottom)
+            make.top.equalTo(nameLabel.snp.bottom)
             make.left.equalTo(backgroundView).offset(12)
             make.right.equalTo(backgroundView).offset(-12)
-            make.bottom.equalTo(backgroundView).offset(-12)
+            self.descriptionBottomContraint = make.bottom.equalTo(backgroundView).offset(-12).constraint
         }
+        
+        self.descriptionBottomContraint.deactivate()
         
         loadingIndicator.snp.makeConstraints { make in
             make.top.greaterThanOrEqualTo(backgroundView).offset(12)
@@ -164,6 +167,22 @@ class ChannelView : UIView {
         }
     }
     
+    var descriptionText: String? {
+        get {
+            return descriptionLabel.text
+        }
+        set {
+            descriptionLabel.text = newValue
+            if newValue != nil && newValue?.isEmpty == false {
+                self.nameBottomContraint.deactivate()
+                self.descriptionBottomContraint.activate()
+            } else {
+                self.descriptionBottomContraint.deactivate()
+                self.nameBottomContraint.activate()
+            }
+        }
+    }
+    
     func setVideoView(view: UIView) {
         videoView = view
         constrainedView.addSubview(videoView)
@@ -177,4 +196,10 @@ class ChannelView : UIView {
         }
     }
     
+}
+
+extension Reactive where Base: ChannelView {
+    var descriptionText: BindingTarget<String?> {
+        return makeBindingTarget { $0.descriptionText = $1 }
+    }
 }

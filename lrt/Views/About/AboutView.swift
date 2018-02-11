@@ -11,7 +11,7 @@ import UIKit
 
 class AboutView : UIView {
     
-    var logoView: UIImageView!
+    var logoButton: UIButton!
     var infoLabel: UILabel!
     
     override init(frame: CGRect) {
@@ -27,8 +27,8 @@ class AboutView : UIView {
     func setup() {
         backgroundColor = UIColor(hex: 0x202535)
         
-        logoView = UIImageView()
-        logoView.image = R.image.delanoirLogo()
+        logoButton = UIButton()
+        logoButton.setImage(R.image.delanoirLogo(), for: .normal)
         
         infoLabel = UILabel()
         infoLabel.textColor = UIColor.white
@@ -36,11 +36,11 @@ class AboutView : UIView {
         infoLabel.alpha = 0
         
         addSubviews(
-            logoView,
+            logoButton,
             infoLabel
         )
         
-        logoView.snp.makeConstraints { make in
+        logoButton.snp.makeConstraints { make in
             make.center.equalTo(self)
         }
         
