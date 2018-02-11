@@ -50,7 +50,7 @@ class ChannelViewController : ViewController<ChannelView>, ModelBased, AVPlayerV
         controlledView.loadingIndicator.reactive.isAnimating <~ updateShows.isExecuting
         controlledView.timeLabel.reactive.text <~ viewModel.showName.map { $0 != nil ? "NOW" : nil }
         controlledView.nameLabel.reactive.text <~ viewModel.showName
-        controlledView.descriptionLabel.reactive.text <~ viewModel.showDescription
+        controlledView.reactive.descriptionText <~ viewModel.showDescription
         controlledView.comingUpLabel.reactive.isHidden <~ viewModel.showComingUpLabel.negate()
         controlledView.allShowsButton.reactive.isHidden <~ viewModel.showAllShowsButton.negate()
         

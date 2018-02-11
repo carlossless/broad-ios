@@ -7,5 +7,15 @@
 //
 
 import Foundation
+import UIKit
+import ReactiveSwift
+import Result
 
-struct AboutViewModel : ViewModel { }
+struct AboutViewModel : ViewModel {
+    
+    var openLogoLink = Action<(), (), NoError> { _ in
+        UIApplication.shared.open(URL(string: "https://delanoir.com")!, options: [:], completionHandler: nil)
+        return SignalProducer.init(value: ())
+    }
+    
+}

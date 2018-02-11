@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ReactiveCocoa
 
 class AboutViewController : ViewController<AboutView>, ModelBased {
     
@@ -18,6 +19,11 @@ class AboutViewController : ViewController<AboutView>, ModelBased {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bind()
+    }
+    
+    func bind() {
+        controlledView.logoButton.reactive.pressed = CocoaAction(viewModel.openLogoLink)
     }
     
     override func viewDidAppear(_ animated: Bool) {
