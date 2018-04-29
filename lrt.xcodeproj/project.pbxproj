@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D5F0EB992055654E00C7C23F /* Keys.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F0EB982055654E00C7C23F /* Keys.m */; };
 		F90787261F9D0C2300E0870B /* UIStackView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90787251F9D0C2300E0870B /* UIStackView+Convenience.swift */; };
 		F908B3971F7C57DD00819655 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908B3961F7C57DD00819655 /* AboutViewController.swift */; };
 		F908B3991F7C57FF00819655 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908B3981F7C57FF00819655 /* AboutView.swift */; };
@@ -149,6 +150,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D5F0EB972055654E00C7C23F /* Keys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Keys.h; sourceTree = "<group>"; };
+		D5F0EB982055654E00C7C23F /* Keys.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Keys.m; sourceTree = "<group>"; };
 		F90787251F9D0C2300E0870B /* UIStackView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Convenience.swift"; sourceTree = "<group>"; };
 		F908B3961F7C57DD00819655 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		F908B3981F7C57FF00819655 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -806,6 +809,8 @@
 			children = (
 				F98BA6D61E6E0ECA001A33A8 /* AppDelegate.swift */,
 				F9B5FE381ED5BA3F00545320 /* lrt-Bridging-Header.h */,
+				D5F0EB972055654E00C7C23F /* Keys.h */,
+				D5F0EB982055654E00C7C23F /* Keys.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -1127,6 +1132,7 @@
 				F9F3F9EE1FF1077600DB7817 /* ProgrammeShowCellModel.swift in Sources */,
 				F9A1CBB11EDE0CC100AA59FA /* SplashView.swift in Sources */,
 				F9A6F72D1FB3654E0028D868 /* ProgrammeViewController.swift in Sources */,
+				D5F0EB992055654E00C7C23F /* Keys.m in Sources */,
 				F936B9621EE8286500B6C84D /* ThumbnailManager.swift in Sources */,
 				F9810BB61F97C22100136F0F /* GraphAPIClient.swift in Sources */,
 				F98E057C2013E84C00EBCACE /* ProgrammeHeaderView.swift in Sources */,
@@ -1252,6 +1258,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"LRT_GRAPH_API_KEY=$(LRT_GRAPH_API_KEY)",
+					"LRT_HOCKEY_APP_KEY=$(LRT_HOCKEY_APP_KEY)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/include",
 					/usr/include/libxml2,
@@ -1262,6 +1273,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/lib",
 				);
+				LRT_GRAPH_API_KEY = anonymous;
+				LRT_HOCKEY_APP_KEY = 58d1c2e2eaf14e97b01973edade2d378;
 				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.lrt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7b45502b-19a8-439c-be90-187d3a957747";
@@ -1333,6 +1346,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"LRT_GRAPH_API_KEY=$(LRT_GRAPH_API_KEY)",
+					"LRT_HOCKEY_APP_KEY=$(LRT_HOCKEY_APP_KEY)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/include",
 					/usr/include/libxml2,
@@ -1343,6 +1361,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/lib",
 				);
+				LRT_GRAPH_API_KEY = anonymous;
+				LRT_HOCKEY_APP_KEY = 58d1c2e2eaf14e97b01973edade2d378;
 				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.lrt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ede213ab-610d-4d8a-8ec6-4a4c2d385372";
@@ -1578,6 +1598,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"LRT_GRAPH_API_KEY=$(LRT_GRAPH_API_KEY)",
+					"LRT_HOCKEY_APP_KEY=$(LRT_HOCKEY_APP_KEY)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/include",
 					/usr/include/libxml2,
@@ -1588,6 +1613,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/lib",
 				);
+				LRT_GRAPH_API_KEY = anonymous;
+				LRT_HOCKEY_APP_KEY = 58d1c2e2eaf14e97b01973edade2d378;
 				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.lrt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "72bf6f18-2876-465c-a55e-e9c92e7ab1a7";
@@ -1611,6 +1638,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"LRT_GRAPH_API_KEY=$(LRT_GRAPH_API_KEY)",
+					"LRT_HOCKEY_APP_KEY=$(LRT_HOCKEY_APP_KEY)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/include",
 					/usr/include/libxml2,
@@ -1621,6 +1653,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/lib",
 				);
+				LRT_GRAPH_API_KEY = anonymous;
+				LRT_HOCKEY_APP_KEY = 58d1c2e2eaf14e97b01973edade2d378;
 				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.lrt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "72bf6f18-2876-465c-a55e-e9c92e7ab1a7";

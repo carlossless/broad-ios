@@ -73,8 +73,6 @@ class ChannelViewModel: ViewModel {
         }
     }
     
-    
-    
     static func selectLatestShows(_ channelId: String, _ showCount: Int, now: Date, response: GraphChannelResponse) -> [GraphShow] {
         guard let channel = response.channels.first(where: { $0.name == channelId })
             else { return [] }

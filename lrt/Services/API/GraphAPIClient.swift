@@ -36,7 +36,10 @@ class GraphAPIClient {
         return formatter
     }()
     
-    init(baseUrl: URL = URL(string: "https://lrt.carlossless.io")!, httpClient: HTTPClient = HTTPClient()) {
+    init(
+        baseUrl: URL = URL(string: "https://lrt.carlossless.io")!,
+        httpClient: HTTPClient = HTTPClient(headers:["Authorization": LRTGraphAPIKey])
+    ) {
         apiBaseUrl = baseUrl
         client = httpClient
     }
