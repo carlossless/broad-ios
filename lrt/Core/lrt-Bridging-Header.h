@@ -14,4 +14,5 @@
 #import <libswscale/swscale.h>
 #pragma clang diagnostic pop
 
+#import "Keys.h"
 #import "LRTStreamImageGrabber.h"

@@ -13,7 +13,11 @@ import Result
 
 class HTTPClient {
     
-    init () { }
+    let httpHeaders: [String: String]
+    
+    init (headers: [String: String] = [:]) {
+        self.httpHeaders = headers
+    }
     
     // MARK: - Private Interface
     
@@ -21,6 +25,9 @@ class HTTPClient {
         var request = URLRequest(url: url)
         request.httpMethod = method
         request.httpBody = body
+        httpHeaders.forEach { key, value in
+            request.addValue(value, forHTTPHeaderField: key)
+        }
         if let cachePolicy = cachePolicy {
             request.cachePolicy = cachePolicy
         }

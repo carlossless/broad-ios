@@ -10,6 +10,7 @@ import Foundation
 import Argo
 
 extension URL: Argo.Decodable {
+    
     public static func decode(_ json: JSON) -> Decoded<URL> {
         switch json {
         case .string(let urlString):
@@ -17,4 +18,5 @@ extension URL: Argo.Decodable {
         default: return .typeMismatch(expected: "URL", actual: json)
         }
     }
+    
 }

@@ -9,6 +9,7 @@
 import Foundation
 
 extension Sequence {
+    
     func group<GroupingType: Hashable>(by key: (Iterator.Element) -> GroupingType) -> [[Iterator.Element]] {
         var groups: [GroupingType: [Iterator.Element]] = [:]
         var groupsOrder: [GroupingType] = []
@@ -21,4 +22,5 @@ extension Sequence {
         }
         return groupsOrder.map { groups[$0]! }
     }
+    
 }
