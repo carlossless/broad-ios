@@ -8,10 +8,10 @@
 
 import Foundation
 
-extension Collection where Index == Int, IndexDistance == Int {
+extension Collection where Index == Int {
     
     func random() -> Iterator.Element {
-        return self[IndexDistance(arc4random_uniform(UInt32(self.count)))]
+        return self[Int(arc4random_uniform(UInt32(self.count)))]
     }
     
 }
