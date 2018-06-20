@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F98BA6D21E6E0ECA001A33A8"
-               BuildableName = "lrt.app"
-               BlueprintName = "lrt"
-               ReferencedContainer = "container:lrt.xcodeproj">
+               BuildableName = "Broad.app"
+               BlueprintName = "Broad"
+               ReferencedContainer = "container:Broad.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F9810BCA1F97C54300136F0F"
-               BuildableName = "lrtTests.xctest"
-               BlueprintName = "lrtTests"
-               ReferencedContainer = "container:lrt.xcodeproj">
+               BuildableName = "BroadTests.xctest"
+               BlueprintName = "BroadTests"
+               ReferencedContainer = "container:Broad.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,9 +44,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F98BA6D21E6E0ECA001A33A8"
-            BuildableName = "lrt.app"
-            BlueprintName = "lrt"
-            ReferencedContainer = "container:lrt.xcodeproj">
+            BuildableName = "Broad.app"
+            BlueprintName = "Broad"
+            ReferencedContainer = "container:Broad.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -67,9 +67,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F98BA6D21E6E0ECA001A33A8"
-            BuildableName = "lrt.app"
-            BlueprintName = "lrt"
-            ReferencedContainer = "container:lrt.xcodeproj">
+            BuildableName = "Broad.app"
+            BlueprintName = "Broad"
+            ReferencedContainer = "container:Broad.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -86,9 +86,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F98BA6D21E6E0ECA001A33A8"
-            BuildableName = "lrt.app"
-            BlueprintName = "lrt"
-            ReferencedContainer = "container:lrt.xcodeproj">
+            BuildableName = "Broad.app"
+            BlueprintName = "Broad"
+            ReferencedContainer = "container:Broad.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

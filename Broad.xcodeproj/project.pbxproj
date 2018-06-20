@@ -281,12 +281,12 @@
 		F957AFE21EEB13E000C9A981 /* Collection+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Convenience.swift"; sourceTree = "<group>"; };
 		F97D80FB1F656E6B005AA5A0 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		F9810BB51F97C22100136F0F /* GraphAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphAPIClient.swift; sourceTree = "<group>"; };
-		F9810BCB1F97C54300136F0F /* lrtTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lrtTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9810BCB1F97C54300136F0F /* BroadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BroadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9810BCF1F97C54300136F0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9810BD71F97C56200136F0F /* GraphAPIClientSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphAPIClientSpec.swift; sourceTree = "<group>"; };
 		F98785271FF5903100DB5E82 /* ProgrammeSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeSectionModel.swift; sourceTree = "<group>"; };
 		F98785291FF6730D00DB5E82 /* Sequence+Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Group.swift"; sourceTree = "<group>"; };
-		F98BA6D31E6E0ECA001A33A8 /* lrt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lrt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F98BA6D31E6E0ECA001A33A8 /* Broad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Broad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98BA6D61E6E0ECA001A33A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F98BA6D81E6E0ECA001A33A8 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		F98BA6DD1E6E0ECA001A33A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -643,13 +643,13 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		F9810BCC1F97C54300136F0F /* lrtTests */ = {
+		F9810BCC1F97C54300136F0F /* BroadTests */ = {
 			isa = PBXGroup;
 			children = (
 				F9810BD71F97C56200136F0F /* GraphAPIClientSpec.swift */,
 				F9810BCF1F97C54300136F0F /* Info.plist */,
 			);
-			path = lrtTests;
+			path = BroadTests;
 			sourceTree = "<group>";
 		};
 		F9810BEC1FA7AA2B00A9E230 /* Selection */ = {
@@ -707,21 +707,21 @@
 			children = (
 				F98BA6E81E6E1344001A33A8 /* Frameworks */,
 				F98BA6D41E6E0ECA001A33A8 /* Products */,
-				F98BA6D51E6E0ECA001A33A8 /* lrt */,
-				F9810BCC1F97C54300136F0F /* lrtTests */,
+				F98BA6D51E6E0ECA001A33A8 /* Broad */,
+				F9810BCC1F97C54300136F0F /* BroadTests */,
 			);
 			sourceTree = "<group>";
 		};
 		F98BA6D41E6E0ECA001A33A8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F98BA6D31E6E0ECA001A33A8 /* lrt.app */,
-				F9810BCB1F97C54300136F0F /* lrtTests.xctest */,
+				F98BA6D31E6E0ECA001A33A8 /* Broad.app */,
+				F9810BCB1F97C54300136F0F /* BroadTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F98BA6D51E6E0ECA001A33A8 /* lrt */ = {
+		F98BA6D51E6E0ECA001A33A8 /* Broad */ = {
 			isa = PBXGroup;
 			children = (
 				F9E8052E1EDEC1860027F1A4 /* Base */,
@@ -734,7 +734,7 @@
 				F9B9CBE61E70446E00168940 /* Views */,
 				F98BA6E21E6E0ECA001A33A8 /* Info.plist */,
 			);
-			path = lrt;
+			path = Broad;
 			sourceTree = "<group>";
 		};
 		F98BA6E81E6E1344001A33A8 /* Frameworks */ = {
@@ -938,9 +938,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F9810BCA1F97C54300136F0F /* lrtTests */ = {
+		F9810BCA1F97C54300136F0F /* BroadTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F9810BD21F97C54300136F0F /* Build configuration list for PBXNativeTarget "lrtTests" */;
+			buildConfigurationList = F9810BD21F97C54300136F0F /* Build configuration list for PBXNativeTarget "BroadTests" */;
 			buildPhases = (
 				F9810BC71F97C54300136F0F /* Sources */,
 				F9810BC81F97C54300136F0F /* Frameworks */,
@@ -952,14 +952,14 @@
 			dependencies = (
 				F9810BD11F97C54300136F0F /* PBXTargetDependency */,
 			);
-			name = lrtTests;
+			name = BroadTests;
 			productName = lrtTests;
-			productReference = F9810BCB1F97C54300136F0F /* lrtTests.xctest */;
+			productReference = F9810BCB1F97C54300136F0F /* BroadTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F98BA6D21E6E0ECA001A33A8 /* lrt */ = {
+		F98BA6D21E6E0ECA001A33A8 /* Broad */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F98BA6E51E6E0ECA001A33A8 /* Build configuration list for PBXNativeTarget "lrt" */;
+			buildConfigurationList = F98BA6E51E6E0ECA001A33A8 /* Build configuration list for PBXNativeTarget "Broad" */;
 			buildPhases = (
 				F9E18EF01E6E26EC00F1A607 /* SwiftLint */,
 				F9E18EEF1E6E26E100F1A607 /* R.swift */,
@@ -973,9 +973,9 @@
 			);
 			dependencies = (
 			);
-			name = lrt;
+			name = Broad;
 			productName = lrt;
-			productReference = F98BA6D31E6E0ECA001A33A8 /* lrt.app */;
+			productReference = F98BA6D31E6E0ECA001A33A8 /* Broad.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1001,7 +1001,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F98BA6CE1E6E0ECA001A33A8 /* Build configuration list for PBXProject "lrt" */;
+			buildConfigurationList = F98BA6CE1E6E0ECA001A33A8 /* Build configuration list for PBXProject "Broad" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1014,8 +1014,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F98BA6D21E6E0ECA001A33A8 /* lrt */,
-				F9810BCA1F97C54300136F0F /* lrtTests */,
+				F98BA6D21E6E0ECA001A33A8 /* Broad */,
+				F9810BCA1F97C54300136F0F /* BroadTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1088,7 +1088,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which rswift >/dev/null; then\n    rswift generate \"$SRCROOT/lrt/Resources/\"\nelse\n    echo \"warning: R.swift not installed, download from https://github.com/mac-cain13/R.swift\"\nfi";
+			shellScript = "if which rswift >/dev/null; then\n    rswift generate \"$SRCROOT/Broad/Resources/\"\nelse\n    echo \"warning: R.swift not installed, download from https://github.com/mac-cain13/R.swift\"\nfi";
 		};
 		F9E18EF01E6E26EC00F1A607 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1179,7 +1179,7 @@
 /* Begin PBXTargetDependency section */
 		F9810BD11F97C54300136F0F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F98BA6D21E6E0ECA001A33A8 /* lrt */;
+			target = F98BA6D21E6E0ECA001A33A8 /* Broad */;
 			targetProxy = F9810BD01F97C54300136F0F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1252,6 +1252,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BROAD_GRAPH_API_KEY = anonymous;
+				BROAD_HOCKEY_APP_KEY = 58d1c2e2eaf14e97b01973edade2d378;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
@@ -1262,26 +1264,24 @@
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
-					"LRT_GRAPH_API_KEY=$(LRT_GRAPH_API_KEY)",
-					"LRT_HOCKEY_APP_KEY=$(LRT_HOCKEY_APP_KEY)",
+					"BROAD_GRAPH_API_KEY=$(BROAD_GRAPH_API_KEY)",
+					"BROAD_HOCKEY_APP_KEY=$(BROAD_HOCKEY_APP_KEY)",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/include",
 					/usr/include/libxml2,
 				);
-				INFOPLIST_FILE = lrt/Info.plist;
+				INFOPLIST_FILE = Broad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/lib",
 				);
-				LRT_GRAPH_API_KEY = anonymous;
-				LRT_HOCKEY_APP_KEY = 58d1c2e2eaf14e97b01973edade2d378;
-				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.lrt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.broad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7b45502b-19a8-439c-be90-187d3a957747";
-				PROVISIONING_PROFILE_SPECIFIER = "lrt Ad Hoc";
-				SWIFT_OBJC_BRIDGING_HEADER = "lrt/Core/lrt-Bridging-Header.h";
+				PROVISIONING_PROFILE = "f4d7515e-23b1-406d-a00a-9c8972f81d06";
+				PROVISIONING_PROFILE_SPECIFIER = "Broad Ad Hoc";
+				SWIFT_OBJC_BRIDGING_HEADER = "Broad/Core/lrt-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};
@@ -1342,6 +1342,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BROAD_GRAPH_API_KEY = anonymous;
+				BROAD_HOCKEY_APP_KEY = 58d1c2e2eaf14e97b01973edade2d378;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
@@ -1352,26 +1354,24 @@
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
-					"LRT_GRAPH_API_KEY=$(LRT_GRAPH_API_KEY)",
-					"LRT_HOCKEY_APP_KEY=$(LRT_HOCKEY_APP_KEY)",
+					"BROAD_GRAPH_API_KEY=$(BROAD_GRAPH_API_KEY)",
+					"BROAD_HOCKEY_APP_KEY=$(BROAD_HOCKEY_APP_KEY)",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/include",
 					/usr/include/libxml2,
 				);
-				INFOPLIST_FILE = lrt/Info.plist;
+				INFOPLIST_FILE = Broad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/lib",
 				);
-				LRT_GRAPH_API_KEY = anonymous;
-				LRT_HOCKEY_APP_KEY = 58d1c2e2eaf14e97b01973edade2d378;
-				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.lrt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.broad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ede213ab-610d-4d8a-8ec6-4a4c2d385372";
-				PROVISIONING_PROFILE_SPECIFIER = "lrt App Store";
-				SWIFT_OBJC_BRIDGING_HEADER = "lrt/Core/lrt-Bridging-Header.h";
+				PROVISIONING_PROFILE = "235c1da9-b1a6-4e14-8e17-ef687a0d6f2e";
+				PROVISIONING_PROFILE_SPECIFIER = "Broad App Store";
+				SWIFT_OBJC_BRIDGING_HEADER = "Broad/Core/lrt-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};
@@ -1392,15 +1392,15 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/include";
-				INFOPLIST_FILE = lrtTests/Info.plist;
+				INFOPLIST_FILE = BroadTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.lrtTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.BroadTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lrt.app/lrt";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Broad.app/Broad";
 			};
 			name = Debug;
 		};
@@ -1419,15 +1419,15 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/include";
-				INFOPLIST_FILE = lrtTests/Info.plist;
+				INFOPLIST_FILE = BroadTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.lrtTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.BroadTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lrt.app/lrt";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Broad.app/Broad";
 			};
 			name = Release;
 		};
@@ -1446,15 +1446,15 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/include";
-				INFOPLIST_FILE = lrtTests/Info.plist;
+				INFOPLIST_FILE = BroadTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.lrtTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.BroadTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lrt.app/lrt";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Broad.app/Broad";
 			};
 			name = AppStore;
 		};
@@ -1473,15 +1473,15 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/include";
-				INFOPLIST_FILE = lrtTests/Info.plist;
+				INFOPLIST_FILE = BroadTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.lrtTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.BroadTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lrt.app/lrt";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Broad.app/Broad";
 			};
 			name = AdHoc;
 		};
@@ -1598,6 +1598,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BROAD_GRAPH_API_KEY = anonymous;
+				BROAD_HOCKEY_APP_KEY = 58d1c2e2eaf14e97b01973edade2d378;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -1608,26 +1610,24 @@
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
-					"LRT_GRAPH_API_KEY=$(LRT_GRAPH_API_KEY)",
-					"LRT_HOCKEY_APP_KEY=$(LRT_HOCKEY_APP_KEY)",
+					"BROAD_GRAPH_API_KEY=$(BROAD_GRAPH_API_KEY)",
+					"BROAD_HOCKEY_APP_KEY=$(BROAD_HOCKEY_APP_KEY)",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/include",
 					/usr/include/libxml2,
 				);
-				INFOPLIST_FILE = lrt/Info.plist;
+				INFOPLIST_FILE = Broad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/lib",
 				);
-				LRT_GRAPH_API_KEY = anonymous;
-				LRT_HOCKEY_APP_KEY = 58d1c2e2eaf14e97b01973edade2d378;
-				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.lrt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.broad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "72bf6f18-2876-465c-a55e-e9c92e7ab1a7";
-				PROVISIONING_PROFILE_SPECIFIER = "lrt Dev";
-				SWIFT_OBJC_BRIDGING_HEADER = "lrt/Core/lrt-Bridging-Header.h";
+				PROVISIONING_PROFILE = "394d94c1-f7a2-4037-9417-fbbbce40607b";
+				PROVISIONING_PROFILE_SPECIFIER = "Broad Dev";
+				SWIFT_OBJC_BRIDGING_HEADER = "Broad/Core/lrt-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -1638,6 +1638,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BROAD_GRAPH_API_KEY = anonymous;
+				BROAD_HOCKEY_APP_KEY = 58d1c2e2eaf14e97b01973edade2d378;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -1648,26 +1650,24 @@
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
-					"LRT_GRAPH_API_KEY=$(LRT_GRAPH_API_KEY)",
-					"LRT_HOCKEY_APP_KEY=$(LRT_HOCKEY_APP_KEY)",
+					"BROAD_GRAPH_API_KEY=$(BROAD_GRAPH_API_KEY)",
+					"BROAD_HOCKEY_APP_KEY=$(BROAD_HOCKEY_APP_KEY)",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/include",
 					/usr/include/libxml2,
 				);
-				INFOPLIST_FILE = lrt/Info.plist;
+				INFOPLIST_FILE = Broad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/lib",
 				);
-				LRT_GRAPH_API_KEY = anonymous;
-				LRT_HOCKEY_APP_KEY = 58d1c2e2eaf14e97b01973edade2d378;
-				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.lrt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.broad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "72bf6f18-2876-465c-a55e-e9c92e7ab1a7";
-				PROVISIONING_PROFILE_SPECIFIER = "lrt Dev";
-				SWIFT_OBJC_BRIDGING_HEADER = "lrt/Core/lrt-Bridging-Header.h";
+				PROVISIONING_PROFILE = "394d94c1-f7a2-4037-9417-fbbbce40607b";
+				PROVISIONING_PROFILE_SPECIFIER = "Broad Dev";
+				SWIFT_OBJC_BRIDGING_HEADER = "Broad/Core/lrt-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};
@@ -1676,7 +1676,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F9810BD21F97C54300136F0F /* Build configuration list for PBXNativeTarget "lrtTests" */ = {
+		F9810BD21F97C54300136F0F /* Build configuration list for PBXNativeTarget "BroadTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F9810BD31F97C54300136F0F /* Debug */,
@@ -1687,7 +1687,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F98BA6CE1E6E0ECA001A33A8 /* Build configuration list for PBXProject "lrt" */ = {
+		F98BA6CE1E6E0ECA001A33A8 /* Build configuration list for PBXProject "Broad" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F98BA6E31E6E0ECA001A33A8 /* Debug */,
@@ -1698,7 +1698,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F98BA6E51E6E0ECA001A33A8 /* Build configuration list for PBXNativeTarget "lrt" */ = {
+		F98BA6E51E6E0ECA001A33A8 /* Build configuration list for PBXNativeTarget "Broad" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F98BA6E61E6E0ECA001A33A8 /* Debug */,

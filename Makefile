@@ -1,13 +1,13 @@
 BINDIR = bin
 
-TARGET ?= lrt
+TARGET ?= Broad
 SCHEME ?= $(TARGET)
 CONFIGURATION ?= AdHoc
 DEVELOPMENT_TEAM = DXEF6FH82Q
 EXPORT_OPTIONS_PATH = Config/$(CONFIGURATION)ExportOptions.plist
 
 COMMIT_SHA1 ?= $(shell git rev-parse HEAD)
-REPOSITORY_URL ?= https://github.com/carlossless/lrt
+REPOSITORY_URL ?= https://github.com/carlossless/broad-ios
 DISTRIBUTION_NOTES_FILE ?= distribution_notes.txt
 
 PROJ_PATH = $(shell pwd)
