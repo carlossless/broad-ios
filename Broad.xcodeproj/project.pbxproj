@@ -407,6 +407,7 @@
 			children = (
 				F957AFE21EEB13E000C9A981 /* Collection+Convenience.swift */,
 				F9F3F7DB1F9B7ACE00829B70 /* Date+Decodable.swift */,
+				F98785291FF6730D00DB5E82 /* Sequence+Group.swift */,
 				F9F6C31C1F82FBC200A57890 /* SignalProducer+Convenience.swift */,
 				F90A70051EDC9D72007A56D1 /* UIColor+Hex.swift */,
 				F926181E1F9CF035008C2B7E /* UIImageView+Reactive.swift */,
@@ -415,7 +416,6 @@
 				F9C3204D1EF1AC270053A92C /* UIViewController+TopMost.swift */,
 				F9C3204C1EF1AC270053A92C /* UIWindow+TopMost.swift */,
 				F9C320501EF1ACE80053A92C /* URL+Decodable.swift */,
-				F98785291FF6730D00DB5E82 /* Sequence+Group.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -705,10 +705,10 @@
 		F98BA6CA1E6E0ECA001A33A8 = {
 			isa = PBXGroup;
 			children = (
-				F98BA6E81E6E1344001A33A8 /* Frameworks */,
-				F98BA6D41E6E0ECA001A33A8 /* Products */,
 				F98BA6D51E6E0ECA001A33A8 /* Broad */,
 				F9810BCC1F97C54300136F0F /* BroadTests */,
+				F98BA6E81E6E1344001A33A8 /* Frameworks */,
+				F98BA6D41E6E0ECA001A33A8 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -787,9 +787,9 @@
 		F9A6F72A1FB3652A0028D868 /* Programme */ = {
 			isa = PBXGroup;
 			children = (
-				F9A6F72C1FB3654E0028D868 /* ProgrammeViewController.swift */,
-				F9F3F9EF1FF112EF00DB7817 /* ProgrammeShowCell.swift */,
 				F98E057B2013E84C00EBCACE /* ProgrammeHeaderView.swift */,
+				F9F3F9EF1FF112EF00DB7817 /* ProgrammeShowCell.swift */,
+				F9A6F72C1FB3654E0028D868 /* ProgrammeViewController.swift */,
 			);
 			path = Programme;
 			sourceTree = "<group>";
@@ -797,9 +797,9 @@
 		F9A6F72B1FB365370028D868 /* Programme */ = {
 			isa = PBXGroup;
 			children = (
-				F9A6F7301FB365CD0028D868 /* ProgrammeViewModel.swift */,
-				F9F3F9ED1FF1077600DB7817 /* ProgrammeShowCellModel.swift */,
 				F98785271FF5903100DB5E82 /* ProgrammeSectionModel.swift */,
+				F9F3F9ED1FF1077600DB7817 /* ProgrammeShowCellModel.swift */,
+				F9A6F7301FB365CD0028D868 /* ProgrammeViewModel.swift */,
 			);
 			path = Programme;
 			sourceTree = "<group>";
@@ -808,9 +808,9 @@
 			isa = PBXGroup;
 			children = (
 				F98BA6D61E6E0ECA001A33A8 /* AppDelegate.swift */,
-				F9B5FE381ED5BA3F00545320 /* lrt-Bridging-Header.h */,
 				D5F0EB972055654E00C7C23F /* Keys.h */,
 				D5F0EB982055654E00C7C23F /* Keys.m */,
+				F9B5FE381ED5BA3F00545320 /* lrt-Bridging-Header.h */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -838,10 +838,10 @@
 		F9B9CBE61E70446E00168940 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F9A6F72A1FB3652A0028D868 /* Programme */,
 				F9F3F7E41F9CC81900829B70 /* About */,
 				F9F3F7E31F9CC80B00829B70 /* Channel */,
 				F9810BF11FA7AA7200A9E230 /* Player */,
+				F9A6F72A1FB3652A0028D868 /* Programme */,
 				F9F3F7E61F9CC84B00829B70 /* Selection */,
 				F9F3F7E51F9CC82400829B70 /* Splash */,
 			);
@@ -851,10 +851,10 @@
 		F9B9CBE71E70448700168940 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				F9A6F72B1FB365370028D868 /* Programme */,
 				F9810BF01FA7AA5A00A9E230 /* About */,
 				F9810BEF1FA7AA5600A9E230 /* Channel */,
 				F9810BEE1FA7AA4400A9E230 /* Player */,
+				F9A6F72B1FB365370028D868 /* Programme */,
 				F9810BEC1FA7AA2B00A9E230 /* Selection */,
 				F9810BED1FA7AA3800A9E230 /* Splash */,
 			);
