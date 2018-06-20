@@ -315,7 +315,7 @@
 		F9A2C5371F7AF68300D4CA01 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		F9A6F72C1FB3654E0028D868 /* ProgrammeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeViewController.swift; sourceTree = "<group>"; };
 		F9A6F7301FB365CD0028D868 /* ProgrammeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeViewModel.swift; sourceTree = "<group>"; };
-		F9B5FE381ED5BA3F00545320 /* lrt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lrt-Bridging-Header.h"; sourceTree = "<group>"; };
+		F9B5FE381ED5BA3F00545320 /* Broad-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Broad-Bridging-Header.h"; sourceTree = "<group>"; };
 		F9B5FE3E1ED5BED200545320 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F9B5FE401ED5BEDA00545320 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		F9B5FE421ED5BEE600545320 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
@@ -810,7 +810,7 @@
 				F98BA6D61E6E0ECA001A33A8 /* AppDelegate.swift */,
 				D5F0EB972055654E00C7C23F /* Keys.h */,
 				D5F0EB982055654E00C7C23F /* Keys.m */,
-				F9B5FE381ED5BA3F00545320 /* lrt-Bridging-Header.h */,
+				F9B5FE381ED5BA3F00545320 /* Broad-Bridging-Header.h */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -1281,7 +1281,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "f4d7515e-23b1-406d-a00a-9c8972f81d06";
 				PROVISIONING_PROFILE_SPECIFIER = "Broad Ad Hoc";
-				SWIFT_OBJC_BRIDGING_HEADER = "Broad/Core/lrt-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Broad/Core/Broad-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};
@@ -1371,7 +1371,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "235c1da9-b1a6-4e14-8e17-ef687a0d6f2e";
 				PROVISIONING_PROFILE_SPECIFIER = "Broad App Store";
-				SWIFT_OBJC_BRIDGING_HEADER = "Broad/Core/lrt-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Broad/Core/Broad-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};
@@ -1627,7 +1627,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "394d94c1-f7a2-4037-9417-fbbbce40607b";
 				PROVISIONING_PROFILE_SPECIFIER = "Broad Dev";
-				SWIFT_OBJC_BRIDGING_HEADER = "Broad/Core/lrt-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Broad/Core/Broad-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -1667,7 +1667,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "394d94c1-f7a2-4037-9417-fbbbce40607b";
 				PROVISIONING_PROFILE_SPECIFIER = "Broad Dev";
-				SWIFT_OBJC_BRIDGING_HEADER = "Broad/Core/lrt-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Broad/Core/Broad-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};
