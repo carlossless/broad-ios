@@ -12,30 +12,41 @@ env:
     - CONFIGURATION=AdHoc
 
 cache:
+  bundler: true
   directories:
-    # - $HOME/Library/Caches/Homebrew
     - Carthage
     - FFmpeg
 
 install:
   - brew update && brew bundle
-  - carthage bootstrap --platform ios
-  - pushd FFmpeg && ./build-ffmpeg.sh && popd
+  - bundle install
+  - carthage bootstrap --platform ios --cache-builds
 
 before_script:
-  - rvm system
   - xcrun agvtool new-version -all "$TRAVIS_BUILD_NUMBER"
-  - ./Scripts/add-key.sh
 
 script:
-  - travis_wait 40 make
-
-after_script:
-  - ./Scripts/remove-key.sh
+  - bundle exec fastlane test
 
 after_success:
-  - printf "CI build $TRAVIS_BUILD_NUMBER\n\nChanges:\n\n$COMMIT_TEXT" > $DISTRIBUTION_NOTES_FILE
-  - if [[ "$TRAVIS_BRANCH" == "master" ]]; then make distribute; fi
+  - |
+      # setup ssh_key for fastlane match
+      declare -r SSH_FILE="$(mktemp -u $HOME/.ssh/XXXXX)"
+      openssl aes-256-cbc \
+        -K $encrypted_31ae002cee1e_key \
+        -iv $encrypted_31ae002cee1e_iv \
+        -in ".travis/github_deploy_key.enc" \
+        -out "$SSH_FILE" -d
+      chmod 600 "$SSH_FILE" \
+        && printf "%s\n" \
+             "Host github.com" \
+             "  StrictHostKeyChecking no" \
+             "  IdentityFile $SSH_FILE" \
+             "  LogLevel ERROR" >> ~/.ssh/config
+  - |
+    if [[ "$TRAVIS_BRANCH" == "master" ]]; then
+      bundle exec fastlane ci_beta
+    fi
 
 notifications:
   slack: delanoir:VvO4iLPEMOWzmcd9a6HRO3am

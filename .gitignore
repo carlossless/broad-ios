@@ -5,3 +5,8 @@ DerivedData/
 Bin/
 
 Carthage/
+fastlane/test_output
+fastlane/report.xml
+
+*.ipa
+*.dSYM.zip

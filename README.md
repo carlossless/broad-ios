@@ -1,4 +1,4 @@
-# lrt [![Build Status](https://travis-ci.com/carlossless/lrt.svg?token=kh8gW3SR4vQpzj5v5SGx&branch=master)](https://travis-ci.com/carlossless/lrt)
+# Broad iOS [![Build Status](https://travis-ci.org/carlossless/broad-ios.svg?branch=master)](https://travis-ci.org/carlossless/broad-ios)
 
 Stream Live Broadcasts from [LRT](http://lrt.lt)
 
@@ -6,14 +6,14 @@ Stream Live Broadcasts from [LRT](http://lrt.lt)
 
 ```
 brew bundle
+bundler install
 carthage bootstrap --platform ios
-pushd FFmpeg && ./build-ffmpeg.sh && popd
 ```
 
 ## Building the IPA
 
 ```
-make
+fastlane build
 ```
 
 ## License
