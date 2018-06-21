@@ -5,6 +5,7 @@ SCHEME ?= $(TARGET)
 CONFIGURATION ?= AdHoc
 DEVELOPMENT_TEAM = DXEF6FH82Q
 EXPORT_OPTIONS_PATH = Config/$(CONFIGURATION)ExportOptions.plist
+TEST_SIMULATOR = platform=iOS Simulator,name=iPhone 6s,OS=11.4
 
 COMMIT_SHA1 ?= $(shell git rev-parse HEAD)
 REPOSITORY_URL ?= https://github.com/carlossless/broad-ios
@@ -12,7 +13,7 @@ DISTRIBUTION_NOTES_FILE ?= distribution_notes.txt
 
 PROJ_PATH = $(shell pwd)
 
-.PHONY: all distribute clean synx
+.PHONY: all test distribute clean synx
 
 all: $(BINDIR)/$(TARGET).ipa $(BINDIR)/$(TARGET).app.dSYM.zip
 
@@ -26,6 +27,9 @@ $(BINDIR)/$(TARGET).app.dSYM.zip: $(BINDIR)/$(TARGET).xcarchive
 
 $(BINDIR)/$(TARGET).xcarchive:
 	xcodebuild -project $(TARGET).xcodeproj -scheme $(TARGET) -configuration '$(CONFIGURATION)' clean archive -archivePath $@ DEVELOPMENT_TEAM='$(DEVELOPMENT_TEAM)'
+
+test:
+	xcodebuild -project $(TARGET).xcodeproj -scheme $(TARGET) test -destination '$(TEST_SIMULATOR)'
 
 distribute: $(BINDIR)/$(TARGET).ipa $(BINDIR)/$(TARGET).app.dSYM.zip
 	curl \

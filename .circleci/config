@@ -1,0 +1,34 @@
+version: 2
+
+carthage_cache: &carthage_cache
+  keys:
+    - v1-carthage-{{ checksum "Carfile.resolved" }}
+    - v1-carthage-
+  paths: ~/project/node_modules
+
+
+jobs:
+  test:
+    macos:
+      xcode: "9"
+
+    steps:
+      - checkout
+      - restore_cache: *carthage_cache
+      - run:
+          name: Install Carthage Dependencies
+          command: carthage bootstrap --platform ios
+      - save_cache: *carthage_cache
+      - run:
+          name: Build FFmpeg
+          command: pushd FFmpeg && ./build-ffmpeg.sh && popd
+      - run:
+          name: Test App
+          command: make test
+
+
+workflows:
+  version: 2
+  build-test:
+    jobs:
+      - test
