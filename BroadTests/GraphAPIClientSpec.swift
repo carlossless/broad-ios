@@ -2,7 +2,7 @@ import Foundation
 import Nimble
 import Quick
 
-@testable import lrt
+@testable import Broad
 
 class GraphAPIClientSpec: QuickSpec {
     

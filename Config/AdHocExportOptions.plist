@@ -7,8 +7,8 @@
     <string>DXEF6FH82Q</string>
     <key>provisioningProfiles</key>
     <dict>
-        <key>com.delanoir.lrt</key>
-        <string>lrt Ad Hoc</string>
+        <key>com.delanoir.broad</key>
+        <string>Broad Ad Hoc</string>
     </dict>
 </dict>
 </plist>

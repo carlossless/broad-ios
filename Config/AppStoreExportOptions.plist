@@ -7,8 +7,8 @@
     <string>DXEF6FH82Q</string>
     <key>provisioningProfiles</key>
     <dict>
-        <key>com.delanoir.lrt</key>
-        <string>lrt App Store</string>
+        <key>com.delanoir.broad</key>
+        <string>Broad App Store</string>
     </dict>
 </dict>
 </plist>
