@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D517F21B210783E100E1188C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D517F21A210783E000E1188C /* Security.framework */; };
 		D5B4F95D20DFC55100F31593 /* FFmpeg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B4F95C20DFC55100F31593 /* FFmpeg.framework */; };
 		D5F0EB992055654E00C7C23F /* Keys.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F0EB982055654E00C7C23F /* Keys.m */; };
 		F90787261F9D0C2300E0870B /* UIStackView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90787251F9D0C2300E0870B /* UIStackView+Convenience.swift */; };
@@ -142,6 +143,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D517F21A210783E000E1188C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D5B4F95C20DFC55100F31593 /* FFmpeg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FFmpeg.framework; path = Carthage/Build/iOS/FFmpeg.framework; sourceTree = "<group>"; };
 		D5F0EB972055654E00C7C23F /* Keys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Keys.h; sourceTree = "<group>"; };
 		D5F0EB982055654E00C7C23F /* Keys.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Keys.m; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D517F21B210783E100E1188C /* Security.framework in Frameworks */,
 				F9F304611F1825D90097E961 /* libxml2.tbd in Frameworks */,
 				F93A31AA1ED5CBAE00F390C2 /* VideoToolbox.framework in Frameworks */,
 				F9F3B9D51FCDE6A500D5CC47 /* DateHelper.framework in Frameworks */,
@@ -403,6 +406,7 @@
 		F98BA6E81E6E1344001A33A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D517F21A210783E000E1188C /* Security.framework */,
 				F98BA6F61E6E1546001A33A8 /* DSYMs */,
 				D5B4F95C20DFC55100F31593 /* FFmpeg.framework */,
 				F9F3B9D41FCDE6A400D5CC47 /* DateHelper.framework */,
