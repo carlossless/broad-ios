@@ -1,4 +1,4 @@
-osx_image: xcode9
+osx_image: xcode9.4
 language: objective-c
 
 env:
@@ -15,7 +15,6 @@ cache:
   bundler: true
   directories:
     - Carthage
-    - FFmpeg
 
 install:
   - brew update && brew bundle
