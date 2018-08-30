@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  lrt
+//  Broad
 //
 //  Created by Karolis Stasaitis on 06/03/2017.
 //  Copyright © 2017 delanoir. All rights reserved.
@@ -11,6 +11,7 @@ import HockeySDK
 import AVFoundation
 import ReactiveSwift
 import CoreSpotlight
+import AppSpectorSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
         setupHockeyApp()
+        setupAppSpector()
         setupAudioSessionCategory()
         
         navigator = Navigator.shared
@@ -56,9 +58,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func setupHockeyApp() {
-        BITHockeyManager.shared().configure(withIdentifier: LRTHockeyAppKey)
+        BITHockeyManager.shared().configure(withIdentifier: Secrets.HockeyAppKey)
         BITHockeyManager.shared().start()
         BITHockeyManager.shared().authenticator.authenticateInstallation()
+    }
+    
+    private func setupAppSpector() {
+        AppSpector.run(
+            with: AppSpectorConfig(apiKey: Secrets.AppSpectorKey, monitorIDs: [Monitor.http, Monitor.logs])
+        )
     }
     
     private func registerViewControllers() {

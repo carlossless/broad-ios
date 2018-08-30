@@ -1,6 +1,6 @@
 //
 //  SplashView.swift
-//  lrt
+//  Broad
 //
 //  Created by Karolis Stasaitis on 30/05/2017.
 //  Copyright © 2017 delanoir. All rights reserved.

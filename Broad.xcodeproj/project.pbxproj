@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		D517F21B210783E100E1188C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D517F21A210783E000E1188C /* Security.framework */; };
 		D5B4F95D20DFC55100F31593 /* FFmpeg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B4F95C20DFC55100F31593 /* FFmpeg.framework */; };
-		D5F0EB992055654E00C7C23F /* Keys.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F0EB982055654E00C7C23F /* Keys.m */; };
+		D5CD1763213801FA00CA635F /* AppSpectorSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CD1762213801F900CA635F /* AppSpectorSDK.framework */; };
+		D5CD17652138020800CA635F /* AppSpectorSDK.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = D5CD17642138020800CA635F /* AppSpectorSDK.framework.dSYM */; };
+		D5CD17662138025000CA635F /* AppSpectorSDK.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = D5CD17642138020800CA635F /* AppSpectorSDK.framework.dSYM */; };
+		D5CD17682138032400CA635F /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD17672138032400CA635F /* Secrets.swift */; };
 		F90787261F9D0C2300E0870B /* UIStackView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90787251F9D0C2300E0870B /* UIStackView+Convenience.swift */; };
 		F908B3971F7C57DD00819655 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908B3961F7C57DD00819655 /* AboutViewController.swift */; };
 		F908B3991F7C57FF00819655 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908B3981F7C57FF00819655 /* AboutView.swift */; };
@@ -113,6 +116,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				D5CD17662138025000CA635F /* AppSpectorSDK.framework.dSYM in Copy dSYMs */,
 				F9F3B9D81FCDE6BB00D5CC47 /* DateHelper.framework.dSYM in Copy dSYMs */,
 				F9E7F1C01FA283AC008B1B13 /* Kingfisher.framework.dSYM in Copy dSYMs */,
 				F9E18EF71E6E282000F1A607 /* Rswift.framework.dSYM in Copy dSYMs */,
@@ -145,8 +149,9 @@
 /* Begin PBXFileReference section */
 		D517F21A210783E000E1188C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D5B4F95C20DFC55100F31593 /* FFmpeg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FFmpeg.framework; path = Carthage/Build/iOS/FFmpeg.framework; sourceTree = "<group>"; };
-		D5F0EB972055654E00C7C23F /* Keys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Keys.h; sourceTree = "<group>"; };
-		D5F0EB982055654E00C7C23F /* Keys.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Keys.m; sourceTree = "<group>"; };
+		D5CD1762213801F900CA635F /* AppSpectorSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppSpectorSDK.framework; path = Carthage/Build/iOS/AppSpectorSDK.framework; sourceTree = "<group>"; };
+		D5CD17642138020800CA635F /* AppSpectorSDK.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = AppSpectorSDK.framework.dSYM; path = Carthage/Build/iOS/AppSpectorSDK.framework.dSYM; sourceTree = "<group>"; };
+		D5CD17672138032400CA635F /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		F90787251F9D0C2300E0870B /* UIStackView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Convenience.swift"; sourceTree = "<group>"; };
 		F908B3961F7C57DD00819655 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		F908B3981F7C57FF00819655 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -267,6 +272,7 @@
 				F9E18EF41E6E27F000F1A607 /* Rswift.framework in Frameworks */,
 				F98BA70B1E6E1A55001A33A8 /* SnapKit.framework in Frameworks */,
 				F9B9CBDF1E70405A00168940 /* HockeySDK.framework in Frameworks */,
+				D5CD1763213801FA00CA635F /* AppSpectorSDK.framework in Frameworks */,
 				F98BA6ED1E6E1382001A33A8 /* Argo.framework in Frameworks */,
 				F98BA6F51E6E150A001A33A8 /* Runes.framework in Frameworks */,
 				F9E7F1BE1FA2838F008B1B13 /* Kingfisher.framework in Frameworks */,
@@ -406,8 +412,9 @@
 		F98BA6E81E6E1344001A33A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D517F21A210783E000E1188C /* Security.framework */,
 				F98BA6F61E6E1546001A33A8 /* DSYMs */,
+				D5CD1762213801F900CA635F /* AppSpectorSDK.framework */,
+				D517F21A210783E000E1188C /* Security.framework */,
 				D5B4F95C20DFC55100F31593 /* FFmpeg.framework */,
 				F9F3B9D41FCDE6A400D5CC47 /* DateHelper.framework */,
 				F9E7F1BD1FA2838F008B1B13 /* Kingfisher.framework */,
@@ -434,6 +441,7 @@
 		F98BA6F61E6E1546001A33A8 /* DSYMs */ = {
 			isa = PBXGroup;
 			children = (
+				D5CD17642138020800CA635F /* AppSpectorSDK.framework.dSYM */,
 				F9F3B9D61FCDE6B100D5CC47 /* DateHelper.framework.dSYM */,
 				F9E7F1BF1FA2839B008B1B13 /* Kingfisher.framework.dSYM */,
 				F9F3F7D01F97F16500829B70 /* Nimble.framework.dSYM */,
@@ -475,9 +483,8 @@
 			isa = PBXGroup;
 			children = (
 				F98BA6D61E6E0ECA001A33A8 /* AppDelegate.swift */,
-				D5F0EB972055654E00C7C23F /* Keys.h */,
-				D5F0EB982055654E00C7C23F /* Keys.m */,
 				F9B5FE381ED5BA3F00545320 /* Broad-Bridging-Header.h */,
+				D5CD17672138032400CA635F /* Secrets.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -699,6 +706,7 @@
 			files = (
 				F98BA6E11E6E0ECA001A33A8 /* LaunchScreen.storyboard in Resources */,
 				F98BA6DE1E6E0ECA001A33A8 /* Assets.xcassets in Resources */,
+				D5CD17652138020800CA635F /* AppSpectorSDK.framework.dSYM in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,6 +730,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/HockeySDK.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/DateHelper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AppSpectorSDK.framework",
 			);
 			name = "Carthage Copy-Frameworks";
 			outputPaths = (
@@ -736,6 +745,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/HockeySDK.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/DateHelper.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AppSpectorSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -785,6 +795,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9E18EFE1E6EBC8B00F1A607 /* SelectionViewModel.swift in Sources */,
+				D5CD17682138032400CA635F /* Secrets.swift in Sources */,
 				F908B3991F7C57FF00819655 /* AboutView.swift in Sources */,
 				F9F6C31D1F82FBC200A57890 /* SignalProducer+Convenience.swift in Sources */,
 				F9F3F9F01FF112EF00DB7817 /* ProgrammeShowCell.swift in Sources */,
@@ -797,7 +808,6 @@
 				F9F3F9EE1FF1077600DB7817 /* ProgrammeShowCellModel.swift in Sources */,
 				F9A1CBB11EDE0CC100AA59FA /* SplashView.swift in Sources */,
 				F9A6F72D1FB3654E0028D868 /* ProgrammeViewController.swift in Sources */,
-				D5F0EB992055654E00C7C23F /* Keys.m in Sources */,
 				F936B9621EE8286500B6C84D /* ThumbnailManager.swift in Sources */,
 				F9810BB61F97C22100136F0F /* GraphAPIClient.swift in Sources */,
 				F98E057C2013E84C00EBCACE /* ProgrammeHeaderView.swift in Sources */,
@@ -917,8 +927,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BROAD_GRAPH_API_KEY = anonymous;
-				BROAD_HOCKEY_APP_KEY = 58d1c2e2eaf14e97b01973edade2d378;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
@@ -926,11 +934,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"BROAD_GRAPH_API_KEY=$(BROAD_GRAPH_API_KEY)",
-					"BROAD_HOCKEY_APP_KEY=$(BROAD_HOCKEY_APP_KEY)",
 				);
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = Broad/Info.plist;
@@ -1003,8 +1006,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BROAD_GRAPH_API_KEY = anonymous;
-				BROAD_HOCKEY_APP_KEY = 58d1c2e2eaf14e97b01973edade2d378;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
@@ -1012,11 +1013,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"BROAD_GRAPH_API_KEY=$(BROAD_GRAPH_API_KEY)",
-					"BROAD_HOCKEY_APP_KEY=$(BROAD_HOCKEY_APP_KEY)",
 				);
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = Broad/Info.plist;
@@ -1257,8 +1253,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BROAD_GRAPH_API_KEY = anonymous;
-				BROAD_HOCKEY_APP_KEY = 58d1c2e2eaf14e97b01973edade2d378;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1267,11 +1261,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"BROAD_GRAPH_API_KEY=$(BROAD_GRAPH_API_KEY)",
-					"BROAD_HOCKEY_APP_KEY=$(BROAD_HOCKEY_APP_KEY)",
 				);
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = Broad/Info.plist;
@@ -1292,8 +1281,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BROAD_GRAPH_API_KEY = anonymous;
-				BROAD_HOCKEY_APP_KEY = 58d1c2e2eaf14e97b01973edade2d378;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -1301,11 +1288,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"BROAD_GRAPH_API_KEY=$(BROAD_GRAPH_API_KEY)",
-					"BROAD_HOCKEY_APP_KEY=$(BROAD_HOCKEY_APP_KEY)",
 				);
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = Broad/Info.plist;

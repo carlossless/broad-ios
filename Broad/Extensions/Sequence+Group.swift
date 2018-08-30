@@ -1,6 +1,6 @@
 //
 //  Sequence+Group.swift
-//  lrt
+//  Broad
 //
 //  Created by Karolis Stasaitis on 29/12/17.
 //  Copyright © 2017 delanoir. All rights reserved.

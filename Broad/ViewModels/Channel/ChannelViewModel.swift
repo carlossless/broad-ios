@@ -1,6 +1,6 @@
 //
 //  ChannelViewModel.swift
-//  lrt
+//  Broad
 //
 //  Created by Karolis Stasaitis on 22/10/17.
 //  Copyright © 2017 delanoir. All rights reserved.

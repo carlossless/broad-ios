@@ -1,6 +1,6 @@
 //
-//  LRTStreamAPIClient.swift
-//  lrt
+//  BroadStreamAPIClient.swift
+//  Broad
 //
 //  Created by Karolis Stasaitis on 18/10/17.
 //  Copyright © 2017 delanoir. All rights reserved.

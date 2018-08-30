@@ -1,6 +1,6 @@
 //
 //  APIClient.swift
-//  lrt
+//  Broad
 //
 //  Created by Karolis Stasaitis on 18/10/17.
 //  Copyright © 2017 delanoir. All rights reserved.
@@ -38,7 +38,7 @@ class GraphAPIClient {
     
     init(
         baseUrl: URL = URL(string: "https://lrt.carlossless.io")!,
-        httpClient: HTTPClient = HTTPClient(headers:["Authorization": LRTGraphAPIKey])
+        httpClient: HTTPClient = HTTPClient(headers:["Authorization": Secrets.GraphAPIKey])
     ) {
         apiBaseUrl = baseUrl
         client = httpClient

@@ -1,6 +1,6 @@
 //
 //  APIManager.swift
-//  lrt
+//  Broad
 //
 //  Created by Karolis Stasaitis on 10/08/15.
 //  Copyright (c) 2017 delanoir. All rights reserved.

@@ -1,6 +1,6 @@
 //
-//  LRTStreamImageGrabber.h
-//  lrt
+//  BroadStreamImageGrabber.h
+//  Broad
 //
 //  Created by Karolis Stasaitis on 26/05/2017.
 //  Copyright © 2017 delanoir. All rights reserved.

@@ -8,6 +8,7 @@ github "bitstadium/HockeySDK-iOS"
 github "onevcat/Kingfisher"
 github "melvitax/DateHelper"
 github "carlossless/broad-ffmpeg"
+github "appspector/ios-sdk"
 
 github "Quick/Quick"
 github "Quick/Nimble"

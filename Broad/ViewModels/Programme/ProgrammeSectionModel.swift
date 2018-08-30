@@ -1,6 +1,6 @@
 //
 //  ProgrammeSectionModel.swift
-//  lrt
+//  Broad
 //
 //  Created by Karolis Stasaitis on 28/12/17.
 //  Copyright © 2017 delanoir. All rights reserved.
