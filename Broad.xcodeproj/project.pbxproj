@@ -10,7 +10,6 @@
 		D517F21B210783E100E1188C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D517F21A210783E000E1188C /* Security.framework */; };
 		D5B4F95D20DFC55100F31593 /* FFmpeg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B4F95C20DFC55100F31593 /* FFmpeg.framework */; };
 		D5CD1763213801FA00CA635F /* AppSpectorSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CD1762213801F900CA635F /* AppSpectorSDK.framework */; };
-		D5CD17652138020800CA635F /* AppSpectorSDK.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = D5CD17642138020800CA635F /* AppSpectorSDK.framework.dSYM */; };
 		D5CD17662138025000CA635F /* AppSpectorSDK.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = D5CD17642138020800CA635F /* AppSpectorSDK.framework.dSYM */; };
 		D5CD17682138032400CA635F /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD17672138032400CA635F /* Secrets.swift */; };
 		F90787261F9D0C2300E0870B /* UIStackView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90787251F9D0C2300E0870B /* UIStackView+Convenience.swift */; };
@@ -706,7 +705,6 @@
 			files = (
 				F98BA6E11E6E0ECA001A33A8 /* LaunchScreen.storyboard in Resources */,
 				F98BA6DE1E6E0ECA001A33A8 /* Assets.xcassets in Resources */,
-				D5CD17652138020800CA635F /* AppSpectorSDK.framework.dSYM in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,7 +747,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which carthage >/dev/null; then\n    carthage copy-frameworks\nelse\n    echo \"warning: Carthage not installed, download from https://github.com/Carthage/Carthage\"\nfi";
+			shellScript = "if which carthage >/dev/null; then\n    carthage copy-frameworks\nelse\n    echo \"warning: Carthage not installed, download from https://github.com/Carthage/Carthage\"\nfi\n";
 		};
 		F9E18EEF1E6E26E100F1A607 /* R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -763,7 +761,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which rswift >/dev/null; then\n    rswift generate \"$SRCROOT/Broad/Resources/\"\nelse\n    echo \"warning: R.swift not installed, download from https://github.com/mac-cain13/R.swift\"\nfi";
+			shellScript = "if which rswift >/dev/null; then\n    rswift generate \"$SRCROOT/Broad/Resources/\"\nelse\n    echo \"warning: R.swift not installed, download from https://github.com/mac-cain13/R.swift\"\nfi\n";
 		};
 		F9E18EF01E6E26EC00F1A607 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -777,7 +775,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n    exit 1\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n    exit 1\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
