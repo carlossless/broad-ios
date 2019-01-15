@@ -34,8 +34,9 @@ extension Reactive where Base: UIImageView {
                 )
             )
         }
+        let source: Source? = url != nil ? Source.network(url!) : nil
         view.kf.setImage(
-            with: url,
+            with: source,
             placeholder: nil,
             options: options,
             progressBlock: nil,

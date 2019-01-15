@@ -7,10 +7,35 @@ platform :ios do
   end
 
   lane :build do |options|
+    sync_code_signing(
+      readonly: true
+    )
     build_app(
       scheme: "Broad",
       configuration: options[:config] || "Release",
       export_method: options[:export] || "development"
+    )
+  end
+
+  lane :beta do
+    sync_code_signing(
+      type: "adhoc"
+    )
+    build(
+      config: "AdHoc",
+      export: "ad-hoc"
+    )
+    hockey
+  end
+
+  lane :appstore do
+    sync_code_signing(
+      type: "appstore",
+        keychain_password: "operator12"
+    )
+    build(
+      config: "AppStore",
+      export: "app-store"
     )
   end
 

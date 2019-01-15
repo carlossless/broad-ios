@@ -16,30 +16,6 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.color` struct is generated, and contains static references to 0 colors.
-  struct color {
-    fileprivate init() {}
-  }
-  
-  /// This `R.file` struct is generated, and contains static references to 1 files.
-  struct file {
-    /// Resource file `AppSpectorSDK.framework.dSYM`.
-    static let appSpectorSDKFrameworkDSYM = Rswift.FileResource(bundle: R.hostingBundle, name: "AppSpectorSDK.framework", pathExtension: "dSYM")
-    
-    /// `bundle.url(forResource: "AppSpectorSDK.framework", withExtension: "dSYM")`
-    static func appSpectorSDKFrameworkDSYM(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.appSpectorSDKFrameworkDSYM
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-    
-    fileprivate init() {}
-  }
-  
-  /// This `R.font` struct is generated, and contains static references to 0 fonts.
-  struct font {
-    fileprivate init() {}
-  }
-  
   /// This `R.image` struct is generated, and contains static references to 2 images.
   struct image {
     /// Image `DelanoirLogo`.
@@ -60,21 +36,6 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 0 nibs.
-  struct nib {
-    fileprivate init() {}
-  }
-  
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 0 reuse identifiers.
-  struct reuseIdentifier {
-    fileprivate init() {}
-  }
-  
-  /// This `R.segue` struct is generated, and contains static references to 0 view controllers.
-  struct segue {
-    fileprivate init() {}
-  }
-  
   /// This `R.storyboard` struct is generated, and contains static references to 1 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
@@ -85,11 +46,6 @@ struct R: Rswift.Validatable {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
     }
     
-    fileprivate init() {}
-  }
-  
-  /// This `R.string` struct is generated, and contains static references to 0 localization tables.
-  struct string {
     fileprivate init() {}
   }
   
@@ -111,10 +67,6 @@ struct _R: Rswift.Validatable {
     try storyboard.validate()
   }
   
-  struct nib {
-    fileprivate init() {}
-  }
-  
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       try launchScreen.validate()
@@ -127,7 +79,9 @@ struct _R: Rswift.Validatable {
       let name = "LaunchScreen"
       
       static func validate() throws {
-        if UIKit.UIImage(named: "Logo") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Logo' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Logo' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
       }
       
       fileprivate init() {}
