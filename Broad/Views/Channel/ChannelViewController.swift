@@ -38,7 +38,7 @@ class ChannelViewController : ViewController<ChannelView>, ModelBased, AVPlayerV
     override func viewDidLoad() {
         videoController = AVPlayerViewController()
         videoController.player = AVPlayer(url: viewModel.playlistUrl)
-        addChildViewController(videoController)
+        addChild(videoController)
         controlledView.setVideoView(view: videoController.view)
         
         super.viewDidLoad()
@@ -71,7 +71,7 @@ class ChannelViewController : ViewController<ChannelView>, ModelBased, AVPlayerV
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if isMovingToParentViewController {
+        if isMovingToParent {
             updateShows.execute(())
         }
         
@@ -82,7 +82,7 @@ class ChannelViewController : ViewController<ChannelView>, ModelBased, AVPlayerV
         super.viewWillDisappear(animated)
         
         // this is to avoid pausing when the player moves into fullscreen mode
-        if isMovingFromParentViewController || navigationController?.viewControllers.last != self {
+        if isMovingFromParent || navigationController?.viewControllers.last != self {
             videoController.player?.pause()
         }
     }

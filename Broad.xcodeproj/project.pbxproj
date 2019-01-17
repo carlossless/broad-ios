@@ -661,13 +661,14 @@
 				TargetAttributes = {
 					F9810BCA1F97C54300136F0F = {
 						CreatedOnToolsVersion = 9.0.1;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F98BA6D21E6E0ECA001A33A8;
 					};
 					F98BA6D21E6E0ECA001A33A8 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = DXEF6FH82Q;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -944,8 +945,7 @@
 				PROVISIONING_PROFILE = "e38d644a-d981-420e-ade3-6962ae365018";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.delanoir.broad";
 				SWIFT_OBJC_BRIDGING_HEADER = "Broad/Core/Broad-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = AdHoc;
 		};
@@ -1023,8 +1023,7 @@
 				PROVISIONING_PROFILE = "e3b73abd-073e-4ab1-b792-44a1928ccfad";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.delanoir.broad";
 				SWIFT_OBJC_BRIDGING_HEADER = "Broad/Core/Broad-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = AppStore;
 		};
@@ -1049,7 +1048,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.BroadTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Broad.app/Broad";
 			};
@@ -1076,7 +1075,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.BroadTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Broad.app/Broad";
 			};
@@ -1103,7 +1102,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.BroadTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Broad.app/Broad";
 			};
@@ -1130,7 +1129,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.BroadTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Broad.app/Broad";
 			};
@@ -1272,8 +1271,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.delanoir.broad";
 				SWIFT_OBJC_BRIDGING_HEADER = "Broad/Core/Broad-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1298,8 +1296,7 @@
 				PROVISIONING_PROFILE = "f0e36a75-ede7-44c7-b0a2-60040191ba35";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.delanoir.broad";
 				SWIFT_OBJC_BRIDGING_HEADER = "Broad/Core/Broad-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

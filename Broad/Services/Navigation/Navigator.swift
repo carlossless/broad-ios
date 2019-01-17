@@ -40,7 +40,7 @@ class Navigator {
         return vc
     }
     
-    func replaceRoot(model: ViewModel, animated: Bool = false, options: UIViewAnimationOptions = []) {
+    func replaceRoot(model: ViewModel, animated: Bool = false, options: UIView.AnimationOptions = []) {
         actuator.replaceRoot(controller: resolveAndConfigureController(for: model), animated: animated, options: options)
     }
     
@@ -66,7 +66,7 @@ private class NavigationActuator {
     
     var window: UIWindow?
     
-    func replaceRoot(controller: UIViewController, animated: Bool, options: UIViewAnimationOptions) {
+    func replaceRoot(controller: UIViewController, animated: Bool, options: UIView.AnimationOptions) {
         let snapshot = self.window!.snapshotView(afterScreenUpdates: true)!
         controller.view.addSubview(snapshot)
         
