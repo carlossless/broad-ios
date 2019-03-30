@@ -21,7 +21,8 @@ class LRTStreamAPIClient {
     
     public func stations() -> SignalProducer<StreamDataResponse, APIError> {
         let url = apiBaseUrl.appendingPathComponent("/data-service/module/live")
-        return client.get(url: url, cachePolicy: .reloadIgnoringCacheData)
+        let data: SignalProducer<StreamData, APIError> = client.get(url: url, cachePolicy: .reloadIgnoringCacheData)
+        return data.map(\StreamData.response)
     }
     
 }

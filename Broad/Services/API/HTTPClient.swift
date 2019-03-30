@@ -8,7 +8,6 @@
 
 import Foundation
 import ReactiveSwift
-import Argo
 import Result
 
 class HTTPClient {
@@ -53,21 +52,6 @@ class HTTPClient {
         return SignalProducer(result: self.handleResponse(data: data, response: response))
     }
     
-    private func deserialise<T : Argo.Decodable>(data: Data) -> Result<T, APIError> where T == T.DecodedType {
-        do {
-            let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions(rawValue: 0))
-            let result: Argo.Decoded<T> = decode(json)
-            switch result {
-            case .success(let value):
-                return Result(value: value)
-            case .failure(let error):
-                return Result(error: APIError.jsonDecodingFailed(error))
-            }
-        } catch let error as NSError {
-            return Result(error: APIError.jsonParsingFailed(error))
-        }
-    }
-    
     //TODO: Remove this duplication
     private let dateFormatter: DateFormatter = {
         var formatter = DateFormatter()
@@ -92,10 +76,6 @@ class HTTPClient {
         } catch let error as NSError {
             return Result(error: APIError.jsonParsingFailed(error))
         }
-    }
-    
-    private func deserialise<T : Argo.Decodable>(data: Data) -> SignalProducer<T, APIError> where T == T.DecodedType {
-        return SignalProducer(result: deserialise(data: data))
     }
     
     private func deserialise<T : Swift.Decodable>(data: Data) -> SignalProducer<T, APIError> {
@@ -148,11 +128,6 @@ class HTTPClient {
             .flatMap(.concat, self.handleResponse)
     }
     
-    public func retrieveAndParseData<T : Argo.Decodable>(request: URLRequest) -> SignalProducer<T, APIError> where T == T.DecodedType {
-        return retrieveData(request: request)
-            .flatMap(.concat, self.deserialise)
-    }
-    
     public func retrieveAndParseData<T : Swift.Decodable>(request: URLRequest) -> SignalProducer<T, APIError> {
         return retrieveData(request: request)
             .flatMap(.concat, self.deserialise)
@@ -163,11 +138,6 @@ class HTTPClient {
     public func get(url: URL, cachePolicy: URLRequest.CachePolicy? = nil) -> SignalProducer<Data, APIError> {
         let request = self.createDefaultRequest(url: url, method: "GET", cachePolicy: cachePolicy)
         return retrieveData(request: request)
-    }
-    
-    public func get<T : Argo.Decodable>(url: URL, cachePolicy: URLRequest.CachePolicy? = nil) -> SignalProducer<T, APIError> where T == T.DecodedType {
-        let request = self.createDefaultRequest(url: url, method: "GET", cachePolicy: cachePolicy)
-        return retrieveAndParseData(request: request)
     }
     
     public func get<T : Swift.Decodable>(url: URL, cachePolicy: URLRequest.CachePolicy? = nil) -> SignalProducer<T, APIError> {
@@ -182,21 +152,12 @@ class HTTPClient {
         return retrieveData(request: request)
     }
     
-    public func post<T: Argo.Decodable>(url: URL, data: Data? = nil, isJson: Bool = false) -> SignalProducer<T, APIError> where T == T.DecodedType {
-        let request = self.createDefaultRequest(url: url, method: "POST", body: data, contentType: isJson ? "application/json; charset=utf-8" : nil)
-        return retrieveAndParseData(request: request)
-    }
-    
     public func post<T: Swift.Decodable>(url: URL, data: Data? = nil, isJson: Bool = false) -> SignalProducer<T, APIError> {
         let request = self.createDefaultRequest(url: url, method: "POST", body: data, contentType: isJson ? "application/json; charset=utf-8" : nil)
         return retrieveAndParseData(request: request)
     }
     
     public func post<T: Encodable>(url: URL, object: T? = nil) -> SignalProducer<Data, APIError> {
-        return post(url: url, data: try! JSONEncoder().encode(object), isJson: true)
-    }
-    
-    public func post<T: Argo.Decodable, U: Encodable>(url: URL, object: U? = nil) -> SignalProducer<T, APIError> where T == T.DecodedType {
         return post(url: url, data: try! JSONEncoder().encode(object), isJson: true)
     }
     
