@@ -57,8 +57,6 @@
 		F9B5FE3F1ED5BED200545320 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B5FE3E1ED5BED200545320 /* libz.tbd */; };
 		F9B5FE411ED5BEDA00545320 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B5FE401ED5BEDA00545320 /* libbz2.tbd */; };
 		F9B5FE431ED5BEE600545320 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B5FE421ED5BEE600545320 /* libiconv.tbd */; };
-		F9B9CBDF1E70405A00168940 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B9CBDE1E70405A00168940 /* HockeySDK.framework */; };
-		F9B9CBE21E70407200168940 /* HockeySDK.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F9B9CBE01E70406900168940 /* HockeySDK.framework.dSYM */; };
 		F9C3204E1EF1AC270053A92C /* UIWindow+TopMost.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C3204C1EF1AC270053A92C /* UIWindow+TopMost.swift */; };
 		F9C3204F1EF1AC270053A92C /* UIViewController+TopMost.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C3204D1EF1AC270053A92C /* UIViewController+TopMost.swift */; };
 		F9D8FF3D1F97860B0086AD76 /* LRTStreamAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8FF3C1F97860B0086AD76 /* LRTStreamAPIClient.swift */; };
@@ -113,7 +111,6 @@
 				F9F3B9D81FCDE6BB00D5CC47 /* DateHelper.framework.dSYM in Copy dSYMs */,
 				F9E7F1C01FA283AC008B1B13 /* Kingfisher.framework.dSYM in Copy dSYMs */,
 				F9E18EF71E6E282000F1A607 /* Rswift.framework.dSYM in Copy dSYMs */,
-				F9B9CBE21E70407200168940 /* HockeySDK.framework.dSYM in Copy dSYMs */,
 				F9E18EF81E6E282000F1A607 /* SnapKit.framework.dSYM in Copy dSYMs */,
 				F98BA7051E6E15BB001A33A8 /* Curry.framework.dSYM in Copy dSYMs */,
 				F98BA7061E6E15BB001A33A8 /* ReactiveCocoa.framework.dSYM in Copy dSYMs */,
@@ -193,8 +190,6 @@
 		F9B5FE3E1ED5BED200545320 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F9B5FE401ED5BEDA00545320 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		F9B5FE421ED5BEE600545320 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
-		F9B9CBDE1E70405A00168940 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HockeySDK.framework; path = Carthage/Build/iOS/HockeySDK.framework; sourceTree = "<group>"; };
-		F9B9CBE01E70406900168940 /* HockeySDK.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = HockeySDK.framework.dSYM; path = Carthage/Build/iOS/HockeySDK.framework.dSYM; sourceTree = "<group>"; };
 		F9C3204C1EF1AC270053A92C /* UIWindow+TopMost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+TopMost.swift"; sourceTree = "<group>"; };
 		F9C3204D1EF1AC270053A92C /* UIViewController+TopMost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+TopMost.swift"; sourceTree = "<group>"; };
 		F9D8FF3C1F97860B0086AD76 /* LRTStreamAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRTStreamAPIClient.swift; sourceTree = "<group>"; };
@@ -257,7 +252,6 @@
 				D5B4F95D20DFC55100F31593 /* FFmpeg.framework in Frameworks */,
 				F9E18EF41E6E27F000F1A607 /* Rswift.framework in Frameworks */,
 				F98BA70B1E6E1A55001A33A8 /* SnapKit.framework in Frameworks */,
-				F9B9CBDF1E70405A00168940 /* HockeySDK.framework in Frameworks */,
 				D5CD1763213801FA00CA635F /* AppSpectorSDK.framework in Frameworks */,
 				F98BA6F01E6E1382001A33A8 /* ReactiveSwift.framework in Frameworks */,
 			);
@@ -407,7 +401,6 @@
 				F93A31A91ED5CBAE00F390C2 /* VideoToolbox.framework */,
 				F98BA6EB1E6E1382001A33A8 /* ReactiveCocoa.framework */,
 				F98BA6EC1E6E1382001A33A8 /* ReactiveSwift.framework */,
-				F9B9CBDE1E70405A00168940 /* HockeySDK.framework */,
 				F98BA70A1E6E1A55001A33A8 /* SnapKit.framework */,
 				F9F304601F1825D90097E961 /* libxml2.tbd */,
 				F9B5FE421ED5BEE600545320 /* libiconv.tbd */,
@@ -425,7 +418,6 @@
 				F9E7F1BF1FA2839B008B1B13 /* Kingfisher.framework.dSYM */,
 				F9F3F7D01F97F16500829B70 /* Nimble.framework.dSYM */,
 				F9F3F7D11F97F16500829B70 /* Quick.framework.dSYM */,
-				F9B9CBE01E70406900168940 /* HockeySDK.framework.dSYM */,
 				F9E18EF51E6E27FC00F1A607 /* Rswift.framework.dSYM */,
 				F98BA70C1E6E1A63001A33A8 /* SnapKit.framework.dSYM */,
 				F98BA6F81E6E156C001A33A8 /* Curry.framework.dSYM */,
@@ -702,7 +694,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/HockeySDK.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/DateHelper.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AppSpectorSDK.framework",
@@ -715,7 +706,6 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Rswift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/HockeySDK.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/DateHelper.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AppSpectorSDK.framework",
