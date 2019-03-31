@@ -73,9 +73,9 @@ class SelectionViewModel : ViewModel {
     func buildViewModels(stations: StreamDataResponse) -> [StationTableCellModel] {
         return Array(stations.data
             .map { (station: $0, id: SelectionViewModel.ids[$0.value.name] ?? $0.value.name) }
-            .filter { SelectionViewModel.order.index(of: $0.station.key) != nil })
+            .filter { SelectionViewModel.order.firstIndex(of: $0.station.key) != nil })
             .sorted { st1, st2 in
-                return SelectionViewModel.order.index(of: st1.id) ?? -1 < SelectionViewModel.order.index(of: st2.id) ?? -1
+                return SelectionViewModel.order.firstIndex(of: st1.id) ?? -1 < SelectionViewModel.order.firstIndex(of: st2.id) ?? -1
             }
             .map { apiStation in
                 return StationTableCellModel(

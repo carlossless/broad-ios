@@ -37,18 +37,14 @@
 		F98BA6D91E6E0ECA001A33A8 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BA6D81E6E0ECA001A33A8 /* SelectionViewController.swift */; };
 		F98BA6DE1E6E0ECA001A33A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F98BA6DD1E6E0ECA001A33A8 /* Assets.xcassets */; };
 		F98BA6E11E6E0ECA001A33A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F98BA6DF1E6E0ECA001A33A8 /* LaunchScreen.storyboard */; };
-		F98BA6ED1E6E1382001A33A8 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98BA6E91E6E1382001A33A8 /* Argo.framework */; };
 		F98BA6EE1E6E1382001A33A8 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98BA6EA1E6E1382001A33A8 /* Curry.framework */; };
 		F98BA6EF1E6E1382001A33A8 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98BA6EB1E6E1382001A33A8 /* ReactiveCocoa.framework */; };
 		F98BA6F01E6E1382001A33A8 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98BA6EC1E6E1382001A33A8 /* ReactiveSwift.framework */; };
 		F98BA6F41E6E150A001A33A8 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98BA6F21E6E150A001A33A8 /* Result.framework */; };
-		F98BA6F51E6E150A001A33A8 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98BA6F31E6E150A001A33A8 /* Runes.framework */; };
-		F98BA7041E6E15BB001A33A8 /* Argo.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F98BA6F71E6E156C001A33A8 /* Argo.framework.dSYM */; };
 		F98BA7051E6E15BB001A33A8 /* Curry.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F98BA6F81E6E156C001A33A8 /* Curry.framework.dSYM */; };
 		F98BA7061E6E15BB001A33A8 /* ReactiveCocoa.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F98BA6F91E6E156C001A33A8 /* ReactiveCocoa.framework.dSYM */; };
 		F98BA7071E6E15BB001A33A8 /* ReactiveSwift.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F98BA6FA1E6E156C001A33A8 /* ReactiveSwift.framework.dSYM */; };
 		F98BA7081E6E15BB001A33A8 /* Result.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F98BA6FB1E6E156C001A33A8 /* Result.framework.dSYM */; };
-		F98BA7091E6E15BB001A33A8 /* Runes.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F98BA6FC1E6E156C001A33A8 /* Runes.framework.dSYM */; };
 		F98BA70B1E6E1A55001A33A8 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98BA70A1E6E1A55001A33A8 /* SnapKit.framework */; };
 		F98E057C2013E84C00EBCACE /* ProgrammeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98E057B2013E84C00EBCACE /* ProgrammeHeaderView.swift */; };
 		F997AF131ED85CD000EAA72B /* LRTStreamImageGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = F997AF121ED85CD000EAA72B /* LRTStreamImageGrabber.m */; };
@@ -61,11 +57,8 @@
 		F9B5FE3F1ED5BED200545320 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B5FE3E1ED5BED200545320 /* libz.tbd */; };
 		F9B5FE411ED5BEDA00545320 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B5FE401ED5BEDA00545320 /* libbz2.tbd */; };
 		F9B5FE431ED5BEE600545320 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B5FE421ED5BEE600545320 /* libiconv.tbd */; };
-		F9B9CBDF1E70405A00168940 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B9CBDE1E70405A00168940 /* HockeySDK.framework */; };
-		F9B9CBE21E70407200168940 /* HockeySDK.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F9B9CBE01E70406900168940 /* HockeySDK.framework.dSYM */; };
 		F9C3204E1EF1AC270053A92C /* UIWindow+TopMost.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C3204C1EF1AC270053A92C /* UIWindow+TopMost.swift */; };
 		F9C3204F1EF1AC270053A92C /* UIViewController+TopMost.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C3204D1EF1AC270053A92C /* UIViewController+TopMost.swift */; };
-		F9C320511EF1ACE80053A92C /* URL+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C320501EF1ACE80053A92C /* URL+Decodable.swift */; };
 		F9D8FF3D1F97860B0086AD76 /* LRTStreamAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8FF3C1F97860B0086AD76 /* LRTStreamAPIClient.swift */; };
 		F9E184DC1F9FEFD2002DDA5E /* ChannelShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E184DB1F9FEFD2002DDA5E /* ChannelShowView.swift */; };
 		F9E18EEE1E6E241500F1A607 /* SelectionNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E18EED1E6E241500F1A607 /* SelectionNavigationController.swift */; };
@@ -89,7 +82,6 @@
 		F9F3F7D51F97F24D00829B70 /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F9F3F7CD1F97F15A00829B70 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F9F3F7D61F97F24D00829B70 /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F9F3F7CC1F97F15A00829B70 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F9F3F7D91F98861A00829B70 /* ChannelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3F7D81F98861A00829B70 /* ChannelResponse.swift */; };
-		F9F3F7DC1F9B7ACE00829B70 /* Date+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3F7DB1F9B7ACE00829B70 /* Date+Decodable.swift */; };
 		F9F3F7DE1F9CC7A900829B70 /* ChannelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3F7DD1F9CC7A900829B70 /* ChannelViewModel.swift */; };
 		F9F3F7E01F9CC7E700829B70 /* ChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3F7DF1F9CC7E700829B70 /* ChannelView.swift */; };
 		F9F3F7E21F9CC7FF00829B70 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3F7E11F9CC7FF00829B70 /* ChannelViewController.swift */; };
@@ -119,14 +111,11 @@
 				F9F3B9D81FCDE6BB00D5CC47 /* DateHelper.framework.dSYM in Copy dSYMs */,
 				F9E7F1C01FA283AC008B1B13 /* Kingfisher.framework.dSYM in Copy dSYMs */,
 				F9E18EF71E6E282000F1A607 /* Rswift.framework.dSYM in Copy dSYMs */,
-				F9B9CBE21E70407200168940 /* HockeySDK.framework.dSYM in Copy dSYMs */,
 				F9E18EF81E6E282000F1A607 /* SnapKit.framework.dSYM in Copy dSYMs */,
-				F98BA7041E6E15BB001A33A8 /* Argo.framework.dSYM in Copy dSYMs */,
 				F98BA7051E6E15BB001A33A8 /* Curry.framework.dSYM in Copy dSYMs */,
 				F98BA7061E6E15BB001A33A8 /* ReactiveCocoa.framework.dSYM in Copy dSYMs */,
 				F98BA7071E6E15BB001A33A8 /* ReactiveSwift.framework.dSYM in Copy dSYMs */,
 				F98BA7081E6E15BB001A33A8 /* Result.framework.dSYM in Copy dSYMs */,
-				F98BA7091E6E15BB001A33A8 /* Runes.framework.dSYM in Copy dSYMs */,
 			);
 			name = "Copy dSYMs";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,18 +167,14 @@
 		F98BA6DD1E6E0ECA001A33A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F98BA6E01E6E0ECA001A33A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F98BA6E21E6E0ECA001A33A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F98BA6E91E6E1382001A33A8 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/iOS/Argo.framework; sourceTree = "<group>"; };
 		F98BA6EA1E6E1382001A33A8 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/iOS/Curry.framework; sourceTree = "<group>"; };
 		F98BA6EB1E6E1382001A33A8 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		F98BA6EC1E6E1382001A33A8 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		F98BA6F21E6E150A001A33A8 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
-		F98BA6F31E6E150A001A33A8 /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/iOS/Runes.framework; sourceTree = "<group>"; };
-		F98BA6F71E6E156C001A33A8 /* Argo.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Argo.framework.dSYM; path = Carthage/Build/iOS/Argo.framework.dSYM; sourceTree = "<group>"; };
 		F98BA6F81E6E156C001A33A8 /* Curry.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Curry.framework.dSYM; path = Carthage/Build/iOS/Curry.framework.dSYM; sourceTree = "<group>"; };
 		F98BA6F91E6E156C001A33A8 /* ReactiveCocoa.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveCocoa.framework.dSYM; path = Carthage/Build/iOS/ReactiveCocoa.framework.dSYM; sourceTree = "<group>"; };
 		F98BA6FA1E6E156C001A33A8 /* ReactiveSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveSwift.framework.dSYM; path = Carthage/Build/iOS/ReactiveSwift.framework.dSYM; sourceTree = "<group>"; };
 		F98BA6FB1E6E156C001A33A8 /* Result.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Result.framework.dSYM; path = Carthage/Build/iOS/Result.framework.dSYM; sourceTree = "<group>"; };
-		F98BA6FC1E6E156C001A33A8 /* Runes.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Runes.framework.dSYM; path = Carthage/Build/iOS/Runes.framework.dSYM; sourceTree = "<group>"; };
 		F98BA70A1E6E1A55001A33A8 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		F98BA70C1E6E1A63001A33A8 /* SnapKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SnapKit.framework.dSYM; path = Carthage/Build/iOS/SnapKit.framework.dSYM; sourceTree = "<group>"; };
 		F98E057B2013E84C00EBCACE /* ProgrammeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeHeaderView.swift; sourceTree = "<group>"; };
@@ -205,11 +190,8 @@
 		F9B5FE3E1ED5BED200545320 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F9B5FE401ED5BEDA00545320 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		F9B5FE421ED5BEE600545320 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
-		F9B9CBDE1E70405A00168940 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HockeySDK.framework; path = Carthage/Build/iOS/HockeySDK.framework; sourceTree = "<group>"; };
-		F9B9CBE01E70406900168940 /* HockeySDK.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = HockeySDK.framework.dSYM; path = Carthage/Build/iOS/HockeySDK.framework.dSYM; sourceTree = "<group>"; };
 		F9C3204C1EF1AC270053A92C /* UIWindow+TopMost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+TopMost.swift"; sourceTree = "<group>"; };
 		F9C3204D1EF1AC270053A92C /* UIViewController+TopMost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+TopMost.swift"; sourceTree = "<group>"; };
-		F9C320501EF1ACE80053A92C /* URL+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Decodable.swift"; sourceTree = "<group>"; };
 		F9D8FF3C1F97860B0086AD76 /* LRTStreamAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRTStreamAPIClient.swift; sourceTree = "<group>"; };
 		F9E184DB1F9FEFD2002DDA5E /* ChannelShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelShowView.swift; sourceTree = "<group>"; };
 		F9E18EED1E6E241500F1A607 /* SelectionNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionNavigationController.swift; sourceTree = "<group>"; };
@@ -233,7 +215,6 @@
 		F9F3F7D01F97F16500829B70 /* Nimble.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Nimble.framework.dSYM; path = Carthage/Build/iOS/Nimble.framework.dSYM; sourceTree = "<group>"; };
 		F9F3F7D11F97F16500829B70 /* Quick.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Quick.framework.dSYM; path = Carthage/Build/iOS/Quick.framework.dSYM; sourceTree = "<group>"; };
 		F9F3F7D81F98861A00829B70 /* ChannelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelResponse.swift; sourceTree = "<group>"; };
-		F9F3F7DB1F9B7ACE00829B70 /* Date+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Decodable.swift"; sourceTree = "<group>"; };
 		F9F3F7DD1F9CC7A900829B70 /* ChannelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewModel.swift; sourceTree = "<group>"; };
 		F9F3F7DF1F9CC7E700829B70 /* ChannelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelView.swift; sourceTree = "<group>"; };
 		F9F3F7E11F9CC7FF00829B70 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
@@ -271,10 +252,7 @@
 				D5B4F95D20DFC55100F31593 /* FFmpeg.framework in Frameworks */,
 				F9E18EF41E6E27F000F1A607 /* Rswift.framework in Frameworks */,
 				F98BA70B1E6E1A55001A33A8 /* SnapKit.framework in Frameworks */,
-				F9B9CBDF1E70405A00168940 /* HockeySDK.framework in Frameworks */,
 				D5CD1763213801FA00CA635F /* AppSpectorSDK.framework in Frameworks */,
-				F98BA6ED1E6E1382001A33A8 /* Argo.framework in Frameworks */,
-				F98BA6F51E6E150A001A33A8 /* Runes.framework in Frameworks */,
 				F98BA6F01E6E1382001A33A8 /* ReactiveSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,7 +264,6 @@
 			isa = PBXGroup;
 			children = (
 				F957AFE21EEB13E000C9A981 /* Collection+Convenience.swift */,
-				F9F3F7DB1F9B7ACE00829B70 /* Date+Decodable.swift */,
 				F98785291FF6730D00DB5E82 /* Sequence+Group.swift */,
 				F9F6C31C1F82FBC200A57890 /* SignalProducer+Convenience.swift */,
 				F90A70051EDC9D72007A56D1 /* UIColor+Hex.swift */,
@@ -295,7 +272,6 @@
 				F90A70071EDD5DB2007A56D1 /* UIView+Convenience.swift */,
 				F9C3204D1EF1AC270053A92C /* UIViewController+TopMost.swift */,
 				F9C3204C1EF1AC270053A92C /* UIWindow+TopMost.swift */,
-				F9C320501EF1ACE80053A92C /* URL+Decodable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -421,13 +397,10 @@
 				F9F3F7CC1F97F15A00829B70 /* Quick.framework */,
 				F9E18EF31E6E27F000F1A607 /* Rswift.framework */,
 				F98BA6F21E6E150A001A33A8 /* Result.framework */,
-				F98BA6F31E6E150A001A33A8 /* Runes.framework */,
-				F98BA6E91E6E1382001A33A8 /* Argo.framework */,
 				F98BA6EA1E6E1382001A33A8 /* Curry.framework */,
 				F93A31A91ED5CBAE00F390C2 /* VideoToolbox.framework */,
 				F98BA6EB1E6E1382001A33A8 /* ReactiveCocoa.framework */,
 				F98BA6EC1E6E1382001A33A8 /* ReactiveSwift.framework */,
-				F9B9CBDE1E70405A00168940 /* HockeySDK.framework */,
 				F98BA70A1E6E1A55001A33A8 /* SnapKit.framework */,
 				F9F304601F1825D90097E961 /* libxml2.tbd */,
 				F9B5FE421ED5BEE600545320 /* libiconv.tbd */,
@@ -445,15 +418,12 @@
 				F9E7F1BF1FA2839B008B1B13 /* Kingfisher.framework.dSYM */,
 				F9F3F7D01F97F16500829B70 /* Nimble.framework.dSYM */,
 				F9F3F7D11F97F16500829B70 /* Quick.framework.dSYM */,
-				F9B9CBE01E70406900168940 /* HockeySDK.framework.dSYM */,
 				F9E18EF51E6E27FC00F1A607 /* Rswift.framework.dSYM */,
 				F98BA70C1E6E1A63001A33A8 /* SnapKit.framework.dSYM */,
-				F98BA6F71E6E156C001A33A8 /* Argo.framework.dSYM */,
 				F98BA6F81E6E156C001A33A8 /* Curry.framework.dSYM */,
 				F98BA6F91E6E156C001A33A8 /* ReactiveCocoa.framework.dSYM */,
 				F98BA6FA1E6E156C001A33A8 /* ReactiveSwift.framework.dSYM */,
 				F98BA6FB1E6E156C001A33A8 /* Result.framework.dSYM */,
-				F98BA6FC1E6E156C001A33A8 /* Runes.framework.dSYM */,
 			);
 			name = DSYMs;
 			sourceTree = "<group>";
@@ -656,26 +626,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = delanoir;
 				TargetAttributes = {
 					F9810BCA1F97C54300136F0F = {
 						CreatedOnToolsVersion = 9.0.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F98BA6D21E6E0ECA001A33A8;
 					};
 					F98BA6D21E6E0ECA001A33A8 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = DXEF6FH82Q;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Manual;
 					};
 				};
 			};
 			buildConfigurationList = F98BA6CE1E6E0ECA001A33A8 /* Build configuration list for PBXProject "Broad" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -718,30 +688,24 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Argo.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Curry.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Runes.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/HockeySDK.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/DateHelper.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AppSpectorSDK.framework",
 			);
 			name = "Carthage Copy-Frameworks";
 			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Argo.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Curry.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveCocoa.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Runes.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Rswift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/HockeySDK.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/DateHelper.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AppSpectorSDK.framework",
@@ -841,10 +805,8 @@
 				F90787261F9D0C2300E0870B /* UIStackView+Convenience.swift in Sources */,
 				F936B9641EE89E2200B6C84D /* ModelBased.swift in Sources */,
 				F90A700E1EDD8CB8007A56D1 /* ThumbnailGenerator.swift in Sources */,
-				F9C320511EF1ACE80053A92C /* URL+Decodable.swift in Sources */,
 				F9C3204F1EF1AC270053A92C /* UIViewController+TopMost.swift in Sources */,
 				F926181F1F9CF035008C2B7E /* UIImageView+Reactive.swift in Sources */,
-				F9F3F7DC1F9B7ACE00829B70 /* Date+Decodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -875,6 +837,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -945,7 +908,7 @@
 				PROVISIONING_PROFILE = "e38d644a-d981-420e-ade3-6962ae365018";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.delanoir.broad";
 				SWIFT_OBJC_BRIDGING_HEADER = "Broad/Core/Broad-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = AdHoc;
 		};
@@ -953,6 +916,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1023,7 +987,7 @@
 				PROVISIONING_PROFILE = "e3b73abd-073e-4ab1-b792-44a1928ccfad";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.delanoir.broad";
 				SWIFT_OBJC_BRIDGING_HEADER = "Broad/Core/Broad-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = AppStore;
 		};
@@ -1048,7 +1012,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.BroadTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Broad.app/Broad";
 			};
@@ -1075,7 +1039,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.BroadTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Broad.app/Broad";
 			};
@@ -1102,7 +1066,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.BroadTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Broad.app/Broad";
 			};
@@ -1129,7 +1093,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.BroadTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Broad.app/Broad";
 			};
@@ -1139,6 +1103,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1199,6 +1164,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1271,7 +1237,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.delanoir.broad";
 				SWIFT_OBJC_BRIDGING_HEADER = "Broad/Core/Broad-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1296,7 +1262,7 @@
 				PROVISIONING_PROFILE = "f0e36a75-ede7-44c7-b0a2-60040191ba35";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.delanoir.broad";
 				SWIFT_OBJC_BRIDGING_HEADER = "Broad/Core/Broad-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

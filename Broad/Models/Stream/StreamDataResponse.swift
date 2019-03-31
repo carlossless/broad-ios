@@ -7,34 +7,19 @@
 //
 
 import Foundation
-import Argo
 import Curry
-import Runes
 
-struct StreamDataResponse {
+struct StreamData: Codable {
+    let response: StreamDataResponse
+}
+
+struct StreamDataResponse: Codable {
     let data: [String: StreamInfo]
 }
 
-struct StreamInfo {
+struct StreamInfo: Codable {
     let name: String
     let title: String?
     let content: URL
     let enable: Bool
-}
-
-extension StreamDataResponse: Argo.Decodable {
-    static func decode(_ j: JSON) -> Decoded<StreamDataResponse> {
-        return curry(StreamDataResponse.init)
-            <^> (j <| ["response", "data"] >>- { [String: StreamInfo].decode($0) })
-    }
-}
-
-extension StreamInfo: Argo.Decodable {
-    static func decode(_ j: JSON) -> Decoded<StreamInfo> {
-        return curry(StreamInfo.init)
-            <^> j <| "name"
-            <*> j <|? "title"
-            <*> j <| "content"
-            <*> j <| "enable"
-    }
 }

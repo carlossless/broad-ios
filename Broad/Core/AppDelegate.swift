@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import HockeySDK
+//import HockeySDK
 import AVFoundation
 import ReactiveSwift
 import CoreSpotlight
@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
-        setupHockeyApp()
+//        setupHockeyApp()
         setupAppSpector()
         setupAudioSessionCategory()
         
@@ -57,11 +57,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return .portrait
     }
     
-    private func setupHockeyApp() {
-        BITHockeyManager.shared().configure(withIdentifier: Secrets.HockeyAppKey)
-        BITHockeyManager.shared().start()
-        BITHockeyManager.shared().authenticator.authenticateInstallation()
-    }
+//    private func setupHockeyApp() {
+//        BITHockeyManager.shared().configure(withIdentifier: Secrets.HockeyAppKey)
+//        BITHockeyManager.shared().start()
+//        BITHockeyManager.shared().authenticator.authenticateInstallation()
+//    }
     
     private func setupAppSpector() {
         AppSpector.run(

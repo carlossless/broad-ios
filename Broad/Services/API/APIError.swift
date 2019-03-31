@@ -7,14 +7,12 @@
 //
 
 import Foundation
-import Argo
 
 enum APIError : Error {
     
     case generic(String)
     case httpFailed(Error)
     case jsonParsingFailed(Error)
-    case jsonDecodingFailed(DecodeError)
     case httpStatusFailed(String)
     
 }
