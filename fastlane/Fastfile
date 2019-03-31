@@ -28,7 +28,7 @@ platform :ios do
     hockey
   end
 
-  lane :appstore do
+  lane :store do
     sync_code_signing(
       type: "appstore",
         keychain_password: "operator12"
