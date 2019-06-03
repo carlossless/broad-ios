@@ -1,51 +1,45 @@
 osx_image: xcode10.2
 language: objective-c
-
 env:
   global:
-    - LANG=en_US.UTF-8
-    - COMMIT_TEXT="$(git log --no-merges --format=%B $TRAVIS_COMMIT_RANGE)"
-    - DISTRIBUTION_NOTES_FILE=distribution_notes.txt
-    - COMMIT_SHA1=$TRAVIS_COMMIT
-    - BUILD_URL="https://travis-ci.com/$TRAVIS_REPO_SLUG/builds/$TRAVIS_BUILD_ID"
-    - REPOSITORY_URL="https://github.com/$TRAVIS_REPO_SLUG"
-    - CONFIGURATION=AdHoc
-
+  - LANG=en_US.UTF-8
+  - COMMIT_TEXT="$(git log --no-merges --format=%B $TRAVIS_COMMIT_RANGE)"
+  - DISTRIBUTION_NOTES_FILE=distribution_notes.txt
+  - COMMIT_SHA1=$TRAVIS_COMMIT
+  - BUILD_URL="https://travis-ci.com/$TRAVIS_REPO_SLUG/builds/$TRAVIS_BUILD_ID"
+  - REPOSITORY_URL="https://github.com/$TRAVIS_REPO_SLUG"
+  - CONFIGURATION=AdHoc
 cache:
   bundler: true
   directories:
-    - Carthage
-
+  - Carthage
 install:
-  - brew update && brew bundle
-  - bundle install
-  - carthage bootstrap --platform ios --cache-builds
-
+- brew update && brew bundle
+- bundle install
+- carthage bootstrap --platform ios --cache-builds
 before_script:
-  - xcrun agvtool new-version -all "$TRAVIS_BUILD_NUMBER"
-
+- xcrun agvtool new-version -all "$TRAVIS_BUILD_NUMBER"
 script:
-  - bundle exec fastlane test
-
+- bundle exec fastlane test
 after_success:
-  - |
-      # setup ssh_key for fastlane match
-      declare -r SSH_FILE="$(mktemp -u $HOME/.ssh/XXXXX)"
-      openssl aes-256-cbc \
-        -K $encrypted_31ae002cee1e_key \
-        -iv $encrypted_31ae002cee1e_iv \
-        -in ".travis/github_deploy_key.enc" \
-        -out "$SSH_FILE" -d
-      chmod 600 "$SSH_FILE" \
-        && printf "%s\n" \
-             "Host github.com" \
-             "  StrictHostKeyChecking no" \
-             "  IdentityFile $SSH_FILE" \
-             "  LogLevel ERROR" >> ~/.ssh/config
-  - |
-    if [[ "$TRAVIS_BRANCH" == "master" ]]; then
-      bundle exec fastlane ci_beta
-    fi
-
+- |
+  # setup ssh_key for fastlane match
+  declare -r SSH_FILE="$(mktemp -u $HOME/.ssh/XXXXX)"
+  openssl aes-256-cbc \
+    -K $encrypted_31ae002cee1e_key \
+    -iv $encrypted_31ae002cee1e_iv \
+    -in ".travis/github_deploy_key.enc" \
+    -out "$SSH_FILE" -d
+  chmod 600 "$SSH_FILE" \
+    && printf "%s\n" \
+         "Host github.com" \
+         "  StrictHostKeyChecking no" \
+         "  IdentityFile $SSH_FILE" \
+         "  LogLevel ERROR" >> ~/.ssh/config
+- |
+  if [[ "$TRAVIS_BRANCH" == "master" ]]; then
+    bundle exec fastlane ci_beta
+  fi
 notifications:
-  slack: delanoir:VvO4iLPEMOWzmcd9a6HRO3am
+  slack:
+    secure: uSG0wO3IcicDwj1q9Z0GEc8dPt7stGkzP75Ybh+TLKxRlaHXbXsLRhkBKSvpTYzh80Nm44SKZRyV0+ihhmn2RQGhZt8gqu+4xMe54RXUWbINCtYZWdDR0CPFLMXReHPjBB1Wn8+ocQKVVKh4NPsk06DtYm0rkefUGYKS5ryzF2FbDGLlRFhxy9dMRz2rxypAwNtN5F8Wm9KEMxBwHU0uMPZyYLyfU829iWKAv9cstm834EUytcYiFMCP68MO4mbIcceBt+V4zHN+Ov82lLSYnfoZBUdotXiNY6gk1Rs+olVTIHyCA8RmBDSQy/coLiI8GtsRuP5quuirCRiehBBmt0S4sOZIMgIWnjnF81fJbaQ0O3Ebr7iit9ii5v4eo7495Va4ndACkx5NwPU0CNo+uI+eDwvbRWPJ7xDVoXf1x6Le4gwGTabuTGfEAqXX9mo8cXxRhtJwBiTZkK07cnTYgJhAISieuCFc1Gwke2nw0oc0PTdYtorYtswzrBea2jb9IGsVtZYIO3mI0nqwo6uXXyei3br7+D35rAG7Jda22P8MaS2nI4loPfHKDvylHdPnmqHAwgR0LlfQ0cRVbSbjn6DDduSsYvul8I9CFEBg4bC+cNzdUl9+qyx1myXQ/PhghB/feVQNoUayZATU0VSlmmLmJlJAIOPRbN2B1zlKUTs=
