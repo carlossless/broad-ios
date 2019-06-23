@@ -31,9 +31,9 @@ fastlane ios build
 fastlane ios beta
 ```
 
-### ios appstore
+### ios store
 ```
-fastlane ios appstore
+fastlane ios store
 ```
 
 ### ios ci_beta
