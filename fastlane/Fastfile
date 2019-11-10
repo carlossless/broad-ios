@@ -42,27 +42,32 @@ platform :ios do
   desc "Build and Release on HockeyApp"
   lane :ci_beta do
     keychain_name = "ios-build.keychain"
-    create_keychain(
-      name: keychain_name,
-      password: ENV['KEYCHAIN_PASSWORD'],
-      default_keychain: true,
-      unlock: true,
-      timeout: 3600,
-      add_to_search_list: true
-    )
-    sync_code_signing(
-      keychain_name: keychain_name,
-      keychain_password: ENV['KEYCHAIN_PASSWORD'],
-      type: "adhoc",
-      readonly: true
-    )
-    increment_build_number(
-      build_number: ENV['TRAVIS_BUILD_NUMBER']
-    )
+    # create_keychain(
+    #   name: keychain_name,
+    #   password: ENV['KEYCHAIN_PASSWORD'],
+    #   default_keychain: true,
+    #   unlock: true,
+    #   timeout: 3600,
+    #   add_to_search_list: true
+    # )
+    # sync_code_signing(
+    #   keychain_name: keychain_name,
+    #   keychain_password: ENV['KEYCHAIN_PASSWORD'],
+    #   type: "adhoc",
+    #   readonly: true
+    # )
+    # increment_build_number(
+    #   build_number: ENV['TRAVIS_BUILD_NUMBER']
+    # )
     build(
       config: "AdHoc",
       export: "ad-hoc"
     )
-    hockey
+    appcenter_upload(
+      owner_name: 'delanoir-omy0',
+      owner_type: 'organization',
+      app_name: 'Broad',
+      notify_testers: true
+    )
   end
 end
