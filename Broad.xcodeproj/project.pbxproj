@@ -40,11 +40,9 @@
 		F98BA6EE1E6E1382001A33A8 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98BA6EA1E6E1382001A33A8 /* Curry.framework */; };
 		F98BA6EF1E6E1382001A33A8 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98BA6EB1E6E1382001A33A8 /* ReactiveCocoa.framework */; };
 		F98BA6F01E6E1382001A33A8 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98BA6EC1E6E1382001A33A8 /* ReactiveSwift.framework */; };
-		F98BA6F41E6E150A001A33A8 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98BA6F21E6E150A001A33A8 /* Result.framework */; };
 		F98BA7051E6E15BB001A33A8 /* Curry.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F98BA6F81E6E156C001A33A8 /* Curry.framework.dSYM */; };
 		F98BA7061E6E15BB001A33A8 /* ReactiveCocoa.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F98BA6F91E6E156C001A33A8 /* ReactiveCocoa.framework.dSYM */; };
 		F98BA7071E6E15BB001A33A8 /* ReactiveSwift.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F98BA6FA1E6E156C001A33A8 /* ReactiveSwift.framework.dSYM */; };
-		F98BA7081E6E15BB001A33A8 /* Result.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F98BA6FB1E6E156C001A33A8 /* Result.framework.dSYM */; };
 		F98BA70B1E6E1A55001A33A8 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98BA70A1E6E1A55001A33A8 /* SnapKit.framework */; };
 		F98E057C2013E84C00EBCACE /* ProgrammeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98E057B2013E84C00EBCACE /* ProgrammeHeaderView.swift */; };
 		F997AF131ED85CD000EAA72B /* LRTStreamImageGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = F997AF121ED85CD000EAA72B /* LRTStreamImageGrabber.m */; };
@@ -115,7 +113,6 @@
 				F98BA7051E6E15BB001A33A8 /* Curry.framework.dSYM in Copy dSYMs */,
 				F98BA7061E6E15BB001A33A8 /* ReactiveCocoa.framework.dSYM in Copy dSYMs */,
 				F98BA7071E6E15BB001A33A8 /* ReactiveSwift.framework.dSYM in Copy dSYMs */,
-				F98BA7081E6E15BB001A33A8 /* Result.framework.dSYM in Copy dSYMs */,
 			);
 			name = "Copy dSYMs";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,7 +167,6 @@
 		F98BA6EA1E6E1382001A33A8 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/iOS/Curry.framework; sourceTree = "<group>"; };
 		F98BA6EB1E6E1382001A33A8 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		F98BA6EC1E6E1382001A33A8 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
-		F98BA6F21E6E150A001A33A8 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		F98BA6F81E6E156C001A33A8 /* Curry.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Curry.framework.dSYM; path = Carthage/Build/iOS/Curry.framework.dSYM; sourceTree = "<group>"; };
 		F98BA6F91E6E156C001A33A8 /* ReactiveCocoa.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveCocoa.framework.dSYM; path = Carthage/Build/iOS/ReactiveCocoa.framework.dSYM; sourceTree = "<group>"; };
 		F98BA6FA1E6E156C001A33A8 /* ReactiveSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveSwift.framework.dSYM; path = Carthage/Build/iOS/ReactiveSwift.framework.dSYM; sourceTree = "<group>"; };
@@ -248,7 +244,6 @@
 				F9B5FE3F1ED5BED200545320 /* libz.tbd in Frameworks */,
 				F98BA6EE1E6E1382001A33A8 /* Curry.framework in Frameworks */,
 				F98BA6EF1E6E1382001A33A8 /* ReactiveCocoa.framework in Frameworks */,
-				F98BA6F41E6E150A001A33A8 /* Result.framework in Frameworks */,
 				D5B4F95D20DFC55100F31593 /* FFmpeg.framework in Frameworks */,
 				F9E18EF41E6E27F000F1A607 /* Rswift.framework in Frameworks */,
 				F98BA70B1E6E1A55001A33A8 /* SnapKit.framework in Frameworks */,
@@ -396,7 +391,6 @@
 				F9F3F7CD1F97F15A00829B70 /* Nimble.framework */,
 				F9F3F7CC1F97F15A00829B70 /* Quick.framework */,
 				F9E18EF31E6E27F000F1A607 /* Rswift.framework */,
-				F98BA6F21E6E150A001A33A8 /* Result.framework */,
 				F98BA6EA1E6E1382001A33A8 /* Curry.framework */,
 				F93A31A91ED5CBAE00F390C2 /* VideoToolbox.framework */,
 				F98BA6EB1E6E1382001A33A8 /* ReactiveCocoa.framework */,
@@ -691,7 +685,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Curry.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
@@ -703,7 +696,6 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Curry.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveCocoa.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Rswift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
@@ -985,7 +977,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.broad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e3b73abd-073e-4ab1-b792-44a1928ccfad";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.delanoir.broad";
+				PROVISIONING_PROFILE_SPECIFIER = "Broad App Store";
 				SWIFT_OBJC_BRIDGING_HEADER = "Broad/Core/Broad-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1246,6 +1238,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = DXEF6FH82Q;

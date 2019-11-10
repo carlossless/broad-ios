@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Result
 import ReactiveSwift
 import Curry
 
@@ -25,7 +24,7 @@ class ChannelViewModel: ViewModel {
     let showAllShowsButton = MutableProperty<Bool>(false)
     let upcomingShows = MutableProperty<[ChannelShowViewModel]>([])
     
-    var showAllShows: Action<(), (), NoError>!
+    var showAllShows: Action<(), (), Never>!
     var updateShows: Action<(), GraphChannelResponse, APIError>!
     
     init (channelId: String, channelName: String, playlistUrl: URL, apiClient: GraphAPIClient = GraphAPIClient(), navigator: Navigator = Navigator.shared) {

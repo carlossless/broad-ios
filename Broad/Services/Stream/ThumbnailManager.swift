@@ -9,14 +9,13 @@
 import Foundation
 import UIKit
 import ReactiveSwift
-import Result
 
 class ThumbnailManager {
     
     let generator = ThumbnailGenerator()
     var cachedThumbnails: [String: UIImage] = [:]
     
-    func getThumbnailUpdateStream(for key: String, playlistUrl: URL, size: CGSize) -> SignalProducer<UIImage?, NoError> {
+    func getThumbnailUpdateStream(for key: String, playlistUrl: URL, size: CGSize) -> SignalProducer<UIImage?, Never> {
         return SignalProducer { obs, disp in
             if let cachedImage = self.cachedThumbnails[key] {
                 obs.send(value: cachedImage)

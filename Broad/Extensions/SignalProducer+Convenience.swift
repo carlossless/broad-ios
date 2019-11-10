@@ -8,12 +8,11 @@
 
 import Foundation
 import ReactiveSwift
-import Result
 
 extension SignalProducer {
-    func optionalizeErrors() -> SignalProducer<Value?, NoError> {
+    func optionalizeErrors() -> SignalProducer<Value?, Never> {
         return self
             .map { Optional($0) }
-            .flatMapError { _ in SignalProducer<Value?, NoError>.init(value: nil) }
+            .flatMapError { _ in SignalProducer<Value?, Never>.init(value: nil) }
     }
 }

@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import ReactiveSwift
 import ReactiveCocoa
-import Result
 import AVFoundation
 import CoreMedia
 
@@ -44,7 +43,7 @@ class SelectionViewModel : ViewModel {
     
     let stations = MutableProperty<[StationTableCellModel]>([])
     var updateStations: Action<(), StreamDataResponse, APIError>!
-    var openAboutScreen: Action<(), (), NoError>!
+    var openAboutScreen: Action<(), (), Never>!
     
     init (apiClient: LRTStreamAPIClient = LRTStreamAPIClient(), navigator: Navigator = Navigator.shared, thumbnailManager: ThumbnailManager = ThumbnailManager()) {
         self.apiClient = apiClient
@@ -55,7 +54,7 @@ class SelectionViewModel : ViewModel {
             return self.apiClient.stations()
         }
         
-        openAboutScreen = Action<(), (), NoError> { [unowned self] _ in
+        openAboutScreen = Action<(), (), Never> { [unowned self] _ in
             self.navigator.push(model: AboutViewModel(), animated: true)
             return SignalProducer.init(value: ())
         }

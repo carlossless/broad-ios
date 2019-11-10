@@ -8,7 +8,6 @@
 
 import Foundation
 import ReactiveSwift
-import Result
 
 class HTTPClient {
     
@@ -39,12 +38,12 @@ class HTTPClient {
     private func handleResponse(data: Data, response: URLResponse) -> Result<Data, APIError> {
         if let response = response as? HTTPURLResponse {
             if 200..<400 ~= response.statusCode {
-                return Result(value: data)
+                return .success(data)
             } else {
-                return Result(error: APIError.httpStatusFailed("Returned response code: \(response.statusCode)"))
+                return .failure(APIError.httpStatusFailed("Returned response code: \(response.statusCode)"))
             }
         } else {
-            return Result(error: APIError.httpStatusFailed("No Response"))
+            return .failure(APIError.httpStatusFailed("No Response"))
         }
     }
     
@@ -72,9 +71,9 @@ class HTTPClient {
                 return date
             })
             let result = try decoder.decode(T.self, from: data)
-            return Result(value: result)
+            return Result.success(result)
         } catch let error as NSError {
-            return Result(error: APIError.jsonParsingFailed(error))
+            return Result.failure(APIError.jsonParsingFailed(error))
         }
     }
     

@@ -8,7 +8,6 @@
 
 import Foundation
 import ReactiveSwift
-import Result
 
 struct StationTableCellModel : ViewModel {
     
@@ -31,7 +30,7 @@ extension StationTableCellModel {
         self.thumbnailManager = thumbnailManager
     }
     
-    var thumbnailImage: SignalProducer<UIImage?, NoError> {
+    var thumbnailImage: SignalProducer<UIImage?, Never> {
         return thumbnailManager.getThumbnailUpdateStream(for: self.name, playlistUrl: playlistUrl, size: CGSize(width: 0, height: 70))
     }
     

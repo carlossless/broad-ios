@@ -8,7 +8,6 @@
 
 import Foundation
 import ReactiveSwift
-import Result
 import DateHelper
 import Curry
 
