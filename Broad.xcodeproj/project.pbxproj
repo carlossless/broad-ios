@@ -10,8 +10,6 @@
 		D517F21B210783E100E1188C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D517F21A210783E000E1188C /* Security.framework */; };
 		D54554DE21EE03F500211ADD /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E7F1BD1FA2838F008B1B13 /* Kingfisher.framework */; };
 		D5B4F95D20DFC55100F31593 /* FFmpeg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B4F95C20DFC55100F31593 /* FFmpeg.framework */; };
-		D5CD1763213801FA00CA635F /* AppSpectorSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CD1762213801F900CA635F /* AppSpectorSDK.framework */; };
-		D5CD17662138025000CA635F /* AppSpectorSDK.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = D5CD17642138020800CA635F /* AppSpectorSDK.framework.dSYM */; };
 		D5CD17682138032400CA635F /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD17672138032400CA635F /* Secrets.swift */; };
 		F90787261F9D0C2300E0870B /* UIStackView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90787251F9D0C2300E0870B /* UIStackView+Convenience.swift */; };
 		F908B3971F7C57DD00819655 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908B3961F7C57DD00819655 /* AboutViewController.swift */; };
@@ -105,7 +103,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				D5CD17662138025000CA635F /* AppSpectorSDK.framework.dSYM in Copy dSYMs */,
 				F9F3B9D81FCDE6BB00D5CC47 /* DateHelper.framework.dSYM in Copy dSYMs */,
 				F9E7F1C01FA283AC008B1B13 /* Kingfisher.framework.dSYM in Copy dSYMs */,
 				F9E18EF71E6E282000F1A607 /* Rswift.framework.dSYM in Copy dSYMs */,
@@ -134,8 +131,6 @@
 /* Begin PBXFileReference section */
 		D517F21A210783E000E1188C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D5B4F95C20DFC55100F31593 /* FFmpeg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FFmpeg.framework; path = Carthage/Build/iOS/FFmpeg.framework; sourceTree = "<group>"; };
-		D5CD1762213801F900CA635F /* AppSpectorSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppSpectorSDK.framework; path = Carthage/Build/iOS/AppSpectorSDK.framework; sourceTree = "<group>"; };
-		D5CD17642138020800CA635F /* AppSpectorSDK.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = AppSpectorSDK.framework.dSYM; path = Carthage/Build/iOS/AppSpectorSDK.framework.dSYM; sourceTree = "<group>"; };
 		D5CD17672138032400CA635F /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		F90787251F9D0C2300E0870B /* UIStackView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Convenience.swift"; sourceTree = "<group>"; };
 		F908B3961F7C57DD00819655 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -247,7 +242,6 @@
 				D5B4F95D20DFC55100F31593 /* FFmpeg.framework in Frameworks */,
 				F9E18EF41E6E27F000F1A607 /* Rswift.framework in Frameworks */,
 				F98BA70B1E6E1A55001A33A8 /* SnapKit.framework in Frameworks */,
-				D5CD1763213801FA00CA635F /* AppSpectorSDK.framework in Frameworks */,
 				F98BA6F01E6E1382001A33A8 /* ReactiveSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,7 +377,6 @@
 			isa = PBXGroup;
 			children = (
 				F98BA6F61E6E1546001A33A8 /* DSYMs */,
-				D5CD1762213801F900CA635F /* AppSpectorSDK.framework */,
 				D517F21A210783E000E1188C /* Security.framework */,
 				D5B4F95C20DFC55100F31593 /* FFmpeg.framework */,
 				F9F3B9D41FCDE6A400D5CC47 /* DateHelper.framework */,
@@ -407,7 +400,6 @@
 		F98BA6F61E6E1546001A33A8 /* DSYMs */ = {
 			isa = PBXGroup;
 			children = (
-				D5CD17642138020800CA635F /* AppSpectorSDK.framework.dSYM */,
 				F9F3B9D61FCDE6B100D5CC47 /* DateHelper.framework.dSYM */,
 				F9E7F1BF1FA2839B008B1B13 /* Kingfisher.framework.dSYM */,
 				F9F3F7D01F97F16500829B70 /* Nimble.framework.dSYM */,
@@ -689,7 +681,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/DateHelper.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/AppSpectorSDK.framework",
 			);
 			name = "Carthage Copy-Frameworks";
 			outputPaths = (

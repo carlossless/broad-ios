@@ -7,11 +7,9 @@
 //
 
 import UIKit
-//import HockeySDK
 import AVFoundation
 import ReactiveSwift
 import CoreSpotlight
-import AppSpectorSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,8 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
-//        setupHockeyApp()
-        setupAppSpector()
         setupAudioSessionCategory()
         
         navigator = Navigator.shared
@@ -55,18 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return .portrait
-    }
-    
-//    private func setupHockeyApp() {
-//        BITHockeyManager.shared().configure(withIdentifier: Secrets.HockeyAppKey)
-//        BITHockeyManager.shared().start()
-//        BITHockeyManager.shared().authenticator.authenticateInstallation()
-//    }
-    
-    private func setupAppSpector() {
-        AppSpector.run(
-            with: AppSpectorConfig(apiKey: Secrets.AppSpectorKey, monitorIDs: [Monitor.http, Monitor.logs])
-        )
     }
     
     private func registerViewControllers() {
