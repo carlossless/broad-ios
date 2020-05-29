@@ -64,7 +64,7 @@ jobs:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Set build number
         run: xcrun agvtool new-version -all "$GITHUB_RUN_ID"
-      - name: Releasing
+      - name: Beta Release
         run: bundle exec fastlane ci_beta
         env:
           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
