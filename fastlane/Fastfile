@@ -31,7 +31,7 @@ platform :ios do
   lane :store do
     sync_code_signing(
       type: "appstore",
-        keychain_password: "operator12"
+      keychain_password: ENV['KEYCHAIN_PASSWORD']
     )
     build(
       config: "AppStore",
@@ -42,23 +42,21 @@ platform :ios do
   desc "Build and Release on HockeyApp"
   lane :ci_beta do
     keychain_name = "ios-build.keychain"
-    # create_keychain(
-    #   name: keychain_name,
-    #   password: ENV['KEYCHAIN_PASSWORD'],
-    #   default_keychain: true,
-    #   unlock: true,
-    #   timeout: 3600,
-    #   add_to_search_list: true
-    # )
-    # sync_code_signing(
-    #   keychain_name: keychain_name,
-    #   keychain_password: ENV['KEYCHAIN_PASSWORD'],
-    #   type: "adhoc",
-    #   readonly: true
-    # )
-    # increment_build_number(
-    #   build_number: ENV['TRAVIS_BUILD_NUMBER']
-    # )
+    create_keychain(
+      name: keychain_name,
+      password: ENV['KEYCHAIN_PASSWORD'],
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600,
+      add_to_search_list: true
+    )
+    sync_code_signing(
+      git_url: 'https://github.com/carlossless/apple-certificates.git',
+      keychain_name: keychain_name,
+      keychain_password: ENV['KEYCHAIN_PASSWORD'],
+      type: "adhoc",
+      readonly: true
+    )
     build(
       config: "AdHoc",
       export: "ad-hoc"

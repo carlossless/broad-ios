@@ -1,4 +1,4 @@
-# Broad iOS [![Build Status](https://travis-ci.org/carlossless/broad-ios.svg?branch=master)](https://travis-ci.org/carlossless/broad-ios)
+# Broad iOS
 
 Stream Live Broadcasts from [LRT](http://lrt.lt)
 
