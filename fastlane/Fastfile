@@ -7,9 +7,6 @@ platform :ios do
   end
 
   lane :build do |options|
-    sync_code_signing(
-      readonly: true
-    )
     build_app(
       scheme: "Broad",
       configuration: options[:config] || "Release",
