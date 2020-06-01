@@ -1,4 +1,4 @@
-# Broad iOS
+# Broad iOS ![status](https://github.com/carlossless/broad-ios/workflows/test/badge.svg?branch=master)
 
 Stream Live Broadcasts from [LRT](http://lrt.lt)
 
