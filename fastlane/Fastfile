@@ -15,14 +15,10 @@ platform :ios do
   end
 
   lane :beta do
-    sync_code_signing(
-      type: "adhoc"
-    )
     build(
       config: "AdHoc",
       export: "ad-hoc"
     )
-    hockey
   end
 
   lane :store do

@@ -11,6 +11,10 @@ import AVFoundation
 import ReactiveSwift
 import CoreSpotlight
 
+import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -18,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
+        setAppCenter()
         setupAudioSessionCategory()
         
         navigator = Navigator.shared
@@ -27,18 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigator.window = window
         navigator.replaceRoot(model: SplashViewModel())
         window?.makeKeyAndVisible()
-    }
-    
-    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Swift.Void) -> Bool {
-        if userActivity.activityType == CSSearchableItemActionType {
-            // This activity represents an item indexed using Core Spotlight, so restore the context related to the unique identifier.
-            // Note that the unique identifier of the Core Spotlight item is set in the activity’s userInfo property for the key CSSearchableItemActivityIdentifier.
-//            if let uniqueIdentifier = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String {
-                // Call the service
-//            }
-            // Next, find and open the item specified by uniqueIdentifer.
-        }
-        return true
     }
     
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
@@ -59,6 +52,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigator.register(AboutViewController.self, for: AboutViewModel.self)
         navigator.register(ChannelViewController.self, for: ChannelViewModel.self)
         navigator.register(ProgrammeViewController.self, for: ProgrammeViewModel.self)
+    }
+    
+    private func setAppCenter() {
+        MSAppCenter.start(Secrets.AppCenterKey, withServices:[
+          MSAnalytics.self,
+          MSCrashes.self,
+        ])
     }
     
     private func setupAudioSessionCategory() {

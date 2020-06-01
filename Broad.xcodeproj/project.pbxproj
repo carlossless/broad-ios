@@ -11,6 +11,9 @@
 		D54554DE21EE03F500211ADD /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E7F1BD1FA2838F008B1B13 /* Kingfisher.framework */; };
 		D5B4F95D20DFC55100F31593 /* FFmpeg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B4F95C20DFC55100F31593 /* FFmpeg.framework */; };
 		D5CD17682138032400CA635F /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD17672138032400CA635F /* Secrets.swift */; };
+		D5DCA21F248516F6004395D8 /* AppCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DCA21C248516F5004395D8 /* AppCenter.framework */; };
+		D5DCA220248516F6004395D8 /* AppCenterAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DCA21D248516F5004395D8 /* AppCenterAnalytics.framework */; };
+		D5DCA221248516F6004395D8 /* AppCenterCrashes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DCA21E248516F5004395D8 /* AppCenterCrashes.framework */; };
 		F90787261F9D0C2300E0870B /* UIStackView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90787251F9D0C2300E0870B /* UIStackView+Convenience.swift */; };
 		F908B3971F7C57DD00819655 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908B3961F7C57DD00819655 /* AboutViewController.swift */; };
 		F908B3991F7C57FF00819655 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908B3981F7C57FF00819655 /* AboutView.swift */; };
@@ -132,6 +135,9 @@
 		D517F21A210783E000E1188C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D5B4F95C20DFC55100F31593 /* FFmpeg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FFmpeg.framework; path = Carthage/Build/iOS/FFmpeg.framework; sourceTree = "<group>"; };
 		D5CD17672138032400CA635F /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		D5DCA21C248516F5004395D8 /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = Carthage/Build/iOS/AppCenter.framework; sourceTree = "<group>"; };
+		D5DCA21D248516F5004395D8 /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = Carthage/Build/iOS/AppCenterAnalytics.framework; sourceTree = "<group>"; };
+		D5DCA21E248516F5004395D8 /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = Carthage/Build/iOS/AppCenterCrashes.framework; sourceTree = "<group>"; };
 		F90787251F9D0C2300E0870B /* UIStackView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Convenience.swift"; sourceTree = "<group>"; };
 		F908B3961F7C57DD00819655 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		F908B3981F7C57FF00819655 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -229,7 +235,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5DCA221248516F6004395D8 /* AppCenterCrashes.framework in Frameworks */,
 				D54554DE21EE03F500211ADD /* Kingfisher.framework in Frameworks */,
+				D5DCA21F248516F6004395D8 /* AppCenter.framework in Frameworks */,
+				D5DCA220248516F6004395D8 /* AppCenterAnalytics.framework in Frameworks */,
 				D517F21B210783E100E1188C /* Security.framework in Frameworks */,
 				F9F304611F1825D90097E961 /* libxml2.tbd in Frameworks */,
 				F93A31AA1ED5CBAE00F390C2 /* VideoToolbox.framework in Frameworks */,
@@ -377,6 +386,9 @@
 			isa = PBXGroup;
 			children = (
 				F98BA6F61E6E1546001A33A8 /* DSYMs */,
+				D5DCA21C248516F5004395D8 /* AppCenter.framework */,
+				D5DCA21D248516F5004395D8 /* AppCenterAnalytics.framework */,
+				D5DCA21E248516F5004395D8 /* AppCenterCrashes.framework */,
 				D517F21A210783E000E1188C /* Security.framework */,
 				D5B4F95C20DFC55100F31593 /* FFmpeg.framework */,
 				F9F3B9D41FCDE6A400D5CC47 /* DateHelper.framework */,
@@ -681,6 +693,9 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/DateHelper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AppCenter.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AppCenterAnalytics.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AppCenterCrashes.framework",
 			);
 			name = "Carthage Copy-Frameworks";
 			outputPaths = (
@@ -691,7 +706,9 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Rswift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/DateHelper.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AppSpectorSDK.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AppCenter.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AppCenterAnalytics.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AppCenterCrashes.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
