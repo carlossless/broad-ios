@@ -12,6 +12,5 @@ import Foundation
 
 class Secrets {
     static let GraphAPIKey = "anonymous"
-    static let HockeyAppKey = "58d1c2e2eaf14e97b01973edade2d378"
-    static let AppSpectorKey = "NjZjY2M4M2ItM2U2Ny00NjIwLWFlY2EtOWFhOTAyYWQ5YWNl"
+    static let AppCenterKey = "58d1c2e2-eaf1-4e97-b019-73edade2d378"
 }
