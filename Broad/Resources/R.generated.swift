@@ -49,6 +49,83 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
+  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
+  struct string {
+    /// This `R.string.localization` struct is generated, and contains static references to 6 localization keys.
+    struct localization {
+      /// en translation: About
+      /// 
+      /// Locales: en, lt
+      static let selection_viewAbout = Rswift.StringResource(key: "selection_view.about", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "lt"], comment: nil)
+      /// en translation: All Shows >
+      /// 
+      /// Locales: en, lt
+      static let channel_viewAll_shows = Rswift.StringResource(key: "channel_view.all_shows", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "lt"], comment: nil)
+      /// en translation: Channels
+      /// 
+      /// Locales: en, lt
+      static let selection_viewChannels = Rswift.StringResource(key: "selection_view.channels", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "lt"], comment: nil)
+      /// en translation: Coming up:
+      /// 
+      /// Locales: en, lt
+      static let channel_viewComing_up = Rswift.StringResource(key: "channel_view.coming_up", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "lt"], comment: nil)
+      /// en translation: NOW
+      /// 
+      /// Locales: en, lt
+      static let channel_viewNow = Rswift.StringResource(key: "channel_view.now", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "lt"], comment: nil)
+      /// en translation: Programme
+      /// 
+      /// Locales: en, lt
+      static let programme_viewTitle = Rswift.StringResource(key: "programme_view.title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "lt"], comment: nil)
+      
+      /// en translation: About
+      /// 
+      /// Locales: en, lt
+      static func selection_viewAbout(_: Void = ()) -> String {
+        return NSLocalizedString("selection_view.about", tableName: "Localization", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: All Shows >
+      /// 
+      /// Locales: en, lt
+      static func channel_viewAll_shows(_: Void = ()) -> String {
+        return NSLocalizedString("channel_view.all_shows", tableName: "Localization", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Channels
+      /// 
+      /// Locales: en, lt
+      static func selection_viewChannels(_: Void = ()) -> String {
+        return NSLocalizedString("selection_view.channels", tableName: "Localization", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Coming up:
+      /// 
+      /// Locales: en, lt
+      static func channel_viewComing_up(_: Void = ()) -> String {
+        return NSLocalizedString("channel_view.coming_up", tableName: "Localization", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: NOW
+      /// 
+      /// Locales: en, lt
+      static func channel_viewNow(_: Void = ()) -> String {
+        return NSLocalizedString("channel_view.now", tableName: "Localization", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Programme
+      /// 
+      /// Locales: en, lt
+      static func programme_viewTitle(_: Void = ()) -> String {
+        return NSLocalizedString("programme_view.title", tableName: "Localization", bundle: R.hostingBundle, comment: "")
+      }
+      
+      fileprivate init() {}
+    }
+    
+    fileprivate init() {}
+  }
+  
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()

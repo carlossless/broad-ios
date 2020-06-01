@@ -48,7 +48,7 @@ class ChannelViewController : ViewController<ChannelView>, ModelBased, AVPlayerV
     
     func bind() {
         controlledView.loadingIndicator.reactive.isAnimating <~ updateShows.isExecuting
-        controlledView.timeLabel.reactive.text <~ viewModel.showName.map { $0 != nil ? "NOW" : nil }
+        controlledView.timeLabel.reactive.text <~ viewModel.showName.map { $0 != nil ? R.string.localization.channel_viewNow() : nil }
         controlledView.nameLabel.reactive.text <~ viewModel.showName
         controlledView.reactive.descriptionText <~ viewModel.showDescription
         controlledView.comingUpLabel.reactive.isHidden <~ viewModel.showComingUpLabel.negate()

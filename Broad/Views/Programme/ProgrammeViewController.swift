@@ -17,7 +17,7 @@ class ProgrammeViewController : UITableViewController, ModelBased {
     public init() {
         super.init(style: .plain)
         
-        navigationItem.title = "Programme"
+        navigationItem.title = R.string.localization.programme_viewTitle()
     }
     
     public required init?(coder aDecoder: NSCoder) {

@@ -14,6 +14,7 @@
 		D5DCA21F248516F6004395D8 /* AppCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DCA21C248516F5004395D8 /* AppCenter.framework */; };
 		D5DCA220248516F6004395D8 /* AppCenterAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DCA21D248516F5004395D8 /* AppCenterAnalytics.framework */; };
 		D5DCA221248516F6004395D8 /* AppCenterCrashes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DCA21E248516F5004395D8 /* AppCenterCrashes.framework */; };
+		D5FD9CA82485632D00B2E6F3 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5FD9CAA2485632D00B2E6F3 /* Localization.strings */; };
 		F90787261F9D0C2300E0870B /* UIStackView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90787251F9D0C2300E0870B /* UIStackView+Convenience.swift */; };
 		F908B3971F7C57DD00819655 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908B3961F7C57DD00819655 /* AboutViewController.swift */; };
 		F908B3991F7C57FF00819655 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908B3981F7C57FF00819655 /* AboutView.swift */; };
@@ -138,6 +139,8 @@
 		D5DCA21C248516F5004395D8 /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = Carthage/Build/iOS/AppCenter.framework; sourceTree = "<group>"; };
 		D5DCA21D248516F5004395D8 /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = Carthage/Build/iOS/AppCenterAnalytics.framework; sourceTree = "<group>"; };
 		D5DCA21E248516F5004395D8 /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = Carthage/Build/iOS/AppCenterCrashes.framework; sourceTree = "<group>"; };
+		D5FD9CA92485632D00B2E6F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
+		D5FD9CAB2485634100B2E6F3 /* lt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lt; path = lt.lproj/Localization.strings; sourceTree = "<group>"; };
 		F90787251F9D0C2300E0870B /* UIStackView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Convenience.swift"; sourceTree = "<group>"; };
 		F908B3961F7C57DD00819655 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		F908B3981F7C57FF00819655 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -462,6 +465,7 @@
 				F98BA6DD1E6E0ECA001A33A8 /* Assets.xcassets */,
 				F98BA6DF1E6E0ECA001A33A8 /* LaunchScreen.storyboard */,
 				F9E18EF11E6E27B400F1A607 /* R.generated.swift */,
+				D5FD9CAA2485632D00B2E6F3 /* Localization.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -648,6 +652,7 @@
 			knownRegions = (
 				en,
 				Base,
+				lt,
 			);
 			mainGroup = F98BA6CA1E6E0ECA001A33A8;
 			productRefGroup = F98BA6D41E6E0ECA001A33A8 /* Products */;
@@ -673,6 +678,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F98BA6E11E6E0ECA001A33A8 /* LaunchScreen.storyboard in Resources */,
+				D5FD9CA82485632D00B2E6F3 /* Localization.strings in Resources */,
 				F98BA6DE1E6E0ECA001A33A8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -815,6 +821,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		D5FD9CAA2485632D00B2E6F3 /* Localization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5FD9CA92485632D00B2E6F3 /* en */,
+				D5FD9CAB2485634100B2E6F3 /* lt */,
+			);
+			name = Localization.strings;
+			sourceTree = "<group>";
+		};
 		F98BA6DF1E6E0ECA001A33A8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

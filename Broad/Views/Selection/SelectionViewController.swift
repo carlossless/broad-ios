@@ -21,8 +21,18 @@ class SelectionViewController: UITableViewController, ModelBased {
         super.init(style: .plain)
         
         navigationItem.title = "LRT"
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Channels", style: .plain, target: nil, action: nil)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "About", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: R.string.localization.selection_viewChannels(),
+            style: .plain,
+            target: nil,
+            action: nil
+        )
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: R.string.localization.selection_viewAbout(),
+            style: .plain,
+            target: nil,
+            action: nil
+        )
     }
     
     public required init?(coder aDecoder: NSCoder) {

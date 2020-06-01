@@ -1,0 +1,16 @@
+/* 
+  Localization.strings
+  Broad
+
+  Created by Karolis Stasaitis on 01.06.20.
+  Copyright © 2020 delanoir. All rights reserved.
+*/
+
+channel_view.all_shows = "All Shows >";
+channel_view.coming_up = "Coming up:";
+channel_view.now = "NOW";
+
+programme_view.title = "Programme";
+
+selection_view.channels = "Channels";
+selection_view.about = "About";

@@ -74,13 +74,13 @@ class ChannelView : UIView {
         comingUpLabel = UILabel()
         comingUpLabel.font = UIFont.boldSystemFont(ofSize: 13)
         comingUpLabel.textColor = UIColor(hex: 0xA3A3A3)
-        comingUpLabel.text = "Coming up:"
+        comingUpLabel.text = R.string.localization.channel_viewComing_up()
         comingUpLabel.isHidden = true
         
         allShowsButton = UIButton()
         allShowsButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
         allShowsButton.setTitleColor(UIColor(hex: 0x6484FF), for: .normal)
-        allShowsButton.setTitle("All Shows >", for: .normal)
+        allShowsButton.setTitle(R.string.localization.channel_viewAll_shows(), for: .normal)
         allShowsButton.setContentCompressionResistancePriority(.required, for: .horizontal)
         allShowsButton.setContentHuggingPriority(.required, for: .horizontal)
         allShowsButton.isHidden = true

@@ -1,0 +1,16 @@
+/* 
+  Localization.strings
+  Broad
+
+  Created by Karolis Stasaitis on 01.06.20.
+  Copyright © 2020 delanoir. All rights reserved.
+*/
+
+channel_view.all_shows = "Pilna Programa >";
+channel_view.coming_up = "Ateinantys:";
+channel_view.now = "DABAR";
+
+programme_view.title = "Programa";
+
+selection_view.channels = "Kanalai";
+selection_view.about = "Apie";
