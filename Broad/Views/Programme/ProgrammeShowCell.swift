@@ -29,6 +29,7 @@ class ProgrammeShowCell: UITableViewCell, ModelBased {
     
     func setup() {
         backgroundColor = UIColor(hex: 0x202535)
+        
         selectedBackgroundView = UIView()
         selectedBackgroundView!.backgroundColor = UIColor(hex: 0x161A2C)
         
@@ -86,6 +87,20 @@ class ProgrammeShowCell: UITableViewCell, ModelBased {
         titleLabel.text = model.name
         timeLabel.text = model.startsAt.toString(format: DateFormatType.custom("HH:mm"))
         programmeLabel.text = model.description
+        
+        if model.archiveUrl != nil {
+            selectionStyle = .default
+        } else {
+            selectionStyle = .none
+        }
+    }
+    
+    func setCurrent(_ isCurrent: Bool) {
+        if isCurrent {
+            backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        } else {
+            backgroundColor = UIColor(hex: 0x202535)
+        }
     }
     
 }

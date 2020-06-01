@@ -34,6 +34,7 @@ class StationTableViewCell : UITableViewCell, ModelBased {
         backgroundColor = UIColor(hex: 0x202535)
         selectedBackgroundView = UIView()
         selectedBackgroundView!.backgroundColor = UIColor(hex: 0x161A2C)
+        selectionStyle = .none
         
         titleLabel = UILabel()
         titleLabel.font = UIFont.boldSystemFont(ofSize: 17)

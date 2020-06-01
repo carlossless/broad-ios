@@ -51,18 +51,26 @@ class ProgrammeViewController : UITableViewController, ModelBased {
     func bind() {
         tableView.refreshControl!.reactive.refresh = CocoaAction(viewModel.updateProgramme)
         
-//        tableView.reactive.reloadData <~ viewModel.shows.producer.map { _ in () }
-        
         viewModel.shows.producer
             .take(during: self.reactive.lifetime)
             .observe(on: UIScheduler())
             .startWithValues { [weak self] _ in
                 self?.tableView.reloadData()
                 if let pair = self?.viewModel.currentShow.value {
-                    print(pair)
                     self?.tableView.scrollToRow(at: IndexPath(row: pair.row, section: pair.section), at: .top, animated: false)
                 }
             }
+        
+        viewModel.currentShow
+            .producer
+            .take(during: self.reactive.lifetime)
+            .observe(on: UIScheduler())
+            .skip(first: 3) // skip the initial data reload
+            .startWithValues({ [weak self] pair in
+                if let pair = pair {
+                    self?.tableView?.reloadRows(at: [IndexPath(row: pair.row, section: pair.section)], with: .fade)
+                }
+            })
         
         viewModel.updateProgramme.errors.observeValues { error in
             let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
@@ -97,6 +105,10 @@ class ProgrammeViewController : UITableViewController, ModelBased {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! ProgrammeShowCell
         let model = viewModel.shows.value[indexPath.section].cells[indexPath.row]
         cell.configure(for: model)
+        
+        let isCurrent = indexPath.section == viewModel.currentShow.value?.section && indexPath.row == viewModel.currentShow.value?.row
+        cell.setCurrent(isCurrent)
+        
         return cell
     }
     
