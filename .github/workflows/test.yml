@@ -1,0 +1,33 @@
+name: test
+
+on: [push]
+
+jobs:
+  test:
+    name: test
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Homebrew Bundle
+        run: brew bundle
+      - uses: ruby/setup-ruby@v1
+      - uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gem-
+      - name: Ruby Bundle
+        run: bundle install
+      - uses: actions/cache@v1
+        id: carthage-cache
+        with:
+          path: Carthage
+          key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
+      - name: Carthage
+        if: steps.carthage-cache.outputs.cache-hit != 'true'
+        run: carthage bootstrap --platform iOS --cache-builds
+        env:
+          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Test
+        run: bundle exec fastlane test

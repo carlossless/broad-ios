@@ -464,8 +464,8 @@
 			children = (
 				F98BA6DD1E6E0ECA001A33A8 /* Assets.xcassets */,
 				F98BA6DF1E6E0ECA001A33A8 /* LaunchScreen.storyboard */,
-				F9E18EF11E6E27B400F1A607 /* R.generated.swift */,
 				D5FD9CAA2485632D00B2E6F3 /* Localization.strings */,
+				F9E18EF11E6E27B400F1A607 /* R.generated.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -724,7 +724,7 @@
 			);
 			name = R.swift;
 			outputPaths = (
-				$SRCROOT/Broad/Resources/R.generated.swift,
+				"$SRCROOT/Broad/Resources/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -828,6 +828,7 @@
 				D5FD9CAB2485634100B2E6F3 /* lt */,
 			);
 			name = Localization.strings;
+			path = .;
 			sourceTree = "<group>";
 		};
 		F98BA6DF1E6E0ECA001A33A8 /* LaunchScreen.storyboard */ = {
