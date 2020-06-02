@@ -15,6 +15,8 @@
 		D5DCA220248516F6004395D8 /* AppCenterAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DCA21D248516F5004395D8 /* AppCenterAnalytics.framework */; };
 		D5DCA221248516F6004395D8 /* AppCenterCrashes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DCA21E248516F5004395D8 /* AppCenterCrashes.framework */; };
 		D5FD9CA82485632D00B2E6F3 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5FD9CAA2485632D00B2E6F3 /* Localization.strings */; };
+		D5FD9CAD2486E72100B2E6F3 /* SignalProducer+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FD9CAC2486E72100B2E6F3 /* SignalProducer+Time.swift */; };
+		D5FD9CAF2486E9C300B2E6F3 /* TimeInterval+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FD9CAE2486E9C300B2E6F3 /* TimeInterval+Convert.swift */; };
 		F90787261F9D0C2300E0870B /* UIStackView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90787251F9D0C2300E0870B /* UIStackView+Convenience.swift */; };
 		F908B3971F7C57DD00819655 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908B3961F7C57DD00819655 /* AboutViewController.swift */; };
 		F908B3991F7C57FF00819655 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908B3981F7C57FF00819655 /* AboutView.swift */; };
@@ -141,6 +143,8 @@
 		D5DCA21E248516F5004395D8 /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = Carthage/Build/iOS/AppCenterCrashes.framework; sourceTree = "<group>"; };
 		D5FD9CA92485632D00B2E6F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
 		D5FD9CAB2485634100B2E6F3 /* lt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lt; path = lt.lproj/Localization.strings; sourceTree = "<group>"; };
+		D5FD9CAC2486E72100B2E6F3 /* SignalProducer+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignalProducer+Time.swift"; sourceTree = "<group>"; };
+		D5FD9CAE2486E9C300B2E6F3 /* TimeInterval+Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Convert.swift"; sourceTree = "<group>"; };
 		F90787251F9D0C2300E0870B /* UIStackView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Convenience.swift"; sourceTree = "<group>"; };
 		F908B3961F7C57DD00819655 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		F908B3981F7C57FF00819655 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -267,6 +271,8 @@
 				F957AFE21EEB13E000C9A981 /* Collection+Convenience.swift */,
 				F98785291FF6730D00DB5E82 /* Sequence+Group.swift */,
 				F9F6C31C1F82FBC200A57890 /* SignalProducer+Convenience.swift */,
+				D5FD9CAC2486E72100B2E6F3 /* SignalProducer+Time.swift */,
+				D5FD9CAE2486E9C300B2E6F3 /* TimeInterval+Convert.swift */,
 				F90A70051EDC9D72007A56D1 /* UIColor+Hex.swift */,
 				F926181E1F9CF035008C2B7E /* UIImageView+Reactive.swift */,
 				F90787251F9D0C2300E0870B /* UIStackView+Convenience.swift */,
@@ -782,6 +788,7 @@
 				F9E18EFA1E6EA96600F1A607 /* HTTPClient.swift in Sources */,
 				F9F3F7D91F98861A00829B70 /* ChannelResponse.swift in Sources */,
 				F9F3F7E21F9CC7FF00829B70 /* ChannelViewController.swift in Sources */,
+				D5FD9CAD2486E72100B2E6F3 /* SignalProducer+Time.swift in Sources */,
 				F9A6F7311FB365CD0028D868 /* ProgrammeViewModel.swift in Sources */,
 				F9A1CBAE1EDE0CAE00AA59FA /* SplashViewController.swift in Sources */,
 				F957AFE31EEB13E000C9A981 /* Collection+Convenience.swift in Sources */,
@@ -803,6 +810,7 @@
 				F9E18EFC1E6EA98E00F1A607 /* StreamDataResponse.swift in Sources */,
 				F9E805301EDEC1960027F1A4 /* ViewController.swift in Sources */,
 				F90787261F9D0C2300E0870B /* UIStackView+Convenience.swift in Sources */,
+				D5FD9CAF2486E9C300B2E6F3 /* TimeInterval+Convert.swift in Sources */,
 				F936B9641EE89E2200B6C84D /* ModelBased.swift in Sources */,
 				F90A700E1EDD8CB8007A56D1 /* ThumbnailGenerator.swift in Sources */,
 				F9C3204F1EF1AC270053A92C /* UIViewController+TopMost.swift in Sources */,

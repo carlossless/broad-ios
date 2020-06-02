@@ -65,10 +65,16 @@ class ProgrammeViewController : UITableViewController, ModelBased {
             .producer
             .take(during: self.reactive.lifetime)
             .observe(on: UIScheduler())
-            .skip(first: 3) // skip the initial data reload
-            .startWithValues({ [weak self] pair in
-                if let pair = pair {
-                    self?.tableView?.reloadRows(at: [IndexPath(row: pair.row, section: pair.section)], with: .fade)
+            .combinePrevious()
+            .startWithValues({ [weak self] (pair1, pair2) in
+                if let pair1 = pair1, let pair2 = pair2 {
+                    self?.tableView?.reloadRows(
+                        at: [
+                            IndexPath(row: pair1.row, section: pair1.section),
+                            IndexPath(row: pair2.row, section: pair2.section)
+                        ],
+                        with: .fade
+                    )
                 }
             })
         

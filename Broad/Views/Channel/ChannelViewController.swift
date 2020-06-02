@@ -56,14 +56,17 @@ class ChannelViewController : ViewController<ChannelView>, ModelBased, AVPlayerV
         
         controlledView.allShowsButton.reactive.pressed = CocoaAction(viewModel.showAllShows, { _ in () })
         
-        viewModel.upcomingShows.producer.observe(on: UIScheduler()).startWithValues { [unowned self] shows in
-            self.controlledView.showsStackView.removeAllArrangedSubviews()
-            shows.forEach { model in
-                let showView = ChannelShowView()
-                showView.configure(for: model)
-                self.controlledView.showsStackView.addArrangedSubview(showView)
+        viewModel.upcomingShows
+            .producer
+            .observe(on: UIScheduler())
+            .startWithValues { [weak self] shows in
+                self?.controlledView.showsStackView.removeSubviews()
+                shows.forEach { model in
+                    let showView = ChannelShowView()
+                    showView.configure(for: model)
+                    self?.controlledView.showsStackView.addArrangedSubview(showView)
+                }
             }
-        }
         
         videoController.delegate = self
     }

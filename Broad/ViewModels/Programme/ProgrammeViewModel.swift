@@ -46,7 +46,7 @@ class ProgrammeViewModel: ViewModel {
             .observe(on: UIScheduler())
         
         let updateSignal = SignalProducer
-            .timer(interval: DispatchTimeInterval.seconds(1), on: QueueScheduler())
+            .developmentTimer(interval: DispatchTimeInterval.seconds(1), on: QueueScheduler())
             .take(duringLifetimeOf: self)
             .merge(with: SignalProducer(value: Date())) // initial date
         

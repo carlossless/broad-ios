@@ -40,7 +40,7 @@ class ChannelViewModel: ViewModel {
         
         let allShows = updateShows.values
         
-        SignalProducer.timer(interval: DispatchTimeInterval.seconds(1), on: QueueScheduler.main)
+        SignalProducer.developmentTimer(interval: DispatchTimeInterval.seconds(1), on: QueueScheduler.main)
             .prefix(value: Date())
             .combineLatest(with: allShows)
             .map { date, response in curry(ChannelViewModel.selectLatestShows)(channelId)(10)(date)(response) }
