@@ -22,7 +22,7 @@ class GraphAPIClientSpec: QuickSpec {
                         }
                 }
                 
-                expect(data).toEventuallyNot(beNil(), timeout: 3)
+                expect(data).toEventuallyNot(beNil(), timeout: DispatchTimeInterval.seconds(3))
             }
         }
     }

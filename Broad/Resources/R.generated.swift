@@ -9,163 +9,299 @@ import UIKit
 
 /// This `R` struct is generated and contains references to static resources.
 struct R: Rswift.Validatable {
-  fileprivate static let applicationLocale = hostingBundle.preferredLocalizations.first.flatMap(Locale.init) ?? Locale.current
+  fileprivate static let applicationLocale = hostingBundle.preferredLocalizations.first.flatMap { Locale(identifier: $0) } ?? Locale.current
   fileprivate static let hostingBundle = Bundle(for: R.Class.self)
-  
+
+  /// Find first language and bundle for which the table exists
+  fileprivate static func localeBundle(tableName: String, preferredLanguages: [String]) -> (Foundation.Locale, Foundation.Bundle)? {
+    // Filter preferredLanguages to localizations, use first locale
+    var languages = preferredLanguages
+      .map { Locale(identifier: $0) }
+      .prefix(1)
+      .flatMap { locale -> [String] in
+        if hostingBundle.localizations.contains(locale.identifier) {
+          if let language = locale.languageCode, hostingBundle.localizations.contains(language) {
+            return [locale.identifier, language]
+          } else {
+            return [locale.identifier]
+          }
+        } else if let language = locale.languageCode, hostingBundle.localizations.contains(language) {
+          return [language]
+        } else {
+          return []
+        }
+      }
+
+    // If there's no languages, use development language as backstop
+    if languages.isEmpty {
+      if let developmentLocalization = hostingBundle.developmentLocalization {
+        languages = [developmentLocalization]
+      }
+    } else {
+      // Insert Base as second item (between locale identifier and languageCode)
+      languages.insert("Base", at: 1)
+
+      // Add development language as backstop
+      if let developmentLocalization = hostingBundle.developmentLocalization {
+        languages.append(developmentLocalization)
+      }
+    }
+
+    // Find first language for which table exists
+    // Note: key might not exist in chosen language (in that case, key will be shown)
+    for language in languages {
+      if let lproj = hostingBundle.url(forResource: language, withExtension: "lproj"),
+         let lbundle = Bundle(url: lproj)
+      {
+        let strings = lbundle.url(forResource: tableName, withExtension: "strings")
+        let stringsdict = lbundle.url(forResource: tableName, withExtension: "stringsdict")
+
+        if strings != nil || stringsdict != nil {
+          return (Locale(identifier: language), lbundle)
+        }
+      }
+    }
+
+    // If table is available in main bundle, don't look for localized resources
+    let strings = hostingBundle.url(forResource: tableName, withExtension: "strings", subdirectory: nil, localization: nil)
+    let stringsdict = hostingBundle.url(forResource: tableName, withExtension: "stringsdict", subdirectory: nil, localization: nil)
+
+    if strings != nil || stringsdict != nil {
+      return (applicationLocale, hostingBundle)
+    }
+
+    // If table is not found for requested languages, key will be shown
+    return nil
+  }
+
+  /// Load string from Info.plist file
+  fileprivate static func infoPlistString(path: [String], key: String) -> String? {
+    var dict = hostingBundle.infoDictionary
+    for step in path {
+      guard let obj = dict?[step] as? [String: Any] else { return nil }
+      dict = obj
+    }
+    return dict?[key] as? String
+  }
+
   static func validate() throws {
     try intern.validate()
   }
-  
+
+  #if os(iOS) || os(tvOS)
+  /// This `R.storyboard` struct is generated, and contains static references to 1 storyboards.
+  struct storyboard {
+    /// Storyboard `LaunchScreen`.
+    static let launchScreen = _R.storyboard.launchScreen()
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
+    static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+  #endif
+
   /// This `R.image` struct is generated, and contains static references to 2 images.
   struct image {
     /// Image `DelanoirLogo`.
     static let delanoirLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "DelanoirLogo")
     /// Image `Logo`.
     static let logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "Logo")
-    
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "DelanoirLogo", bundle: ..., traitCollection: ...)`
     static func delanoirLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.delanoirLogo, compatibleWith: traitCollection)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Logo", bundle: ..., traitCollection: ...)`
     static func logo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.logo, compatibleWith: traitCollection)
     }
-    
+    #endif
+
     fileprivate init() {}
   }
-  
-  /// This `R.storyboard` struct is generated, and contains static references to 1 storyboards.
-  struct storyboard {
-    /// Storyboard `LaunchScreen`.
-    static let launchScreen = _R.storyboard.launchScreen()
-    
-    /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
-    static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
-    }
-    
-    fileprivate init() {}
-  }
-  
+
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
     /// This `R.string.localization` struct is generated, and contains static references to 6 localization keys.
     struct localization {
       /// en translation: About
-      /// 
+      ///
       /// Locales: en, lt
       static let selection_viewAbout = Rswift.StringResource(key: "selection_view.about", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "lt"], comment: nil)
       /// en translation: All Shows >
-      /// 
+      ///
       /// Locales: en, lt
       static let channel_viewAll_shows = Rswift.StringResource(key: "channel_view.all_shows", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "lt"], comment: nil)
       /// en translation: Channels
-      /// 
+      ///
       /// Locales: en, lt
       static let selection_viewChannels = Rswift.StringResource(key: "selection_view.channels", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "lt"], comment: nil)
       /// en translation: Coming up:
-      /// 
+      ///
       /// Locales: en, lt
       static let channel_viewComing_up = Rswift.StringResource(key: "channel_view.coming_up", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "lt"], comment: nil)
       /// en translation: NOW
-      /// 
+      ///
       /// Locales: en, lt
       static let channel_viewNow = Rswift.StringResource(key: "channel_view.now", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "lt"], comment: nil)
       /// en translation: Programme
-      /// 
+      ///
       /// Locales: en, lt
       static let programme_viewTitle = Rswift.StringResource(key: "programme_view.title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "lt"], comment: nil)
-      
+
       /// en translation: About
-      /// 
+      ///
       /// Locales: en, lt
-      static func selection_viewAbout(_: Void = ()) -> String {
-        return NSLocalizedString("selection_view.about", tableName: "Localization", bundle: R.hostingBundle, comment: "")
+      static func selection_viewAbout(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("selection_view.about", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "selection_view.about"
+        }
+
+        return NSLocalizedString("selection_view.about", tableName: "Localization", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: All Shows >
-      /// 
+      ///
       /// Locales: en, lt
-      static func channel_viewAll_shows(_: Void = ()) -> String {
-        return NSLocalizedString("channel_view.all_shows", tableName: "Localization", bundle: R.hostingBundle, comment: "")
+      static func channel_viewAll_shows(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("channel_view.all_shows", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "channel_view.all_shows"
+        }
+
+        return NSLocalizedString("channel_view.all_shows", tableName: "Localization", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Channels
-      /// 
+      ///
       /// Locales: en, lt
-      static func selection_viewChannels(_: Void = ()) -> String {
-        return NSLocalizedString("selection_view.channels", tableName: "Localization", bundle: R.hostingBundle, comment: "")
+      static func selection_viewChannels(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("selection_view.channels", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "selection_view.channels"
+        }
+
+        return NSLocalizedString("selection_view.channels", tableName: "Localization", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Coming up:
-      /// 
+      ///
       /// Locales: en, lt
-      static func channel_viewComing_up(_: Void = ()) -> String {
-        return NSLocalizedString("channel_view.coming_up", tableName: "Localization", bundle: R.hostingBundle, comment: "")
+      static func channel_viewComing_up(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("channel_view.coming_up", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "channel_view.coming_up"
+        }
+
+        return NSLocalizedString("channel_view.coming_up", tableName: "Localization", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: NOW
-      /// 
+      ///
       /// Locales: en, lt
-      static func channel_viewNow(_: Void = ()) -> String {
-        return NSLocalizedString("channel_view.now", tableName: "Localization", bundle: R.hostingBundle, comment: "")
+      static func channel_viewNow(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("channel_view.now", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "channel_view.now"
+        }
+
+        return NSLocalizedString("channel_view.now", tableName: "Localization", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Programme
-      /// 
+      ///
       /// Locales: en, lt
-      static func programme_viewTitle(_: Void = ()) -> String {
-        return NSLocalizedString("programme_view.title", tableName: "Localization", bundle: R.hostingBundle, comment: "")
+      static func programme_viewTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("programme_view.title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "programme_view.title"
+        }
+
+        return NSLocalizedString("programme_view.title", tableName: "Localization", bundle: bundle, comment: "")
       }
-      
+
       fileprivate init() {}
     }
-    
+
     fileprivate init() {}
   }
-  
+
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
     }
-    
+
     fileprivate init() {}
   }
-  
+
   fileprivate class Class {}
-  
+
   fileprivate init() {}
 }
 
 struct _R: Rswift.Validatable {
   static func validate() throws {
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
+    #endif
   }
-  
+
+  #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
+      #if os(iOS) || os(tvOS)
       try launchScreen.validate()
+      #endif
     }
-    
+
+    #if os(iOS) || os(tvOS)
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UIViewController
-      
+
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
-      
+
       static func validate() throws {
         if UIKit.UIImage(named: "Logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Logo' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
-      
+
       fileprivate init() {}
     }
-    
+    #endif
+
     fileprivate init() {}
   }
-  
+  #endif
+
   fileprivate init() {}
 }

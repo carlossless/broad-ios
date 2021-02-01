@@ -55,9 +55,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func setAppCenter() {
-        MSAppCenter.start(Secrets.AppCenterKey, withServices:[
-          MSAnalytics.self,
-          MSCrashes.self,
+        AppCenter.start(withAppSecret: Secrets.AppCenterKey, services:[
+          Analytics.self,
+          Crashes.self
         ])
     }
     

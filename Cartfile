@@ -1,12 +1,3 @@
-github "ReactiveCocoa/ReactiveSwift"
-github "ReactiveCocoa/ReactiveCocoa"
-github "thoughtbot/Curry"
-github "SnapKit/SnapKit"
-github "mac-cain13/R.swift.Library"
-github "onevcat/Kingfisher"
-github "melvitax/DateHelper"
 github "carlossless/broad-ffmpeg"
 github "microsoft/appcenter-sdk-apple"
 
-github "Quick/Quick"
-github "Quick/Nimble"

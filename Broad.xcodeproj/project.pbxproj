@@ -3,12 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		D517F21B210783E100E1188C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D517F21A210783E000E1188C /* Security.framework */; };
-		D54554DE21EE03F500211ADD /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E7F1BD1FA2838F008B1B13 /* Kingfisher.framework */; };
+		D597A78125C83394005B9577 /* ReactiveSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D597A78025C83394005B9577 /* ReactiveSwift */; };
+		D597A78625C83416005B9577 /* ReactiveCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = D597A78525C83416005B9577 /* ReactiveCocoa */; };
+		D597A78B25C83451005B9577 /* Curry in Frameworks */ = {isa = PBXBuildFile; productRef = D597A78A25C83451005B9577 /* Curry */; };
+		D597A79025C83495005B9577 /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = D597A78F25C83495005B9577 /* Rswift */; };
+		D597A79525C834BE005B9577 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D597A79425C834BE005B9577 /* SnapKit */; };
+		D597A79A25C834DD005B9577 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D597A79925C834DD005B9577 /* Kingfisher */; };
+		D597A79F25C8352A005B9577 /* DateHelper in Frameworks */ = {isa = PBXBuildFile; productRef = D597A79E25C8352A005B9577 /* DateHelper */; };
+		D597A7AD25C835DB005B9577 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = D597A7AC25C835DB005B9577 /* Nimble */; };
+		D597A7AF25C835E1005B9577 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = D597A7AE25C835E1005B9577 /* Quick */; };
 		D5B4F95D20DFC55100F31593 /* FFmpeg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B4F95C20DFC55100F31593 /* FFmpeg.framework */; };
 		D5CD17682138032400CA635F /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD17672138032400CA635F /* Secrets.swift */; };
 		D5DCA21F248516F6004395D8 /* AppCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DCA21C248516F5004395D8 /* AppCenter.framework */; };
@@ -34,20 +42,12 @@
 		F97D80FC1F656E6B005AA5A0 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D80FB1F656E6B005AA5A0 /* APIError.swift */; };
 		F9810BB61F97C22100136F0F /* GraphAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9810BB51F97C22100136F0F /* GraphAPIClient.swift */; };
 		F9810BD81F97C56200136F0F /* GraphAPIClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9810BD71F97C56200136F0F /* GraphAPIClientSpec.swift */; };
-		F9810BDA1F97C97A00136F0F /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98BA6EC1E6E1382001A33A8 /* ReactiveSwift.framework */; };
 		F98785281FF5903100DB5E82 /* ProgrammeSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98785271FF5903100DB5E82 /* ProgrammeSectionModel.swift */; };
 		F987852A1FF6730D00DB5E82 /* Sequence+Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98785291FF6730D00DB5E82 /* Sequence+Group.swift */; };
 		F98BA6D71E6E0ECA001A33A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BA6D61E6E0ECA001A33A8 /* AppDelegate.swift */; };
 		F98BA6D91E6E0ECA001A33A8 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BA6D81E6E0ECA001A33A8 /* SelectionViewController.swift */; };
 		F98BA6DE1E6E0ECA001A33A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F98BA6DD1E6E0ECA001A33A8 /* Assets.xcassets */; };
 		F98BA6E11E6E0ECA001A33A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F98BA6DF1E6E0ECA001A33A8 /* LaunchScreen.storyboard */; };
-		F98BA6EE1E6E1382001A33A8 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98BA6EA1E6E1382001A33A8 /* Curry.framework */; };
-		F98BA6EF1E6E1382001A33A8 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98BA6EB1E6E1382001A33A8 /* ReactiveCocoa.framework */; };
-		F98BA6F01E6E1382001A33A8 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98BA6EC1E6E1382001A33A8 /* ReactiveSwift.framework */; };
-		F98BA7051E6E15BB001A33A8 /* Curry.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F98BA6F81E6E156C001A33A8 /* Curry.framework.dSYM */; };
-		F98BA7061E6E15BB001A33A8 /* ReactiveCocoa.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F98BA6F91E6E156C001A33A8 /* ReactiveCocoa.framework.dSYM */; };
-		F98BA7071E6E15BB001A33A8 /* ReactiveSwift.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F98BA6FA1E6E156C001A33A8 /* ReactiveSwift.framework.dSYM */; };
-		F98BA70B1E6E1A55001A33A8 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98BA70A1E6E1A55001A33A8 /* SnapKit.framework */; };
 		F98E057C2013E84C00EBCACE /* ProgrammeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98E057B2013E84C00EBCACE /* ProgrammeHeaderView.swift */; };
 		F997AF131ED85CD000EAA72B /* LRTStreamImageGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = F997AF121ED85CD000EAA72B /* LRTStreamImageGrabber.m */; };
 		F997AF151ED88F2600EAA72B /* StationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F997AF141ED88F2600EAA72B /* StationTableViewCell.swift */; };
@@ -65,24 +65,14 @@
 		F9E184DC1F9FEFD2002DDA5E /* ChannelShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E184DB1F9FEFD2002DDA5E /* ChannelShowView.swift */; };
 		F9E18EEE1E6E241500F1A607 /* SelectionNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E18EED1E6E241500F1A607 /* SelectionNavigationController.swift */; };
 		F9E18EF21E6E27B400F1A607 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E18EF11E6E27B400F1A607 /* R.generated.swift */; };
-		F9E18EF41E6E27F000F1A607 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E18EF31E6E27F000F1A607 /* Rswift.framework */; };
-		F9E18EF71E6E282000F1A607 /* Rswift.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F9E18EF51E6E27FC00F1A607 /* Rswift.framework.dSYM */; };
-		F9E18EF81E6E282000F1A607 /* SnapKit.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F98BA70C1E6E1A63001A33A8 /* SnapKit.framework.dSYM */; };
 		F9E18EFA1E6EA96600F1A607 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E18EF91E6EA96600F1A607 /* HTTPClient.swift */; };
 		F9E18EFC1E6EA98E00F1A607 /* StreamDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E18EFB1E6EA98E00F1A607 /* StreamDataResponse.swift */; };
 		F9E18EFE1E6EBC8B00F1A607 /* SelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E18EFD1E6EBC8B00F1A607 /* SelectionViewModel.swift */; };
-		F9E7F1C01FA283AC008B1B13 /* Kingfisher.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F9E7F1BF1FA2839B008B1B13 /* Kingfisher.framework.dSYM */; };
 		F9E805301EDEC1960027F1A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E8052F1EDEC1960027F1A4 /* ViewController.swift */; };
 		F9E805321EDECDD50027F1A4 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E805311EDECDD50027F1A4 /* SplashViewModel.swift */; };
 		F9E805341EDED83F0027F1A4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E805331EDED83F0027F1A4 /* ViewModel.swift */; };
 		F9E805361EDEDF4A0027F1A4 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E805351EDEDF4A0027F1A4 /* Navigator.swift */; };
 		F9F304611F1825D90097E961 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F304601F1825D90097E961 /* libxml2.tbd */; };
-		F9F3B9D51FCDE6A500D5CC47 /* DateHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F3B9D41FCDE6A400D5CC47 /* DateHelper.framework */; };
-		F9F3B9D81FCDE6BB00D5CC47 /* DateHelper.framework.dSYM in Copy dSYMs */ = {isa = PBXBuildFile; fileRef = F9F3B9D61FCDE6B100D5CC47 /* DateHelper.framework.dSYM */; };
-		F9F3F7CE1F97F15A00829B70 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F3F7CC1F97F15A00829B70 /* Quick.framework */; };
-		F9F3F7CF1F97F15A00829B70 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F3F7CD1F97F15A00829B70 /* Nimble.framework */; };
-		F9F3F7D51F97F24D00829B70 /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F9F3F7CD1F97F15A00829B70 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F9F3F7D61F97F24D00829B70 /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F9F3F7CC1F97F15A00829B70 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F9F3F7D91F98861A00829B70 /* ChannelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3F7D81F98861A00829B70 /* ChannelResponse.swift */; };
 		F9F3F7DE1F9CC7A900829B70 /* ChannelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3F7DD1F9CC7A900829B70 /* ChannelViewModel.swift */; };
 		F9F3F7E01F9CC7E700829B70 /* ChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3F7DF1F9CC7E700829B70 /* ChannelView.swift */; };
@@ -101,38 +91,6 @@
 			remoteInfo = lrt;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		F98BA7031E6E1586001A33A8 /* Copy dSYMs */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 16;
-			files = (
-				F9F3B9D81FCDE6BB00D5CC47 /* DateHelper.framework.dSYM in Copy dSYMs */,
-				F9E7F1C01FA283AC008B1B13 /* Kingfisher.framework.dSYM in Copy dSYMs */,
-				F9E18EF71E6E282000F1A607 /* Rswift.framework.dSYM in Copy dSYMs */,
-				F9E18EF81E6E282000F1A607 /* SnapKit.framework.dSYM in Copy dSYMs */,
-				F98BA7051E6E15BB001A33A8 /* Curry.framework.dSYM in Copy dSYMs */,
-				F98BA7061E6E15BB001A33A8 /* ReactiveCocoa.framework.dSYM in Copy dSYMs */,
-				F98BA7071E6E15BB001A33A8 /* ReactiveSwift.framework.dSYM in Copy dSYMs */,
-			);
-			name = "Copy dSYMs";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F9F3F7D41F97F23C00829B70 /* Copy Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 16;
-			files = (
-				F9F3F7D51F97F24D00829B70 /* Nimble.framework in Copy Frameworks */,
-				F9F3F7D61F97F24D00829B70 /* Quick.framework in Copy Frameworks */,
-			);
-			name = "Copy Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D517F21A210783E000E1188C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -232,9 +190,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9F3F7CF1F97F15A00829B70 /* Nimble.framework in Frameworks */,
-				F9F3F7CE1F97F15A00829B70 /* Quick.framework in Frameworks */,
-				F9810BDA1F97C97A00136F0F /* ReactiveSwift.framework in Frameworks */,
+				D597A7AF25C835E1005B9577 /* Quick in Frameworks */,
+				D597A7AD25C835DB005B9577 /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,23 +199,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D597A79F25C8352A005B9577 /* DateHelper in Frameworks */,
 				D5DCA221248516F6004395D8 /* AppCenterCrashes.framework in Frameworks */,
-				D54554DE21EE03F500211ADD /* Kingfisher.framework in Frameworks */,
+				D597A78125C83394005B9577 /* ReactiveSwift in Frameworks */,
 				D5DCA21F248516F6004395D8 /* AppCenter.framework in Frameworks */,
 				D5DCA220248516F6004395D8 /* AppCenterAnalytics.framework in Frameworks */,
 				D517F21B210783E100E1188C /* Security.framework in Frameworks */,
 				F9F304611F1825D90097E961 /* libxml2.tbd in Frameworks */,
 				F93A31AA1ED5CBAE00F390C2 /* VideoToolbox.framework in Frameworks */,
-				F9F3B9D51FCDE6A500D5CC47 /* DateHelper.framework in Frameworks */,
 				F9B5FE431ED5BEE600545320 /* libiconv.tbd in Frameworks */,
 				F9B5FE411ED5BEDA00545320 /* libbz2.tbd in Frameworks */,
 				F9B5FE3F1ED5BED200545320 /* libz.tbd in Frameworks */,
-				F98BA6EE1E6E1382001A33A8 /* Curry.framework in Frameworks */,
-				F98BA6EF1E6E1382001A33A8 /* ReactiveCocoa.framework in Frameworks */,
+				D597A78B25C83451005B9577 /* Curry in Frameworks */,
+				D597A79025C83495005B9577 /* Rswift in Frameworks */,
 				D5B4F95D20DFC55100F31593 /* FFmpeg.framework in Frameworks */,
-				F9E18EF41E6E27F000F1A607 /* Rswift.framework in Frameworks */,
-				F98BA70B1E6E1A55001A33A8 /* SnapKit.framework in Frameworks */,
-				F98BA6F01E6E1382001A33A8 /* ReactiveSwift.framework in Frameworks */,
+				D597A79A25C834DD005B9577 /* Kingfisher in Frameworks */,
+				D597A78625C83416005B9577 /* ReactiveCocoa in Frameworks */,
+				D597A79525C834BE005B9577 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,7 +551,6 @@
 				F9810BC71F97C54300136F0F /* Sources */,
 				F9810BC81F97C54300136F0F /* Frameworks */,
 				F9810BC91F97C54300136F0F /* Resources */,
-				F9F3F7D41F97F23C00829B70 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -602,6 +558,10 @@
 				F9810BD11F97C54300136F0F /* PBXTargetDependency */,
 			);
 			name = BroadTests;
+			packageProductDependencies = (
+				D597A7AC25C835DB005B9577 /* Nimble */,
+				D597A7AE25C835E1005B9577 /* Quick */,
+			);
 			productName = lrtTests;
 			productReference = F9810BCB1F97C54300136F0F /* BroadTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -615,14 +575,21 @@
 				F98BA6CF1E6E0ECA001A33A8 /* Sources */,
 				F98BA6D01E6E0ECA001A33A8 /* Frameworks */,
 				F98BA6D11E6E0ECA001A33A8 /* Resources */,
-				F98BA6F11E6E13E8001A33A8 /* Carthage Copy-Frameworks */,
-				F98BA7031E6E1586001A33A8 /* Copy dSYMs */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Broad;
+			packageProductDependencies = (
+				D597A78025C83394005B9577 /* ReactiveSwift */,
+				D597A78525C83416005B9577 /* ReactiveCocoa */,
+				D597A78A25C83451005B9577 /* Curry */,
+				D597A78F25C83495005B9577 /* Rswift */,
+				D597A79425C834BE005B9577 /* SnapKit */,
+				D597A79925C834DD005B9577 /* Kingfisher */,
+				D597A79E25C8352A005B9577 /* DateHelper */,
+			);
 			productName = lrt;
 			productReference = F98BA6D31E6E0ECA001A33A8 /* Broad.app */;
 			productType = "com.apple.product-type.application";
@@ -634,7 +601,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = delanoir;
 				TargetAttributes = {
 					F9810BCA1F97C54300136F0F = {
@@ -661,6 +628,17 @@
 				lt,
 			);
 			mainGroup = F98BA6CA1E6E0ECA001A33A8;
+			packageReferences = (
+				D597A77F25C83394005B9577 /* XCRemoteSwiftPackageReference "ReactiveSwift" */,
+				D597A78425C83416005B9577 /* XCRemoteSwiftPackageReference "ReactiveCocoa" */,
+				D597A78925C83451005B9577 /* XCRemoteSwiftPackageReference "Curry" */,
+				D597A78E25C83495005B9577 /* XCRemoteSwiftPackageReference "R.swift.Library" */,
+				D597A79325C834BE005B9577 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				D597A79825C834DD005B9577 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				D597A79D25C8352A005B9577 /* XCRemoteSwiftPackageReference "DateHelper" */,
+				D597A7A225C83560005B9577 /* XCRemoteSwiftPackageReference "Quick" */,
+				D597A7A725C835A6005B9577 /* XCRemoteSwiftPackageReference "Nimble" */,
+			);
 			productRefGroup = F98BA6D41E6E0ECA001A33A8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -692,34 +670,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		F98BA6F11E6E13E8001A33A8 /* Carthage Copy-Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Curry.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/DateHelper.framework",
-			);
-			name = "Carthage Copy-Frameworks";
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Curry.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveSwift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveCocoa.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Rswift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/DateHelper.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which carthage >/dev/null; then\n    carthage copy-frameworks\nelse\n    echo \"warning: Carthage not installed, download from https://github.com/Carthage/Carthage\"\nfi\n";
-		};
 		F9E18EEF1E6E26E100F1A607 /* R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -730,7 +680,7 @@
 			);
 			name = R.swift;
 			outputPaths = (
-				"$SRCROOT/Broad/Resources/R.generated.swift",
+				$SRCROOT/Broad/Resources/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -876,6 +826,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -895,10 +846,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -919,7 +871,10 @@
 				);
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = Broad/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.broad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -955,6 +910,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -974,10 +930,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -998,7 +955,10 @@
 				);
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = Broad/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.broad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1025,8 +985,12 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/include";
 				INFOPLIST_FILE = BroadTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.BroadTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1052,8 +1016,12 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/include";
 				INFOPLIST_FILE = BroadTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.BroadTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1079,8 +1047,12 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/include";
 				INFOPLIST_FILE = BroadTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.BroadTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1106,8 +1078,12 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/FFmpeg/FFmpeg-iOS/include";
 				INFOPLIST_FILE = BroadTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.BroadTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1142,6 +1118,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1167,7 +1144,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1203,6 +1180,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1222,10 +1200,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1247,7 +1226,10 @@
 				);
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = Broad/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.broad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1274,7 +1256,10 @@
 				);
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = Broad/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.delanoir.broad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1322,6 +1307,129 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D597A77F25C83394005B9577 /* XCRemoteSwiftPackageReference "ReactiveSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveCocoa/ReactiveSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.0;
+			};
+		};
+		D597A78425C83416005B9577 /* XCRemoteSwiftPackageReference "ReactiveCocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveCocoa/ReactiveCocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.1.0;
+			};
+		};
+		D597A78925C83451005B9577 /* XCRemoteSwiftPackageReference "Curry" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/thoughtbot/Curry.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		D597A78E25C83495005B9577 /* XCRemoteSwiftPackageReference "R.swift.Library" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift.Library.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.0;
+			};
+		};
+		D597A79325C834BE005B9577 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		D597A79825C834DD005B9577 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.0;
+			};
+		};
+		D597A79D25C8352A005B9577 /* XCRemoteSwiftPackageReference "DateHelper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/melvitax/DateHelper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.1;
+			};
+		};
+		D597A7A225C83560005B9577 /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		D597A7A725C835A6005B9577 /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D597A78025C83394005B9577 /* ReactiveSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D597A77F25C83394005B9577 /* XCRemoteSwiftPackageReference "ReactiveSwift" */;
+			productName = ReactiveSwift;
+		};
+		D597A78525C83416005B9577 /* ReactiveCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D597A78425C83416005B9577 /* XCRemoteSwiftPackageReference "ReactiveCocoa" */;
+			productName = ReactiveCocoa;
+		};
+		D597A78A25C83451005B9577 /* Curry */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D597A78925C83451005B9577 /* XCRemoteSwiftPackageReference "Curry" */;
+			productName = Curry;
+		};
+		D597A78F25C83495005B9577 /* Rswift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D597A78E25C83495005B9577 /* XCRemoteSwiftPackageReference "R.swift.Library" */;
+			productName = Rswift;
+		};
+		D597A79425C834BE005B9577 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D597A79325C834BE005B9577 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		D597A79925C834DD005B9577 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D597A79825C834DD005B9577 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		D597A79E25C8352A005B9577 /* DateHelper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D597A79D25C8352A005B9577 /* XCRemoteSwiftPackageReference "DateHelper" */;
+			productName = DateHelper;
+		};
+		D597A7AC25C835DB005B9577 /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D597A7A725C835A6005B9577 /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+		D597A7AE25C835E1005B9577 /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D597A7A225C83560005B9577 /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F98BA6CB1E6E0ECA001A33A8 /* Project object */;
 }

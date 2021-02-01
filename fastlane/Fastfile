@@ -3,14 +3,22 @@ default_platform(:ios)
 platform :ios do
   desc "Run Tests"
   lane :test do
-    run_tests(scheme: "Broad")
+    run_tests(
+      scheme: "Broad",
+      # configuration: "Debug",
+      # build_for_testing: true,
+      code_coverage: true,
+      output_directory: "build",
+      output_types: "junit"
+    )
   end
 
   lane :build do |options|
     build_app(
       scheme: "Broad",
       configuration: options[:config] || "Release",
-      export_method: options[:export] || "development"
+      export_method: options[:export] || "development",
+      output_directory: "build"
     )
   end
 
