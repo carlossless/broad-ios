@@ -20,8 +20,6 @@ jobs:
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gem-
       - name: Ruby Bundle
         run: bundle install --path vendor/bundle
       - uses: actions/cache@v1
