@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import ReactiveSwift
 import CoreSpotlight
+import SwiftUI
 
 import AppCenter
 import AppCenterAnalytics
@@ -29,8 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         registerViewControllers()
         
         window = UIWindow(frame: UIScreen.main.bounds)
+        
         navigator.window = window
-        navigator.replaceRoot(model: SplashViewModel())
+        window?.rootViewController = UIHostingController(rootView: SwiftUISelectionView())
+//        navigator.replaceRoot(model: SplashViewModel())
         window?.makeKeyAndVisible()
     }
     
