@@ -1342,7 +1342,7 @@
 			repositoryURL = "https://github.com/ReactiveCocoa/ReactiveSwift.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 6.5.0;
+				minimumVersion = 6.6.0;
 			};
 		};
 		D597A78425C83416005B9577 /* XCRemoteSwiftPackageReference "ReactiveCocoa" */ = {
@@ -1350,7 +1350,7 @@
 			repositoryURL = "https://github.com/ReactiveCocoa/ReactiveCocoa.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 11.1.0;
+				minimumVersion = 11.2.1;
 			};
 		};
 		D597A78925C83451005B9577 /* XCRemoteSwiftPackageReference "Curry" */ = {
@@ -1366,7 +1366,7 @@
 			repositoryURL = "https://github.com/mac-cain13/R.swift.Library.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.3.0;
+				minimumVersion = 5.4.0;
 			};
 		};
 		D597A79325C834BE005B9577 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
@@ -1382,7 +1382,7 @@
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 6.1.0;
+				minimumVersion = 6.3.0;
 			};
 		};
 		D597A79D25C8352A005B9577 /* XCRemoteSwiftPackageReference "DateHelper" */ = {
@@ -1390,7 +1390,7 @@
 			repositoryURL = "https://github.com/melvitax/DateHelper.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.4.1;
+				minimumVersion = 4.5.3;
 			};
 		};
 		D597A7A225C83560005B9577 /* XCRemoteSwiftPackageReference "Quick" */ = {
@@ -1398,7 +1398,7 @@
 			repositoryURL = "https://github.com/Quick/Quick";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
+				minimumVersion = 4.0.0;
 			};
 		};
 		D597A7A725C835A6005B9577 /* XCRemoteSwiftPackageReference "Nimble" */ = {
@@ -1406,7 +1406,7 @@
 			repositoryURL = "https://github.com/Quick/Nimble.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
+				minimumVersion = 9.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

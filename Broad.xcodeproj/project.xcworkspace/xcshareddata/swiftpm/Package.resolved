@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/melvitax/DateHelper.git",
         "state": {
           "branch": null,
-          "revision": "403c5b56d7b3bf1553664148a373295dc0094010",
-          "version": "4.4.1"
+          "revision": "8dfbbea6e285d6f63d4dd39a15466809e2cc28f9",
+          "version": "4.5.3"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
         "state": {
           "branch": null,
-          "revision": "daebf8ddf974164d1b9a050c8231e263f3106b09",
-          "version": "6.1.0"
+          "revision": "44450a8f564d7c0165f736ba2250649ff8d3e556",
+          "version": "6.3.0"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/Quick/Nimble.git",
         "state": {
           "branch": null,
-          "revision": "e491a6731307bb23783bf664d003be9b2fa59ab5",
-          "version": "9.0.0"
+          "revision": "af1730dde4e6c0d45bf01b99f8a41713ce536790",
+          "version": "9.2.0"
         }
       },
       {
@@ -60,8 +60,8 @@
         "repositoryURL": "https://github.com/Quick/Quick",
         "state": {
           "branch": null,
-          "revision": "0038bcbab4292f3b028632556507c124e5ba69f3",
-          "version": "3.0.0"
+          "revision": "bd86ca0141e3cfb333546de5a11ede63f0c4a0e6",
+          "version": "4.0.0"
         }
       },
       {
@@ -69,8 +69,8 @@
         "repositoryURL": "https://github.com/mac-cain13/R.swift.Library.git",
         "state": {
           "branch": null,
-          "revision": "5025163d8f60d3c56124c309db0246ba421aa8c6",
-          "version": "5.3.0"
+          "revision": "8998cfe77f4fce79ee6dfab0c88a7d551659d8fb",
+          "version": "5.4.0"
         }
       },
       {
@@ -78,8 +78,8 @@
         "repositoryURL": "https://github.com/ReactiveCocoa/ReactiveCocoa.git",
         "state": {
           "branch": null,
-          "revision": "cca8bdc26d10a889b8bec3cc2167544df730953e",
-          "version": "11.1.0"
+          "revision": "376f98e9341bfe4daba01909d51acf47fde456d7",
+          "version": "11.2.1"
         }
       },
       {
@@ -87,8 +87,8 @@
         "repositoryURL": "https://github.com/ReactiveCocoa/ReactiveSwift.git",
         "state": {
           "branch": null,
-          "revision": "e03cda84105ba707de039b757e2b2de868c65a3e",
-          "version": "6.5.0"
+          "revision": "4a8e1e4a683e96daf658f68132dae781738bc862",
+          "version": "6.6.0"
         }
       },
       {
