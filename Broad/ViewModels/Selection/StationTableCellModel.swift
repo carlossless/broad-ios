@@ -8,8 +8,9 @@
 
 import Foundation
 import ReactiveSwift
+import SwiftUI
 
-struct StationTableCellModel : ViewModel {
+struct StationTableCellModel : ViewModel, Identifiable {
     
     let id: String
     let name: String

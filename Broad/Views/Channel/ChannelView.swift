@@ -53,7 +53,7 @@ class ChannelView : UIView {
         backgroundView = UIView()
         backgroundView.backgroundColor = UIColor(hex: 0x373D55)
         
-        loadingIndicator = UIActivityIndicatorView(style: .white)
+        loadingIndicator = UIActivityIndicatorView(style: .medium)
         
         timeLabel = UILabel()
         timeLabel.textColor = UIColor.white
